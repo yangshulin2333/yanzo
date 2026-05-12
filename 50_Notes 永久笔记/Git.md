@@ -378,7 +378,7 @@ git commit -m "首次提交"
 git remote add origin https://github.com/用户名/仓库名.git
 
 # 5. 推送
-git push -u origin main
+git push -u origin master
 ```
 
 ---
