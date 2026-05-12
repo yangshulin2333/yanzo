@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记导览.md",
+                "file": "60_Templates 模板/MOC通用模板.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "笔记导览"
+              "title": "MOC通用模板"
             }
           }
         ],
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "笔记导览.md",
+                "file": "60_Templates 模板/MOC通用模板.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "笔记导览 的反向链接列表"
+              "title": "MOC通用模板 的反向链接列表"
             }
           },
           {
@@ -138,12 +138,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "笔记导览.md",
+                "file": "60_Templates 模板/MOC通用模板.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "笔记导览 的出链列表"
+              "title": "MOC通用模板 的出链列表"
             }
           },
           {
@@ -181,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记导览.md",
+                "file": "60_Templates 模板/MOC通用模板.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "笔记导览 的大纲"
+              "title": "MOC通用模板 的大纲"
             }
           }
         ],
@@ -209,12 +209,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d3be8173c5b5c46c",
+  "active": "46b78b4dbf201580",
   "lastOpenFiles": [
+    "笔记导览.md",
+    "60_Templates 模板/MOC通用模板.md",
     "60_Templates 模板",
     "10_Projects 项目/Roblox/Roblox项目交接知识文档_AI可读版.md",
     "10_Projects 项目/Roblox/未命名.md",
-    "笔记导览.md",
     "10_Projects 项目/Roblox",
     "50_Notes 永久笔记/Git命令完全教程.md",
     "50_Notes 永久笔记/Obsidian.md",
@@ -240,7 +241,6 @@
     "50_Notes 永久笔记",
     "40_Resources 资料",
     "30_MOC 内容地图",
-    "20_Areas 领域",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307428.png",
     "Pasted image 20260512124816.png",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307429.png",
