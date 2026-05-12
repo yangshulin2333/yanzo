@@ -27,22 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "60_Templates 模板/通用 Obsidian 模板.md",
+                "file": "50_Notes 永久笔记/Obsidian.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "通用 Obsidian 模板"
-            }
-          },
-          {
-            "id": "63906d12a68afc3b",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "title": "Obsidian"
             }
           },
           {
@@ -74,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -142,11 +132,22 @@
         "type": "tabs",
         "children": [
           {
+            "id": "63906d12a68afc3b",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          },
+          {
             "id": "d0c4df697b44a443",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "50_Notes 永久笔记/Obsidian.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +157,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "Obsidian 的反向链接列表"
             }
           },
           {
@@ -165,11 +166,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "50_Notes 永久笔记/Obsidian.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "Obsidian 的出链列表"
             }
           },
           {
@@ -207,25 +209,26 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "50_Notes 永久笔记/Obsidian.md",
                 "followCursor": false,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Obsidian 的大纲"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 368.5
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
+      "switcher:打开快速切换": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
@@ -234,15 +237,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "63906d12a68afc3b",
+  "active": "ed9ebb99a9fd6126",
   "lastOpenFiles": [
+    "60_Templates 模板/通用 Obsidian 模板.md",
+    "60_Templates 模板/视频笔记模板.md.md",
+    "60_Templates 模板/项目模板.md.md",
     "30_MOC 内容地图/Obsidian MOC.md",
     "50_Notes 永久笔记/Obsidian.md",
-    "60_Templates 模板/视频笔记模板.md.md",
     "60_Templates 模板/Obsidian GitHub 免费同步方案.md.md",
-    "60_Templates 模板/通用 Obsidian 模板.md",
     "60_Templates 模板/模版01.md",
-    "60_Templates 模板/项目模板.md.md",
     "30_MOC 内容地图/Roblox MOC.md",
     "60_Templates 模板/Obsidian.md",
     "20_Areas 领域/Unity.md",
