@@ -218,7 +218,8 @@
               "title": "Obsidian MOC 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -237,10 +238,13 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "46b78b4dbf201580",
+  "active": "ed9ebb99a9fd6126",
   "lastOpenFiles": [
-    "60_Templates 模板/MOC通用模板.md",
+    "assets/配置Obsidian/file-20251119200446037.png.md",
     "30_MOC 内容地图/Obsidian MOC.md",
+    "assets/配置Obsidian",
+    "assets",
+    "60_Templates 模板/MOC通用模板.md",
     "30_MOC 内容地图/Claude Code.md",
     "50_Notes 永久笔记/Obsidian.md",
     "笔记导览.md",
@@ -269,8 +273,6 @@
     "90_Archive 归档",
     "60_Templates 模板",
     "50_Notes 永久笔记",
-    "40_Resources 资料",
-    "30_MOC 内容地图",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307428.png",
     "Pasted image 20260512124816.png",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307429.png",

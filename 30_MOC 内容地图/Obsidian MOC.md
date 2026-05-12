@@ -11,9 +11,9 @@ updated: 2026-05-12
 
 # Obsidian MOC
 
-## 这个主题是什么
+## Obsidian MOC
 
-这个主题用于整理我在 [[Obsidian]] 里的整套工作流：文件夹怎么分、笔记属性怎么写、双向链接怎么挂、MOC 怎么作为主题入口，以及 Git / 附件 / AI 工具怎么接进来。
+这篇笔记是 [[Obsidian]] 主题的内容地图，用来集中放入口、规则、资料和我自己的整理方法。
 
 一句话原则：
 
@@ -27,8 +27,6 @@ updated: 2026-05-12
 
 - [[笔记导览]]
 - [[Obsidian]]
-- [[Git命令完全教程]]
-- [[Obsidian初始配置]]
 
 ---
 
@@ -38,7 +36,6 @@ updated: 2026-05-12
 
 - [[笔记导览]]：整个仓库的使用说明，定义文件夹、属性、链接、MOC 的职责分工
 - [[Obsidian]]：围绕 Obsidian 的实际使用记录，重点包括同步、附件、AI、导出工具
-- [[Obsidian初始配置]]：适合和 `Obsidian` 笔记对照着做第一次配置
 
 ---
 
@@ -47,9 +44,9 @@ updated: 2026-05-12
 这些概念决定这个库以后会不会越记越乱。
 
 - [[Obsidian]]：本地 Markdown 笔记库，而不是封闭平台
-- [[MOC]]：主题入口页，用来集中挂载相关笔记
-- [[双向链接]]：用链接表达知识关系，而不是把主题全塞进标签
-- [[Markdown]]：Obsidian 笔记的底层格式
+- MOC：主题入口页，用来集中挂载相关笔记
+- 双向链接：用链接表达知识关系，而不是把主题全塞进标签
+- Markdown：Obsidian 笔记的底层格式
 - `type / status / source`：每篇笔记顶部的最小属性
 - `00_Inbox / 10_Projects / 20_Areas / 30_MOC / 40_Resources / 50_Notes / 60_Templates / 90_Archive / Assets`：当前仓库的一级结构
 
@@ -69,7 +66,6 @@ updated: 2026-05-12
 
 - [[笔记导览]]
 - [[Obsidian]]
-- [[Obsidian初始配置]]
 
 ---
 
@@ -77,13 +73,7 @@ updated: 2026-05-12
 
 这部分是 Obsidian 工作流里最容易反复用到的操作。
 
-- [[Git命令完全教程]]：Git 基础命令和仓库操作
-- [[Obsidian]]：记录了 `.gitignore`、Obsidian Git、Custom Attachment Location、Pandoc、代理配置
-- [[Git]]
-- [[GitHub]]
-- [[Obsidian Git]]
-- [[Custom Attachment Location]]
-- [[Pandoc]]
+- [[Obsidian]]：记录了 `.gitignore`、Git 云同步、附件位置、Pandoc、代理配置
 
 重点规则：
 
@@ -101,9 +91,6 @@ updated: 2026-05-12
 Obsidian 适合和本地 AI 工具配合，因为笔记本质上就是 Markdown 文件。
 
 - [[Obsidian]]
-- [[Gemini CLI]]
-- [[Claude Code]]
-- [[AI 编程工具]]
 
 适合交给 AI 做的事：
 
@@ -119,7 +106,6 @@ Obsidian 适合和本地 AI 工具配合，因为笔记本质上就是 Markdown 
 主要是别人产出的内容，先作为资料吸收，再决定要不要沉淀成永久笔记。
 
 - [[Obsidian]]
-- [[豆包总结Obsidian]]
 - [Obsidian 官方帮助中文文档](https://publish.obsidian.md/help-zh/%E7%94%B1%E6%AD%A4%E5%BC%80%E5%A7%8B)
 
 ---
@@ -129,15 +115,7 @@ Obsidian 适合和本地 AI 工具配合，因为笔记本质上就是 Markdown 
 已经更接近我自己的长期规则，而不是单次教程摘录。
 
 - [[笔记导览]]
-- [[Git命令完全教程]]
-
-可以继续补成独立笔记的主题：
-
-- [[MOC]]
-- [[双向链接]]
-- [[Markdown]]
-- [[Obsidian Git]]
-- [[Custom Attachment Location]]
+- [[Obsidian]]
 
 ---
 
@@ -154,18 +132,17 @@ Obsidian 适合和本地 AI 工具配合，因为笔记本质上就是 Markdown 
 相关入口：
 
 - [[Obsidian]]
-- [[Git命令完全教程]]
 
 ---
 
 ## 待整理
 
-- [ ] 把 `[[MOC]]`、`[[双向链接]]`、`[[Markdown]]` 补成独立概念笔记
-- [ ] 把 `[[Obsidian Git]]`、`[[Custom Attachment Location]]` 补成独立工具笔记
-- [ ] 后续新增的 Obsidian 教程统一挂到这个 MOC，而不是散着放
+- [ ] 后续新增的 Obsidian 资料统一挂到这个 MOC
+- [ ] 把 `[[Obsidian]]` 里的配置内容继续整理成更稳定的长期笔记
+- [ ] 定期回看 `[[笔记导览]]`，确保新笔记仍按这套结构在放
 
 ---
 
 ## 相关 MOC
 
-- [[Roblox MOC]]
+- 暂无
