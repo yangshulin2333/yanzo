@@ -133,6 +133,8 @@ Assets
 
 ![](assets/豆包总结Obsidian/file-20260512125345710.png)
 
+![](assets/豆包总结Obsidian/file-20260512125453198.png)
+
 1. 设置 → Files and Links
     
     - ❌ 关闭「Use Wikilinks」
