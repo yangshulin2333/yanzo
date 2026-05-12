@@ -131,6 +131,8 @@ Assets
 
 ## 七、处理图片（标准 Markdown，GitHub 可预览）
 
+![](assets/豆包总结Obsidian/file-20260512125345710.png)
+
 1. 设置 → Files and Links
     
     - ❌ 关闭「Use Wikilinks」
