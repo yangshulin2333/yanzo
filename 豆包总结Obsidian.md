@@ -87,6 +87,8 @@ Thumbs.db
 2. **关闭安全模式**
 3. 浏览 → 搜索 `Git` → 安装 **Vinzent** 写的「Obsidian Git」→ 启用。
 
+![[Pasted image 20260512124816.png]]
+
 ### 插件设置（照着填）
 
 - **Pull on startup**：开启（打开 Obsidian 自动拉最新）
