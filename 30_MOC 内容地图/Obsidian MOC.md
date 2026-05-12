@@ -4,7 +4,7 @@
 - [[Obsidian GitHub 免费同步方案]]
 - [[Obsidian Git]]
 - [[GitHub]]
-- [[Git]]
+- [[../50_Notes 永久笔记/Git命令完全教程]]
 
 ## 插件
 - [[Custom Attachment Location]]
