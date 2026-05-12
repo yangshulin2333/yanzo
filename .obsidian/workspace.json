@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "60_Templates 模板/MOC通用模板.md",
+                "file": "60_Templates 模板/未命名.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MOC通用模板"
+              "title": "未命名"
             }
           }
         ],
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "60_Templates 模板/MOC通用模板.md",
+                "file": "60_Templates 模板/未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "MOC通用模板 的反向链接列表"
+              "title": "未命名 的反向链接列表"
             }
           },
           {
@@ -138,12 +138,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "60_Templates 模板/MOC通用模板.md",
+                "file": "60_Templates 模板/未命名.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "MOC通用模板 的出链列表"
+              "title": "未命名 的出链列表"
             }
           },
           {
@@ -181,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "60_Templates 模板/MOC通用模板.md",
+                "file": "60_Templates 模板/未命名.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "MOC通用模板 的大纲"
+              "title": "未命名 的大纲"
             }
           }
         ],
@@ -206,13 +206,15 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "46b78b4dbf201580",
   "lastOpenFiles": [
-    "笔记导览.md",
     "60_Templates 模板/MOC通用模板.md",
+    "60_Templates 模板/未命名.md",
+    "笔记导览.md",
     "60_Templates 模板",
     "10_Projects 项目/Roblox/Roblox项目交接知识文档_AI可读版.md",
     "10_Projects 项目/Roblox/未命名.md",
