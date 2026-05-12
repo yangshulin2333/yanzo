@@ -1,8 +1,7 @@
 
 #  Git命令完全教程
 
-
-初始化
+Git 绑定身份,否则无法git commit
 ```
 git config --global user.email "yangshulin2333@gmail.com"
 
@@ -37,17 +36,12 @@ $ git init
 Reinitialized existing Git repository in D:/Yanzo/yanzo_note/.git/
 ```
 
-**提示说明：**
-- `Reinitialized existing` = 重新初始化（因为之前已经执行过了）
-- 如果是第一次会显示：`Initialized empty Git repository`
-
 ---
 
 ## **2️⃣ `git add .` - 添加文件到暂存区**
 
 ### **作用：**
 告诉Git："我要把这些文件的当前状态记录下来"
-
 ### **语法：**
 ```bash
 git add .              # 添加当前目录所有文件
