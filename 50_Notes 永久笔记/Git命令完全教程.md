@@ -1,9 +1,11 @@
 ---
 created: 2026-05-12
+source: web
+type: note
+status: summarized
+tags:
+  - status/summarized
 ---
-
-
-
 # 绑定身份
 ```
 git config --global user.email "yangshulin2333@gmail.com"
