@@ -1,0 +1,11 @@
+# Obsidian 工作区（窗口布局、打开标签）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 回收站、缓存
+.trash/
+*.tmp
