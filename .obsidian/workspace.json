@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "60_Templates 模板/视频笔记模板.md.md",
+                "file": "60_Templates 模板/Obsidian GitHub 免费同步方案.md.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "视频笔记模板.md"
+              "title": "Obsidian GitHub 免费同步方案.md"
             }
           },
           {
@@ -49,7 +49,8 @@
               "title": "模版01"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -132,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "笔记导览.md",
+                "file": "60_Templates 模板/Obsidian GitHub 免费同步方案.md.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +143,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "笔记导览 的反向链接列表"
+              "title": "Obsidian GitHub 免费同步方案.md 的反向链接列表"
             }
           },
           {
@@ -151,12 +152,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "笔记导览.md",
+                "file": "60_Templates 模板/Obsidian GitHub 免费同步方案.md.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "笔记导览 的出链列表"
+              "title": "Obsidian GitHub 免费同步方案.md 的出链列表"
             }
           },
           {
@@ -194,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记导览.md",
+                "file": "60_Templates 模板/Obsidian GitHub 免费同步方案.md.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "笔记导览 的大纲"
+              "title": "Obsidian GitHub 免费同步方案.md 的大纲"
             }
           }
         ],
@@ -222,20 +223,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4c8c23ee79c4d041",
+  "active": "f345b1880f9e94f2",
   "lastOpenFiles": [
-    "50_Notes 永久笔记/Git命令完全教程.md",
-    "笔记导览.md",
+    "60_Templates 模板/Obsidian.md",
+    "60_Templates 模板/项目模板.md.md",
+    "60_Templates 模板/通用 Obsidian 模板.md",
+    "50_Notes 永久笔记/Obsidian.md",
     "60_Templates 模板/视频笔记模板.md.md",
     "60_Templates 模板/模版01.md",
-    "60_Templates 模板/通用 Obsidian 模板.md",
-    "60_Templates 模板/项目模板.md.md",
+    "笔记导览.md",
+    "50_Notes 永久笔记/Git命令完全教程.md",
     "30_MOC 内容地图/Obsidian MOC.md",
     "2026-05-12.md",
-    "50_Notes 永久笔记/Obsidian.md",
     "60_Templates 模板/Obsidian GitHub 免费同步方案.md.md",
     "30_MOC 内容地图/Roblox MOC.md",
-    "60_Templates 模板/Obsidian.md",
     "20_Areas 领域/Unity.md",
     "20_Areas 领域/英语.md",
     "20_Areas 领域/Roblox.md",
