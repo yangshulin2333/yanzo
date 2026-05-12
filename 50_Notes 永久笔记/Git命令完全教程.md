@@ -4,7 +4,7 @@ created: 2026-05-12
 
 
 
-Git 绑定身份,否则无法git commit
+# 绑定身份
 ```
 git config --global user.email "yangshulin2333@gmail.com"
 
