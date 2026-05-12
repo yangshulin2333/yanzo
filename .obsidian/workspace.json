@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "50_Notes 永久笔记/Obsidian.md",
+                "file": "50_Notes 永久笔记/Git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Obsidian"
+              "title": "Git"
             }
           },
           {
@@ -147,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "50_Notes 永久笔记/Obsidian.md",
+                "file": "50_Notes 永久笔记/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,7 +157,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Obsidian 的反向链接列表"
+              "title": "Git 的反向链接列表"
             }
           },
           {
@@ -166,12 +166,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "50_Notes 永久笔记/Obsidian.md",
+                "file": "50_Notes 永久笔记/Git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Obsidian 的出链列表"
+              "title": "Git 的出链列表"
             }
           },
           {
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "50_Notes 永久笔记/Obsidian.md",
+                "file": "50_Notes 永久笔记/Git.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Obsidian 的大纲"
+              "title": "Git 的大纲"
             }
           }
         ],
@@ -237,13 +237,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ed9ebb99a9fd6126",
+  "active": "b0967a0b2442574e",
   "lastOpenFiles": [
+    "50_Notes 永久笔记/Obsidian.md",
+    "50_Notes 永久笔记/Git.md",
     "60_Templates 模板/通用 Obsidian 模板.md",
     "60_Templates 模板/视频笔记模板.md.md",
     "60_Templates 模板/项目模板.md.md",
     "30_MOC 内容地图/Obsidian MOC.md",
-    "50_Notes 永久笔记/Obsidian.md",
     "60_Templates 模板/Obsidian GitHub 免费同步方案.md.md",
     "60_Templates 模板/模版01.md",
     "30_MOC 内容地图/Roblox MOC.md",

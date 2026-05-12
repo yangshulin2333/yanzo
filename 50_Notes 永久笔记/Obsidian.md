@@ -17,7 +17,7 @@ tags:
 2. `git init`  初始化仓库
 	初始化仓库后代开该文件地址。
 	
-3. 打开根目录，新建添加`.ignore`文件,文件内容为：
+3. 打开根目录，新建添加`.gitignore`文件,文件内容为：
 	```
 	.obsidian/workspace.json
 	.obsidian/workspace-mobile.json
