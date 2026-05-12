@@ -11,7 +11,6 @@ updated: 2026-05-12
 
 # Obsidian MOC
 
-## Obsidian MOC
 
 这篇笔记是 [[Obsidian]] 主题的内容地图，用来集中放入口、规则、资料和我自己的整理方法。
 
