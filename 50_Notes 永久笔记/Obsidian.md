@@ -12,13 +12,13 @@ tags:
 [操作文档](https://publish.obsidian.md/help-zh/%E7%94%B1%E6%AD%A4%E5%BC%80%E5%A7%8B)
 
 #### Git云同步
-1. 登录个人git账户，新建git仓库G
+1. 登录个人git账户，新建git仓库
 	
-2. `git init`  # 初始化仓库
-	初始化仓库后代开该地址。
+2. `git init`  初始化仓库
+	初始化仓库后代开该文件地址。
 	
-3. 打开根目录，添加`.ignore`文件,文件内容为：
-	```b
+3. 打开根目录，新建添加`.ignore`文件,文件内容为：
+	```
 	.obsidian/workspace.json
 	.obsidian/workspace-mobile.json
 	```
