@@ -147,6 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "30_MOC 内容地图/Obsidian MOC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +157,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "Obsidian MOC 的反向链接列表"
             }
           },
           {
@@ -165,11 +166,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "30_MOC 内容地图/Obsidian MOC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "Obsidian MOC 的出链列表"
             }
           },
           {
@@ -207,12 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "30_MOC 内容地图/Obsidian MOC.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Obsidian MOC 的大纲"
             }
           }
         ]
@@ -234,13 +237,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "63906d12a68afc3b",
+  "active": "46b78b4dbf201580",
   "lastOpenFiles": [
+    "60_Templates 模板/MOC通用模板.md",
     "30_MOC 内容地图/Obsidian MOC.md",
+    "30_MOC 内容地图/Claude Code.md",
     "50_Notes 永久笔记/Obsidian.md",
     "笔记导览.md",
     "30_MOC 内容地图/Roblox MOC.md",
-    "60_Templates 模板/MOC通用模板.md",
     "60_Templates 模板/未命名.md",
     "60_Templates 模板",
     "10_Projects 项目/Roblox/Roblox项目交接知识文档_AI可读版.md",
