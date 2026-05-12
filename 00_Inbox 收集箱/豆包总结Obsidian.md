@@ -86,7 +86,7 @@ Thumbs.db
 1. Obsidian 左下角 ⚙️「设置」→「第三方插件」
 2. **关闭安全模式**
 3. 浏览 → 搜索 `Git` → 安装 **Vinzent** 写的「Obsidian Git」→ 启用。
-![450](assets/豆包总结Obsidian/file-20260512125653492.png)
+![450](assets/豆包总结Obsidian/file-20260512130307428.png)
 ### 插件设置（照着填）
 
 - **Pull on startup**：开启（打开 Obsidian 自动拉最新）
@@ -129,9 +129,9 @@ Assets
 
 ## 七、处理图片（标准 Markdown，GitHub 可预览）
 
-![](assets/豆包总结Obsidian/file-20260512125345710.png)
+![](assets/豆包总结Obsidian/file-20260512130307429%201.png)
 
-![](assets/豆包总结Obsidian/file-20260512125453198.png)
+![](assets/豆包总结Obsidian/file-20260512130307429.png)
 
 1. 设置 → Files and Links
     
