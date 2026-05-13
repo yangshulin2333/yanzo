@@ -40,8 +40,6 @@ tags:
 	- 开启`Pull on startup`选项
 	- 开启`Auto commit-and-sync after stopping file edits`选项
 	- 设置`Auto commit-and-sync interval (minutes)`自动提交时间
-	- [![350](assets/配置Obsidian/file-20251119201843469.png)]()
-
 ## git同步图片上传
 第三方插件`Custom Attachment Location`
 - 修改Markdown URL格式：`assets/${noteFileName}/${generatedAttachmentFileName}`
@@ -50,9 +48,6 @@ tags:
 - 选项设置
 	- 关闭`使用Wiki链接`
 	- `内部链接类型`选择`基于当前笔记的相对路径`
-![](assets/配置Obsidian/file-20251119212020891.png)
-
-![](assets/配置Obsidian/file-20251119185228343%201.png)
 ## 接入Gemini-CLI AI编程工具
 
 
