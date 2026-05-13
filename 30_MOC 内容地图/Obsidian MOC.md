@@ -12,7 +12,7 @@ updated: 2026-05-12
 # Obsidian MOC
 
 
-这篇笔记是 [[Obsidian]] 主题的内容地图，用来集中放入口、规则、资料和我自己的整理方法。
+这篇笔记是 Obsidian 主题的内容地图，用来集中放入口、规则、资料和我自己的整理方法。
 
 一句话原则：
 
@@ -25,7 +25,7 @@ updated: 2026-05-12
 ## 快速入口
 
 - [[笔记导览]]
-- [[Obsidian]]
+- 
 
 ---
 
@@ -34,7 +34,7 @@ updated: 2026-05-12
 适合先建立整体认识，再开始动手配置。
 
 - [[笔记导览]]：整个仓库的使用说明，定义文件夹、属性、链接、MOC 的职责分工
-- [[Obsidian]]：围绕 Obsidian 的实际使用记录，重点包括同步、附件、AI、导出工具
+- 
 
 ---
 
@@ -42,7 +42,7 @@ updated: 2026-05-12
 
 这些概念决定这个库以后会不会越记越乱。
 
-- [[Obsidian]]：本地 Markdown 笔记库，而不是封闭平台
+- Obsidian：本地 Markdown 笔记库，而不是封闭平台
 - MOC：主题入口页，用来集中挂载相关笔记
 - 双向链接：用链接表达知识关系，而不是把主题全塞进标签
 - Markdown：Obsidian 笔记的底层格式
@@ -64,7 +64,7 @@ updated: 2026-05-12
 相关笔记：
 
 - [[笔记导览]]
-- [[Obsidian]]
+- 
 
 ---
 
@@ -72,7 +72,7 @@ updated: 2026-05-12
 
 这部分是 Obsidian 工作流里最容易反复用到的操作。
 
-- [[Obsidian]]：记录了 `.gitignore`、Git 云同步、附件位置、Pandoc、代理配置
+- Obsidian：记录了 `.gitignore`、Git 云同步、附件位置、Pandoc、代理配置
 
 重点规则：
 
@@ -89,7 +89,7 @@ updated: 2026-05-12
 
 Obsidian 适合和本地 AI 工具配合，因为笔记本质上就是 Markdown 文件。
 
-- [[Obsidian]]
+- Obsidian
 
 适合交给 AI 做的事：
 
@@ -104,7 +104,7 @@ Obsidian 适合和本地 AI 工具配合，因为笔记本质上就是 Markdown 
 
 主要是别人产出的内容，先作为资料吸收，再决定要不要沉淀成永久笔记。
 
-- [[Obsidian]]
+- Obsidian
 - [Obsidian 官方帮助中文文档](https://publish.obsidian.md/help-zh/%E7%94%B1%E6%AD%A4%E5%BC%80%E5%A7%8B)
 
 ---
@@ -114,7 +114,7 @@ Obsidian 适合和本地 AI 工具配合，因为笔记本质上就是 Markdown 
 已经更接近我自己的长期规则，而不是单次教程摘录。
 
 - [[笔记导览]]
-- [[Obsidian]]
+- Obsidian
 
 ---
 
@@ -130,14 +130,14 @@ Obsidian 适合和本地 AI 工具配合，因为笔记本质上就是 Markdown 
 
 相关入口：
 
-- [[Obsidian]]
+- Obsidian
 
 ---
 
 ## 待整理
 
 - [ ] 后续新增的 Obsidian 资料统一挂到这个 MOC
-- [ ] 把 `[[Obsidian]]` 里的配置内容继续整理成更稳定的长期笔记
+- [ ] 把 `Obsidian` 里的配置内容继续整理成更稳定的长期笔记
 - [ ] 定期回看 `[[笔记导览]]`，确保新笔记仍按这套结构在放
 
 ---
