@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "40_Resources 资料/油管博主.md",
+                "file": "20_Areas 领域/算法/递归.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "油管博主"
+              "title": "递归"
             }
           }
         ],
@@ -195,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "40_Resources 资料/油管博主.md",
+                "file": "20_Areas 领域/算法/递归.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "油管博主 的大纲"
+              "title": "递归 的大纲"
             }
           }
         ],
@@ -225,6 +225,9 @@
   },
   "active": "2dffc1ed72b1e911",
   "lastOpenFiles": [
+    "40_Resources 资料/油管博主.md",
+    "20_Areas 领域/算法/递归.md",
+    "20_Areas 领域/算法",
     "00_Inbox 收集箱/Roblox.md",
     "笔记导览.md",
     "10_Projects 项目/Roblox/奇幻小小英雄/Roblox项目交接知识文档_AI可读版.md",
@@ -233,7 +236,6 @@
     "20_Areas 领域/未命名.md",
     "20_Areas 领域/Roblox",
     "20_Areas 领域/AI/Codex.md",
-    "40_Resources 资料/油管博主.md",
     "20_Areas 领域/AI",
     "30_MOC 内容地图/Obsidian MOC.md",
     "60_Templates 模板/MOC通用模板.md",
@@ -259,8 +261,6 @@
     "60_Templates 模板/Obsidian.md",
     "60_Templates 模板/Obsidian GitHub 免费同步方案.md.md",
     "60_Templates 模板/模版01.md",
-    "60_Templates 模板/通用 Obsidian 模板.md",
-    "00_Inbox 收集箱/assets/豆包总结Obsidian",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307428.png",
     "Pasted image 20260512124816.png",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307429.png",
