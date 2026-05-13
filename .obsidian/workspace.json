@@ -204,7 +204,8 @@
               "title": "Codex 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -222,7 +223,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "46b78b4dbf201580",
+  "active": "ed9ebb99a9fd6126",
   "lastOpenFiles": [
     "40_Resources 资料/油管博主.md",
     "20_Areas 领域/AI/Codex.md",
