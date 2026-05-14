@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "3d",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +89,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -209,7 +210,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "983cca7b87cae4ca",
+  "active": "196eb72552b27a87",
   "lastOpenFiles": [
     "40_Resources 资料/未命名 2.md",
     "40_Resources 资料/未命名 1.md",
