@@ -1,0 +1,283 @@
+[00:00] Roblox projects fall apart as they grow,
+[00:02] not because of bad code, but because of
+[00:03] that structure. This video breaks down
+[00:05] how professional developers set up their
+[00:07] games with organized folders, modular
+[00:09] services, scalable UI, and essential
+[00:11] packages. This isn't just for big teams.
+[00:13] This is the exact structure that I use,
+[00:15] and I'm going to walk you through it
+[00:16] step by step. Advanced tooling like VS
+[00:18] Code and Rojo aren't required, but if
+[00:20] you want to dive deeper into tooling,
+[00:22] you should check out my previous
+[00:23] tutorial video.
+[00:25] Let's break down the structure behind
+[00:26] the professional-grade Roblox game. Game
+[00:29] logic should be broken into services.
+[00:32] Each service owns a slice of your game
+[00:33] and manages related data and systems.
+[00:36] For example, build service would handle
+[00:38] placement of parts, while enemy service
+[00:40] controls enemy spawning and tracking.
+[00:43] Although not always required, each
+[00:45] service is typically split into client
+[00:46] and server versions with shared
+[00:48] functionality or data placed in a
+[00:50] utility module.
+[00:52] This keeps your logic organized, makes
+[00:54] debugging easier, and helps your game
+[00:56] scale cleanly as it grows.
+[01:00] So, what does this actually look like in
+[01:02] Studio? First, we're going to create a
+[01:04] shared folder. This will house our
+[01:06] shared and client game logic. Inside of
+[01:08] shared, create a services folder. Each
+[01:11] service will have a dedicated folder
+[01:13] assigned to it for easy scalability. In
+[01:15] this example, I will create a build
+[01:17] service. The client version of each
+[01:19] service will live here along with any
+[01:20] needed shared utility scripts. We must
+[01:23] place the server versions of each
+[01:25] service under server script service in
+[01:27] order to prevent exploiters from
+[01:29] downloading sensitive server code.
+[01:33] Our build services hierarchy setup is
+[01:36] now complete.
+[01:38] Here's an example with multiple
+[01:39] services. Like I mentioned earlier, some
+[01:42] services don't need client and server
+[01:44] versions as you can see with part
+[01:45] service here.
+[01:48] Ideally, all related code would live
+[01:50] together for easy access and navigation.
+[01:52] However, the server code must stay
+[01:54] within non-replicated containers as
+[01:56] mentioned earlier. To remedy this, I
+[01:58] created a VS Code tool that
+[02:00] automatically maps scripts to their
+[02:01] correct container while allowing
+[02:03] everything to live together. This tool
+[02:04] is available on my GitHub link in the
+[02:06] description.
+[02:11] Each service is a singleton. We only
+[02:13] ever have one build service, one
+[02:15] inventory service and so on. That means
+[02:17] no new constructor. The module itself is
+[02:20] the instance. Most services have an
+[02:22] initialize function in it. Here any
+[02:25] needed objects can be created or
+[02:27] non-yielding startup code can be
+[02:28] executed.
+[02:30] In this example, we're inside build
+[02:32] service client. So the singleton table
+[02:34] is named exactly that. Always keep
+[02:37] service names explicit to maintain
+[02:38] readability.
+[02:40] in it creates a model called parts and
+[02:43] stores it on the service.
+[02:46] The service then exposes the build
+[02:48] function. It spawns a part, sets it
+[02:50] frame to the pass in parameter and
+[02:52] parents it under self.parts.
+[02:57] By default, the current Luau type
+[02:59] checker struggles to understand the true
+[03:00] type of self. In order to fix this, we
+[03:03] need to ditch the colon operator and
+[03:05] pass self in as the first parameter with
+[03:07] our defined type.
+[03:18] Member variables can be defined by
+[03:20] unionuning a table of our defined
+[03:22] variables to the type.
+[03:25] Additionally, type cast the return
+[03:27] service for proper IntelliSense when
+[03:29] used in another script.
+[03:33] Now let's use the service we just
+[03:35] created. Create a client script inside
+[03:38] of starter player scripts and name it
+[03:39] client.
+[03:41] This contains basic startup logic for
+[03:44] our client sided services.
+[03:47] For demonstration purposes, I'll use the
+[03:49] build function here.
+[03:54] Typically, startup scripts will simply
+[03:56] initialize all of our services. If order
+[03:59] matters or the init function takes any
+[04:01] parameters, you can initialize each
+[04:03] service manually. Otherwise create a
+[04:06] simple loop that calls in it on a
+[04:08] recognized services.
+[04:12] In order for client and server
+[04:14] communication to be possible, we must
+[04:15] use remote events and functions.
+[04:18] Remote instances should not be created
+[04:20] manually. Manual creation leads to messy
+[04:23] hierarchy trees, dependency on names,
+[04:25] and hard to manage version diffs.
+[04:28] Instead, create remotes through code. A
+[04:30] simple remote event wrapper can be
+[04:32] created in less than 50 lines of code
+[04:33] and solves all of these issues. There
+[04:36] are plenty of open source solutions such
+[04:37] as Biteet, Blink, or Zap. I personally
+[04:40] created my own networking solution that
+[04:41] I use in all of my games, and I'll be
+[04:43] using it for the example shown. Whatever
+[04:46] networking library you use or create
+[04:48] should be placed into a new folder
+[04:50] called packages. Packages are reusable
+[04:52] scripts that are not reliant on any
+[04:54] specific game logic, meaning they can
+[04:56] easily be dropped into any project. If
+[04:58] you are using VS Code, I recommend using
+[05:00] the Wall-E package manager as I
+[05:02] mentioned in my previous tutorial video.
+[05:08] Start by mirroring the service setup on
+[05:10] the server.
+[05:17] Inside of the initialize function,
+[05:18] create any needed networking solutions.
+[05:22] My networker library is designed for
+[05:24] easy communication between either side
+[05:25] of the network. Simply create the client
+[05:28] and server versions of the networker,
+[05:30] define any functions the client has
+[05:31] access to call, and use the built-in
+[05:33] methods to communicate.
+[05:39] I'm not going to go in depth into my
+[05:41] specific networking solution as it could
+[05:43] vary from yours. If you're interested in
+[05:45] mine, there are docs on the GitHub
+[05:46] repository in the description.
+[05:50] Instead of clients telling the server
+[05:52] directly, I built a part here, it should
+[05:54] ask, can I build here? The server would
+[05:56] then validate the request and
+[05:58] potentially send some response if
+[06:00] needed.
+[06:01] In this example, the client calls the
+[06:03] serverowned attempt build function
+[06:05] within its build method. In this case,
+[06:08] the attempt build validates by creating
+[06:10] a 5-second cool down between builds.
+[06:14] Don't forget the server startup script
+[06:16] inside of server script service.
+[06:22] In order to modulize reusable game
+[06:24] logic, most professional developers
+[06:26] utilize object-oriented programming to
+[06:28] create classes. Similarly to the service
+[06:31] structure, create dedicated class
+[06:33] folders under shared and server script
+[06:35] service. This video will not be teaching
+[06:38] object-oriented programming. So if
+[06:39] you're unfamiliar with this paradigm, I
+[06:41] recommend doing some research on your
+[06:42] own.
+[06:44] Leave a comment if you'd be interested
+[06:45] in a separate video covering
+[06:47] object-oriented programming in depth.
+[06:50] In this example, I will create a spike
+[06:52] class.
+[06:53] Now, instead of build service creating a
+[06:55] new part, it will create a new spike
+[06:57] object instead.
+[07:03] When a player touches a spike, they'll
+[07:05] now be damaged.
+[07:07] Custom models, VFX, and other instances
+[07:10] should be placed inside of an assets
+[07:11] folder under replicated storage. For
+[07:14] example, my spike class will now use
+[07:16] this custom spike mesh instead of a
+[07:17] basic part.
+[07:24] For the sake of example and to make
+[07:26] things more interesting, I've hooked up
+[07:28] the clients build function to call
+[07:30] attempt build whenever the mouse is
+[07:31] clicked. I initialize this behavior
+[07:33] within the init function.
+[07:38] Modules provide shared functionality,
+[07:41] data or utilities that other scripts can
+[07:43] depend on. Follow the same shared versus
+[07:45] server rules from before, creating their
+[07:47] respective folders.
+[07:50] I take module organization a step
+[07:52] further by grouping them into clear
+[07:53] categories like core, game, math, and
+[07:56] platform. This way, it's immediately
+[07:58] obvious where any script belongs and
+[08:00] where someone should look to find it.
+[08:02] Keep modules small and focused. Math
+[08:04] helpers, reusable functions, pure data
+[08:06] tables, and so on.
+[08:10] User interface is one of the easiest
+[08:12] places for projects to get messy.
+[08:14] Professional teams prevent this by
+[08:15] keeping UI modular and scalable.
+[08:18] Many developers use declarative UI
+[08:20] frameworks for this. React, Fusion, and
+[08:22] VID are the main options. I currently
+[08:25] use React and I've shipped production
+[08:26] games with Fusion as well. With that
+[08:29] said, I know many Roblox developers
+[08:31] aren't ready to dive into declarative
+[08:32] workflow, but here's a middle ground
+[08:34] that I recommend. Place all interface
+[08:36] code under a tople UI module in
+[08:39] replicated storage. This module acts as
+[08:41] the UI initializer. Inside, create
+[08:44] folders for interface types such as
+[08:45] menus or HUD.
+[08:48] In this example, I have a left sidebar
+[08:50] HUD element and an inventory menu.
+[08:54] Each feature gets its own module script
+[08:56] that exposes its functionality and an
+[08:58] init function if needed.
+[09:06] Just like services, the top level UI
+[09:08] script should initialize these features.
+[09:15] Finally, make sure the UI initializer is
+[09:18] called inside your client startup
+[09:19] script.
+[09:23] This approach keeps the familiar Roblox
+[09:25] workflow while still giving you scalable
+[09:27] modular UI design.
+[09:32] As mentioned earlier, packages are
+[09:33] reusable scripts that aren't tied to any
+[09:35] specific game logic, which means they
+[09:37] can be dropped into any project.
+[09:40] Professional developers rely on them to
+[09:41] avoid reinventing the wheel and to keep
+[09:43] their code base clean. Here are a few
+[09:45] core packages that I personally use
+[09:47] across all of my projects. Signal, a
+[09:50] pure code replacement for bindable
+[09:51] events, more efficient, easier to work
+[09:53] with, and hands down the one package I
+[09:55] wouldn't want to develop without. Charm,
+[09:58] an atomic state manager that pairs
+[10:00] perfectly with declarative UI
+[10:01] frameworks.
+[10:04] Sift, a comprehensive table utility
+[10:07] library packed with useful functions.
+[10:13] Data service, a full persistent data
+[10:16] solution with automatic client
+[10:17] replication and observable values.
+[10:23] Janitor, a lightweight cleanup module
+[10:26] that makes managing connections and
+[10:27] instances painless.
+[10:32] These packages keep your projects
+[10:34] modular, predictable, and ready to
+[10:36] scale. Like I mentioned earlier, I
+[10:38] manage all of these through Wall-E for
+[10:39] versioning and easy updates.
+[10:43] This is how professionals structure
+[10:44] Roblox projects. Services for game
+[10:47] logic, clear modules, scalable UI, and
+[10:49] reusable packages. Together, they keep
+[10:52] projects clean and scalable. Your exact
+[10:54] setup may differ slightly, but the
+[10:56] principle is the same. Organize early to
+[10:58] avoid chaos later. Check the description
+[11:00] for relevant links, and drop a comment
+[11:02] below the like button if you'd like a
+[11:04] deep dive on topics like object-oriented
+[11:06] programming or networking.

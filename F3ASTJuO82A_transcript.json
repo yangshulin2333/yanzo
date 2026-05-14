@@ -1,0 +1,1417 @@
+[
+  {
+    "start": 0.16,
+    "duration": 3.68,
+    "text": "Roblox projects fall apart as they grow,"
+  },
+  {
+    "start": 2.159,
+    "duration": 3.521,
+    "text": "not because of bad code, but because of"
+  },
+  {
+    "start": 3.84,
+    "duration": 3.439,
+    "text": "that structure. This video breaks down"
+  },
+  {
+    "start": 5.68,
+    "duration": 3.44,
+    "text": "how professional developers set up their"
+  },
+  {
+    "start": 7.279,
+    "duration": 3.841,
+    "text": "games with organized folders, modular"
+  },
+  {
+    "start": 9.12,
+    "duration": 4.24,
+    "text": "services, scalable UI, and essential"
+  },
+  {
+    "start": 11.12,
+    "duration": 3.92,
+    "text": "packages. This isn't just for big teams."
+  },
+  {
+    "start": 13.36,
+    "duration": 2.8,
+    "text": "This is the exact structure that I use,"
+  },
+  {
+    "start": 15.04,
+    "duration": 3.36,
+    "text": "and I'm going to walk you through it"
+  },
+  {
+    "start": 16.16,
+    "duration": 4.64,
+    "text": "step by step. Advanced tooling like VS"
+  },
+  {
+    "start": 18.4,
+    "duration": 3.76,
+    "text": "Code and Rojo aren't required, but if"
+  },
+  {
+    "start": 20.8,
+    "duration": 2.239,
+    "text": "you want to dive deeper into tooling,"
+  },
+  {
+    "start": 22.16,
+    "duration": 3.279,
+    "text": "you should check out my previous"
+  },
+  {
+    "start": 23.039,
+    "duration": 3.601,
+    "text": "tutorial video."
+  },
+  {
+    "start": 25.439,
+    "duration": 4.401,
+    "text": "Let's break down the structure behind"
+  },
+  {
+    "start": 26.64,
+    "duration": 5.36,
+    "text": "the professional-grade Roblox game. Game"
+  },
+  {
+    "start": 29.84,
+    "duration": 4.08,
+    "text": "logic should be broken into services."
+  },
+  {
+    "start": 32.0,
+    "duration": 4.64,
+    "text": "Each service owns a slice of your game"
+  },
+  {
+    "start": 33.92,
+    "duration": 4.56,
+    "text": "and manages related data and systems."
+  },
+  {
+    "start": 36.64,
+    "duration": 4.16,
+    "text": "For example, build service would handle"
+  },
+  {
+    "start": 38.48,
+    "duration": 4.8,
+    "text": "placement of parts, while enemy service"
+  },
+  {
+    "start": 40.8,
+    "duration": 4.4,
+    "text": "controls enemy spawning and tracking."
+  },
+  {
+    "start": 43.28,
+    "duration": 3.68,
+    "text": "Although not always required, each"
+  },
+  {
+    "start": 45.2,
+    "duration": 3.359,
+    "text": "service is typically split into client"
+  },
+  {
+    "start": 46.96,
+    "duration": 3.68,
+    "text": "and server versions with shared"
+  },
+  {
+    "start": 48.559,
+    "duration": 4.081,
+    "text": "functionality or data placed in a"
+  },
+  {
+    "start": 50.64,
+    "duration": 3.84,
+    "text": "utility module."
+  },
+  {
+    "start": 52.64,
+    "duration": 3.52,
+    "text": "This keeps your logic organized, makes"
+  },
+  {
+    "start": 54.48,
+    "duration": 5.8,
+    "text": "debugging easier, and helps your game"
+  },
+  {
+    "start": 56.16,
+    "duration": 4.12,
+    "text": "scale cleanly as it grows."
+  },
+  {
+    "start": 60.48,
+    "duration": 3.6,
+    "text": "So, what does this actually look like in"
+  },
+  {
+    "start": 62.0,
+    "duration": 4.32,
+    "text": "Studio? First, we're going to create a"
+  },
+  {
+    "start": 64.08,
+    "duration": 4.88,
+    "text": "shared folder. This will house our"
+  },
+  {
+    "start": 66.32,
+    "duration": 5.36,
+    "text": "shared and client game logic. Inside of"
+  },
+  {
+    "start": 68.96,
+    "duration": 4.24,
+    "text": "shared, create a services folder. Each"
+  },
+  {
+    "start": 71.68,
+    "duration": 4.0,
+    "text": "service will have a dedicated folder"
+  },
+  {
+    "start": 73.2,
+    "duration": 4.16,
+    "text": "assigned to it for easy scalability. In"
+  },
+  {
+    "start": 75.68,
+    "duration": 3.439,
+    "text": "this example, I will create a build"
+  },
+  {
+    "start": 77.36,
+    "duration": 3.52,
+    "text": "service. The client version of each"
+  },
+  {
+    "start": 79.119,
+    "duration": 4.561,
+    "text": "service will live here along with any"
+  },
+  {
+    "start": 80.88,
+    "duration": 4.4,
+    "text": "needed shared utility scripts. We must"
+  },
+  {
+    "start": 83.68,
+    "duration": 3.759,
+    "text": "place the server versions of each"
+  },
+  {
+    "start": 85.28,
+    "duration": 3.76,
+    "text": "service under server script service in"
+  },
+  {
+    "start": 87.439,
+    "duration": 5.881,
+    "text": "order to prevent exploiters from"
+  },
+  {
+    "start": 89.04,
+    "duration": 4.28,
+    "text": "downloading sensitive server code."
+  },
+  {
+    "start": 93.92,
+    "duration": 4.32,
+    "text": "Our build services hierarchy setup is"
+  },
+  {
+    "start": 96.079,
+    "duration": 3.68,
+    "text": "now complete."
+  },
+  {
+    "start": 98.24,
+    "duration": 4.16,
+    "text": "Here's an example with multiple"
+  },
+  {
+    "start": 99.759,
+    "duration": 4.561,
+    "text": "services. Like I mentioned earlier, some"
+  },
+  {
+    "start": 102.4,
+    "duration": 3.52,
+    "text": "services don't need client and server"
+  },
+  {
+    "start": 104.32,
+    "duration": 4.56,
+    "text": "versions as you can see with part"
+  },
+  {
+    "start": 105.92,
+    "duration": 4.72,
+    "text": "service here."
+  },
+  {
+    "start": 108.88,
+    "duration": 4.0,
+    "text": "Ideally, all related code would live"
+  },
+  {
+    "start": 110.64,
+    "duration": 3.6,
+    "text": "together for easy access and navigation."
+  },
+  {
+    "start": 112.88,
+    "duration": 3.36,
+    "text": "However, the server code must stay"
+  },
+  {
+    "start": 114.24,
+    "duration": 4.4,
+    "text": "within non-replicated containers as"
+  },
+  {
+    "start": 116.24,
+    "duration": 3.839,
+    "text": "mentioned earlier. To remedy this, I"
+  },
+  {
+    "start": 118.64,
+    "duration": 2.96,
+    "text": "created a VS Code tool that"
+  },
+  {
+    "start": 120.079,
+    "duration": 3.201,
+    "text": "automatically maps scripts to their"
+  },
+  {
+    "start": 121.6,
+    "duration": 3.28,
+    "text": "correct container while allowing"
+  },
+  {
+    "start": 123.28,
+    "duration": 3.36,
+    "text": "everything to live together. This tool"
+  },
+  {
+    "start": 124.88,
+    "duration": 4.76,
+    "text": "is available on my GitHub link in the"
+  },
+  {
+    "start": 126.64,
+    "duration": 3.0,
+    "text": "description."
+  },
+  {
+    "start": 131.2,
+    "duration": 4.16,
+    "text": "Each service is a singleton. We only"
+  },
+  {
+    "start": 133.599,
+    "duration": 4.161,
+    "text": "ever have one build service, one"
+  },
+  {
+    "start": 135.36,
+    "duration": 5.04,
+    "text": "inventory service and so on. That means"
+  },
+  {
+    "start": 137.76,
+    "duration": 5.119,
+    "text": "no new constructor. The module itself is"
+  },
+  {
+    "start": 140.4,
+    "duration": 5.199,
+    "text": "the instance. Most services have an"
+  },
+  {
+    "start": 142.879,
+    "duration": 4.481,
+    "text": "initialize function in it. Here any"
+  },
+  {
+    "start": 145.599,
+    "duration": 3.36,
+    "text": "needed objects can be created or"
+  },
+  {
+    "start": 147.36,
+    "duration": 3.599,
+    "text": "non-yielding startup code can be"
+  },
+  {
+    "start": 148.959,
+    "duration": 3.761,
+    "text": "executed."
+  },
+  {
+    "start": 150.959,
+    "duration": 3.681,
+    "text": "In this example, we're inside build"
+  },
+  {
+    "start": 152.72,
+    "duration": 4.48,
+    "text": "service client. So the singleton table"
+  },
+  {
+    "start": 154.64,
+    "duration": 4.239,
+    "text": "is named exactly that. Always keep"
+  },
+  {
+    "start": 157.2,
+    "duration": 3.679,
+    "text": "service names explicit to maintain"
+  },
+  {
+    "start": 158.879,
+    "duration": 4.241,
+    "text": "readability."
+  },
+  {
+    "start": 160.879,
+    "duration": 5.881,
+    "text": "in it creates a model called parts and"
+  },
+  {
+    "start": 163.12,
+    "duration": 3.64,
+    "text": "stores it on the service."
+  },
+  {
+    "start": 166.8,
+    "duration": 4.159,
+    "text": "The service then exposes the build"
+  },
+  {
+    "start": 168.72,
+    "duration": 3.76,
+    "text": "function. It spawns a part, sets it"
+  },
+  {
+    "start": 170.959,
+    "duration": 5.241,
+    "text": "frame to the pass in parameter and"
+  },
+  {
+    "start": 172.48,
+    "duration": 3.72,
+    "text": "parents it under self.parts."
+  },
+  {
+    "start": 177.36,
+    "duration": 3.519,
+    "text": "By default, the current Luau type"
+  },
+  {
+    "start": 179.2,
+    "duration": 4.48,
+    "text": "checker struggles to understand the true"
+  },
+  {
+    "start": 180.879,
+    "duration": 4.561,
+    "text": "type of self. In order to fix this, we"
+  },
+  {
+    "start": 183.68,
+    "duration": 4.24,
+    "text": "need to ditch the colon operator and"
+  },
+  {
+    "start": 185.44,
+    "duration": 6.12,
+    "text": "pass self in as the first parameter with"
+  },
+  {
+    "start": 187.92,
+    "duration": 3.64,
+    "text": "our defined type."
+  },
+  {
+    "start": 198.08,
+    "duration": 3.92,
+    "text": "Member variables can be defined by"
+  },
+  {
+    "start": 200.08,
+    "duration": 5.72,
+    "text": "unionuning a table of our defined"
+  },
+  {
+    "start": 202.0,
+    "duration": 3.8,
+    "text": "variables to the type."
+  },
+  {
+    "start": 205.84,
+    "duration": 3.679,
+    "text": "Additionally, type cast the return"
+  },
+  {
+    "start": 207.519,
+    "duration": 5.8,
+    "text": "service for proper IntelliSense when"
+  },
+  {
+    "start": 209.519,
+    "duration": 3.8,
+    "text": "used in another script."
+  },
+  {
+    "start": 213.36,
+    "duration": 4.64,
+    "text": "Now let's use the service we just"
+  },
+  {
+    "start": 215.12,
+    "duration": 4.8,
+    "text": "created. Create a client script inside"
+  },
+  {
+    "start": 218.0,
+    "duration": 3.76,
+    "text": "of starter player scripts and name it"
+  },
+  {
+    "start": 219.92,
+    "duration": 4.16,
+    "text": "client."
+  },
+  {
+    "start": 221.76,
+    "duration": 5.52,
+    "text": "This contains basic startup logic for"
+  },
+  {
+    "start": 224.08,
+    "duration": 5.28,
+    "text": "our client sided services."
+  },
+  {
+    "start": 227.28,
+    "duration": 5.8,
+    "text": "For demonstration purposes, I'll use the"
+  },
+  {
+    "start": 229.36,
+    "duration": 3.72,
+    "text": "build function here."
+  },
+  {
+    "start": 234.799,
+    "duration": 4.961,
+    "text": "Typically, startup scripts will simply"
+  },
+  {
+    "start": 236.72,
+    "duration": 5.04,
+    "text": "initialize all of our services. If order"
+  },
+  {
+    "start": 239.76,
+    "duration": 4.0,
+    "text": "matters or the init function takes any"
+  },
+  {
+    "start": 241.76,
+    "duration": 4.559,
+    "text": "parameters, you can initialize each"
+  },
+  {
+    "start": 243.76,
+    "duration": 4.399,
+    "text": "service manually. Otherwise create a"
+  },
+  {
+    "start": 246.319,
+    "duration": 5.401,
+    "text": "simple loop that calls in it on a"
+  },
+  {
+    "start": 248.159,
+    "duration": 3.561,
+    "text": "recognized services."
+  },
+  {
+    "start": 252.72,
+    "duration": 3.12,
+    "text": "In order for client and server"
+  },
+  {
+    "start": 254.08,
+    "duration": 4.32,
+    "text": "communication to be possible, we must"
+  },
+  {
+    "start": 255.84,
+    "duration": 5.04,
+    "text": "use remote events and functions."
+  },
+  {
+    "start": 258.4,
+    "duration": 5.04,
+    "text": "Remote instances should not be created"
+  },
+  {
+    "start": 260.88,
+    "duration": 4.72,
+    "text": "manually. Manual creation leads to messy"
+  },
+  {
+    "start": 263.44,
+    "duration": 4.96,
+    "text": "hierarchy trees, dependency on names,"
+  },
+  {
+    "start": 265.6,
+    "duration": 5.28,
+    "text": "and hard to manage version diffs."
+  },
+  {
+    "start": 268.4,
+    "duration": 3.92,
+    "text": "Instead, create remotes through code. A"
+  },
+  {
+    "start": 270.88,
+    "duration": 3.039,
+    "text": "simple remote event wrapper can be"
+  },
+  {
+    "start": 272.32,
+    "duration": 3.76,
+    "text": "created in less than 50 lines of code"
+  },
+  {
+    "start": 273.919,
+    "duration": 4.0,
+    "text": "and solves all of these issues. There"
+  },
+  {
+    "start": 276.08,
+    "duration": 4.24,
+    "text": "are plenty of open source solutions such"
+  },
+  {
+    "start": 277.919,
+    "duration": 4.0,
+    "text": "as Biteet, Blink, or Zap. I personally"
+  },
+  {
+    "start": 280.32,
+    "duration": 3.36,
+    "text": "created my own networking solution that"
+  },
+  {
+    "start": 281.919,
+    "duration": 4.321,
+    "text": "I use in all of my games, and I'll be"
+  },
+  {
+    "start": 283.68,
+    "duration": 4.88,
+    "text": "using it for the example shown. Whatever"
+  },
+  {
+    "start": 286.24,
+    "duration": 3.76,
+    "text": "networking library you use or create"
+  },
+  {
+    "start": 288.56,
+    "duration": 4.079,
+    "text": "should be placed into a new folder"
+  },
+  {
+    "start": 290.0,
+    "duration": 4.56,
+    "text": "called packages. Packages are reusable"
+  },
+  {
+    "start": 292.639,
+    "duration": 4.0,
+    "text": "scripts that are not reliant on any"
+  },
+  {
+    "start": 294.56,
+    "duration": 4.4,
+    "text": "specific game logic, meaning they can"
+  },
+  {
+    "start": 296.639,
+    "duration": 4.161,
+    "text": "easily be dropped into any project. If"
+  },
+  {
+    "start": 298.96,
+    "duration": 3.6,
+    "text": "you are using VS Code, I recommend using"
+  },
+  {
+    "start": 300.8,
+    "duration": 6.2,
+    "text": "the Wall-E package manager as I"
+  },
+  {
+    "start": 302.56,
+    "duration": 4.44,
+    "text": "mentioned in my previous tutorial video."
+  },
+  {
+    "start": 308.24,
+    "duration": 5.399,
+    "text": "Start by mirroring the service setup on"
+  },
+  {
+    "start": 310.479,
+    "duration": 3.16,
+    "text": "the server."
+  },
+  {
+    "start": 317.28,
+    "duration": 4.8,
+    "text": "Inside of the initialize function,"
+  },
+  {
+    "start": 318.96,
+    "duration": 5.2,
+    "text": "create any needed networking solutions."
+  },
+  {
+    "start": 322.08,
+    "duration": 3.839,
+    "text": "My networker library is designed for"
+  },
+  {
+    "start": 324.16,
+    "duration": 4.16,
+    "text": "easy communication between either side"
+  },
+  {
+    "start": 325.919,
+    "duration": 4.161,
+    "text": "of the network. Simply create the client"
+  },
+  {
+    "start": 328.32,
+    "duration": 3.599,
+    "text": "and server versions of the networker,"
+  },
+  {
+    "start": 330.08,
+    "duration": 3.679,
+    "text": "define any functions the client has"
+  },
+  {
+    "start": 331.919,
+    "duration": 5.401,
+    "text": "access to call, and use the built-in"
+  },
+  {
+    "start": 333.759,
+    "duration": 3.561,
+    "text": "methods to communicate."
+  },
+  {
+    "start": 339.199,
+    "duration": 3.921,
+    "text": "I'm not going to go in depth into my"
+  },
+  {
+    "start": 341.28,
+    "duration": 3.759,
+    "text": "specific networking solution as it could"
+  },
+  {
+    "start": 343.12,
+    "duration": 3.84,
+    "text": "vary from yours. If you're interested in"
+  },
+  {
+    "start": 345.039,
+    "duration": 5.281,
+    "text": "mine, there are docs on the GitHub"
+  },
+  {
+    "start": 346.96,
+    "duration": 5.04,
+    "text": "repository in the description."
+  },
+  {
+    "start": 350.32,
+    "duration": 4.0,
+    "text": "Instead of clients telling the server"
+  },
+  {
+    "start": 352.0,
+    "duration": 4.96,
+    "text": "directly, I built a part here, it should"
+  },
+  {
+    "start": 354.32,
+    "duration": 4.08,
+    "text": "ask, can I build here? The server would"
+  },
+  {
+    "start": 356.96,
+    "duration": 3.12,
+    "text": "then validate the request and"
+  },
+  {
+    "start": 358.4,
+    "duration": 3.2,
+    "text": "potentially send some response if"
+  },
+  {
+    "start": 360.08,
+    "duration": 3.44,
+    "text": "needed."
+  },
+  {
+    "start": 361.6,
+    "duration": 4.0,
+    "text": "In this example, the client calls the"
+  },
+  {
+    "start": 363.52,
+    "duration": 5.04,
+    "text": "serverowned attempt build function"
+  },
+  {
+    "start": 365.6,
+    "duration": 4.879,
+    "text": "within its build method. In this case,"
+  },
+  {
+    "start": 368.56,
+    "duration": 6.16,
+    "text": "the attempt build validates by creating"
+  },
+  {
+    "start": 370.479,
+    "duration": 5.84,
+    "text": "a 5-second cool down between builds."
+  },
+  {
+    "start": 374.72,
+    "duration": 5.64,
+    "text": "Don't forget the server startup script"
+  },
+  {
+    "start": 376.319,
+    "duration": 4.041,
+    "text": "inside of server script service."
+  },
+  {
+    "start": 382.8,
+    "duration": 4.0,
+    "text": "In order to modulize reusable game"
+  },
+  {
+    "start": 384.88,
+    "duration": 3.84,
+    "text": "logic, most professional developers"
+  },
+  {
+    "start": 386.8,
+    "duration": 4.64,
+    "text": "utilize object-oriented programming to"
+  },
+  {
+    "start": 388.72,
+    "duration": 4.479,
+    "text": "create classes. Similarly to the service"
+  },
+  {
+    "start": 391.44,
+    "duration": 3.84,
+    "text": "structure, create dedicated class"
+  },
+  {
+    "start": 393.199,
+    "duration": 4.881,
+    "text": "folders under shared and server script"
+  },
+  {
+    "start": 395.28,
+    "duration": 4.4,
+    "text": "service. This video will not be teaching"
+  },
+  {
+    "start": 398.08,
+    "duration": 3.2,
+    "text": "object-oriented programming. So if"
+  },
+  {
+    "start": 399.68,
+    "duration": 2.88,
+    "text": "you're unfamiliar with this paradigm, I"
+  },
+  {
+    "start": 401.28,
+    "duration": 2.88,
+    "text": "recommend doing some research on your"
+  },
+  {
+    "start": 402.56,
+    "duration": 3.04,
+    "text": "own."
+  },
+  {
+    "start": 404.16,
+    "duration": 2.879,
+    "text": "Leave a comment if you'd be interested"
+  },
+  {
+    "start": 405.6,
+    "duration": 4.4,
+    "text": "in a separate video covering"
+  },
+  {
+    "start": 407.039,
+    "duration": 5.041,
+    "text": "object-oriented programming in depth."
+  },
+  {
+    "start": 410.0,
+    "duration": 3.84,
+    "text": "In this example, I will create a spike"
+  },
+  {
+    "start": 412.08,
+    "duration": 3.76,
+    "text": "class."
+  },
+  {
+    "start": 413.84,
+    "duration": 3.68,
+    "text": "Now, instead of build service creating a"
+  },
+  {
+    "start": 415.84,
+    "duration": 5.0,
+    "text": "new part, it will create a new spike"
+  },
+  {
+    "start": 417.52,
+    "duration": 3.32,
+    "text": "object instead."
+  },
+  {
+    "start": 423.68,
+    "duration": 3.919,
+    "text": "When a player touches a spike, they'll"
+  },
+  {
+    "start": 425.199,
+    "duration": 4.881,
+    "text": "now be damaged."
+  },
+  {
+    "start": 427.599,
+    "duration": 4.16,
+    "text": "Custom models, VFX, and other instances"
+  },
+  {
+    "start": 430.08,
+    "duration": 4.16,
+    "text": "should be placed inside of an assets"
+  },
+  {
+    "start": 431.759,
+    "duration": 4.401,
+    "text": "folder under replicated storage. For"
+  },
+  {
+    "start": 434.24,
+    "duration": 3.6,
+    "text": "example, my spike class will now use"
+  },
+  {
+    "start": 436.16,
+    "duration": 4.56,
+    "text": "this custom spike mesh instead of a"
+  },
+  {
+    "start": 437.84,
+    "duration": 2.88,
+    "text": "basic part."
+  },
+  {
+    "start": 444.72,
+    "duration": 3.28,
+    "text": "For the sake of example and to make"
+  },
+  {
+    "start": 446.56,
+    "duration": 3.6,
+    "text": "things more interesting, I've hooked up"
+  },
+  {
+    "start": 448.0,
+    "duration": 3.759,
+    "text": "the clients build function to call"
+  },
+  {
+    "start": 450.16,
+    "duration": 3.599,
+    "text": "attempt build whenever the mouse is"
+  },
+  {
+    "start": 451.759,
+    "duration": 5.88,
+    "text": "clicked. I initialize this behavior"
+  },
+  {
+    "start": 453.759,
+    "duration": 3.88,
+    "text": "within the init function."
+  },
+  {
+    "start": 458.88,
+    "duration": 4.159,
+    "text": "Modules provide shared functionality,"
+  },
+  {
+    "start": 461.039,
+    "duration": 4.241,
+    "text": "data or utilities that other scripts can"
+  },
+  {
+    "start": 463.039,
+    "duration": 4.16,
+    "text": "depend on. Follow the same shared versus"
+  },
+  {
+    "start": 465.28,
+    "duration": 4.8,
+    "text": "server rules from before, creating their"
+  },
+  {
+    "start": 467.199,
+    "duration": 4.881,
+    "text": "respective folders."
+  },
+  {
+    "start": 470.08,
+    "duration": 3.519,
+    "text": "I take module organization a step"
+  },
+  {
+    "start": 472.08,
+    "duration": 4.48,
+    "text": "further by grouping them into clear"
+  },
+  {
+    "start": 473.599,
+    "duration": 5.121,
+    "text": "categories like core, game, math, and"
+  },
+  {
+    "start": 476.56,
+    "duration": 3.919,
+    "text": "platform. This way, it's immediately"
+  },
+  {
+    "start": 478.72,
+    "duration": 3.919,
+    "text": "obvious where any script belongs and"
+  },
+  {
+    "start": 480.479,
+    "duration": 4.241,
+    "text": "where someone should look to find it."
+  },
+  {
+    "start": 482.639,
+    "duration": 4.24,
+    "text": "Keep modules small and focused. Math"
+  },
+  {
+    "start": 484.72,
+    "duration": 5.8,
+    "text": "helpers, reusable functions, pure data"
+  },
+  {
+    "start": 486.879,
+    "duration": 3.641,
+    "text": "tables, and so on."
+  },
+  {
+    "start": 490.639,
+    "duration": 3.441,
+    "text": "User interface is one of the easiest"
+  },
+  {
+    "start": 492.319,
+    "duration": 3.201,
+    "text": "places for projects to get messy."
+  },
+  {
+    "start": 494.08,
+    "duration": 4.08,
+    "text": "Professional teams prevent this by"
+  },
+  {
+    "start": 495.52,
+    "duration": 4.56,
+    "text": "keeping UI modular and scalable."
+  },
+  {
+    "start": 498.16,
+    "duration": 4.159,
+    "text": "Many developers use declarative UI"
+  },
+  {
+    "start": 500.08,
+    "duration": 5.119,
+    "text": "frameworks for this. React, Fusion, and"
+  },
+  {
+    "start": 502.319,
+    "duration": 4.32,
+    "text": "VID are the main options. I currently"
+  },
+  {
+    "start": 505.199,
+    "duration": 4.241,
+    "text": "use React and I've shipped production"
+  },
+  {
+    "start": 506.639,
+    "duration": 4.481,
+    "text": "games with Fusion as well. With that"
+  },
+  {
+    "start": 509.44,
+    "duration": 3.519,
+    "text": "said, I know many Roblox developers"
+  },
+  {
+    "start": 511.12,
+    "duration": 3.2,
+    "text": "aren't ready to dive into declarative"
+  },
+  {
+    "start": 512.959,
+    "duration": 3.76,
+    "text": "workflow, but here's a middle ground"
+  },
+  {
+    "start": 514.32,
+    "duration": 5.04,
+    "text": "that I recommend. Place all interface"
+  },
+  {
+    "start": 516.719,
+    "duration": 5.041,
+    "text": "code under a tople UI module in"
+  },
+  {
+    "start": 519.36,
+    "duration": 4.64,
+    "text": "replicated storage. This module acts as"
+  },
+  {
+    "start": 521.76,
+    "duration": 4.0,
+    "text": "the UI initializer. Inside, create"
+  },
+  {
+    "start": 524.0,
+    "duration": 4.16,
+    "text": "folders for interface types such as"
+  },
+  {
+    "start": 525.76,
+    "duration": 4.8,
+    "text": "menus or HUD."
+  },
+  {
+    "start": 528.16,
+    "duration": 6.48,
+    "text": "In this example, I have a left sidebar"
+  },
+  {
+    "start": 530.56,
+    "duration": 6.08,
+    "text": "HUD element and an inventory menu."
+  },
+  {
+    "start": 534.64,
+    "duration": 4.24,
+    "text": "Each feature gets its own module script"
+  },
+  {
+    "start": 536.64,
+    "duration": 6.28,
+    "text": "that exposes its functionality and an"
+  },
+  {
+    "start": 538.88,
+    "duration": 4.04,
+    "text": "init function if needed."
+  },
+  {
+    "start": 546.959,
+    "duration": 6.201,
+    "text": "Just like services, the top level UI"
+  },
+  {
+    "start": 548.959,
+    "duration": 4.201,
+    "text": "script should initialize these features."
+  },
+  {
+    "start": 555.839,
+    "duration": 3.68,
+    "text": "Finally, make sure the UI initializer is"
+  },
+  {
+    "start": 558.08,
+    "duration": 4.439,
+    "text": "called inside your client startup"
+  },
+  {
+    "start": 559.519,
+    "duration": 3.0,
+    "text": "script."
+  },
+  {
+    "start": 563.839,
+    "duration": 4.0,
+    "text": "This approach keeps the familiar Roblox"
+  },
+  {
+    "start": 565.76,
+    "duration": 5.96,
+    "text": "workflow while still giving you scalable"
+  },
+  {
+    "start": 567.839,
+    "duration": 3.881,
+    "text": "modular UI design."
+  },
+  {
+    "start": 572.0,
+    "duration": 3.839,
+    "text": "As mentioned earlier, packages are"
+  },
+  {
+    "start": 573.839,
+    "duration": 3.761,
+    "text": "reusable scripts that aren't tied to any"
+  },
+  {
+    "start": 575.839,
+    "duration": 4.161,
+    "text": "specific game logic, which means they"
+  },
+  {
+    "start": 577.6,
+    "duration": 4.239,
+    "text": "can be dropped into any project."
+  },
+  {
+    "start": 580.0,
+    "duration": 3.68,
+    "text": "Professional developers rely on them to"
+  },
+  {
+    "start": 581.839,
+    "duration": 4.0,
+    "text": "avoid reinventing the wheel and to keep"
+  },
+  {
+    "start": 583.68,
+    "duration": 3.92,
+    "text": "their code base clean. Here are a few"
+  },
+  {
+    "start": 585.839,
+    "duration": 4.401,
+    "text": "core packages that I personally use"
+  },
+  {
+    "start": 587.6,
+    "duration": 4.16,
+    "text": "across all of my projects. Signal, a"
+  },
+  {
+    "start": 590.24,
+    "duration": 3.36,
+    "text": "pure code replacement for bindable"
+  },
+  {
+    "start": 591.76,
+    "duration": 3.84,
+    "text": "events, more efficient, easier to work"
+  },
+  {
+    "start": 593.6,
+    "duration": 4.48,
+    "text": "with, and hands down the one package I"
+  },
+  {
+    "start": 595.6,
+    "duration": 4.48,
+    "text": "wouldn't want to develop without. Charm,"
+  },
+  {
+    "start": 598.08,
+    "duration": 3.52,
+    "text": "an atomic state manager that pairs"
+  },
+  {
+    "start": 600.08,
+    "duration": 4.52,
+    "text": "perfectly with declarative UI"
+  },
+  {
+    "start": 601.6,
+    "duration": 3.0,
+    "text": "frameworks."
+  },
+  {
+    "start": 604.8,
+    "duration": 6.68,
+    "text": "Sift, a comprehensive table utility"
+  },
+  {
+    "start": 607.12,
+    "duration": 4.36,
+    "text": "library packed with useful functions."
+  },
+  {
+    "start": 613.92,
+    "duration": 3.52,
+    "text": "Data service, a full persistent data"
+  },
+  {
+    "start": 616.079,
+    "duration": 5.88,
+    "text": "solution with automatic client"
+  },
+  {
+    "start": 617.44,
+    "duration": 4.519,
+    "text": "replication and observable values."
+  },
+  {
+    "start": 623.76,
+    "duration": 3.92,
+    "text": "Janitor, a lightweight cleanup module"
+  },
+  {
+    "start": 626.0,
+    "duration": 5.32,
+    "text": "that makes managing connections and"
+  },
+  {
+    "start": 627.68,
+    "duration": 3.64,
+    "text": "instances painless."
+  },
+  {
+    "start": 632.72,
+    "duration": 3.359,
+    "text": "These packages keep your projects"
+  },
+  {
+    "start": 634.24,
+    "duration": 3.76,
+    "text": "modular, predictable, and ready to"
+  },
+  {
+    "start": 636.079,
+    "duration": 3.601,
+    "text": "scale. Like I mentioned earlier, I"
+  },
+  {
+    "start": 638.0,
+    "duration": 5.279,
+    "text": "manage all of these through Wall-E for"
+  },
+  {
+    "start": 639.68,
+    "duration": 5.279,
+    "text": "versioning and easy updates."
+  },
+  {
+    "start": 643.279,
+    "duration": 3.761,
+    "text": "This is how professionals structure"
+  },
+  {
+    "start": 644.959,
+    "duration": 4.961,
+    "text": "Roblox projects. Services for game"
+  },
+  {
+    "start": 647.04,
+    "duration": 5.28,
+    "text": "logic, clear modules, scalable UI, and"
+  },
+  {
+    "start": 649.92,
+    "duration": 4.8,
+    "text": "reusable packages. Together, they keep"
+  },
+  {
+    "start": 652.32,
+    "duration": 4.16,
+    "text": "projects clean and scalable. Your exact"
+  },
+  {
+    "start": 654.72,
+    "duration": 3.76,
+    "text": "setup may differ slightly, but the"
+  },
+  {
+    "start": 656.48,
+    "duration": 4.24,
+    "text": "principle is the same. Organize early to"
+  },
+  {
+    "start": 658.48,
+    "duration": 4.24,
+    "text": "avoid chaos later. Check the description"
+  },
+  {
+    "start": 660.72,
+    "duration": 3.6,
+    "text": "for relevant links, and drop a comment"
+  },
+  {
+    "start": 662.72,
+    "duration": 3.6,
+    "text": "below the like button if you'd like a"
+  },
+  {
+    "start": 664.32,
+    "duration": 5.28,
+    "text": "deep dive on topics like object-oriented"
+  },
+  {
+    "start": 666.32,
+    "duration": 3.28,
+    "text": "programming or networking."
+  }
+]
