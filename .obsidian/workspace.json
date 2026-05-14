@@ -45,7 +45,8 @@
               "title": "新标签页"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -190,13 +191,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/AI/Codex实用功能.md",
+                "file": "40_Resources 资料/Youtube.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Codex实用功能 的大纲"
+              "title": "Youtube 的大纲"
             }
           }
         ]
@@ -217,10 +218,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f345b1880f9e94f2",
+  "active": "940b75812ae3b185",
   "lastOpenFiles": [
-    "40_Resources 资料/Youtube.md",
     "20_Areas 领域/AI/Codex实用功能.md",
+    "40_Resources 资料/Youtube.md",
     "60_Templates 模板/MOC通用模板.md",
     "30_MOC 内容地图/Obsidian MOC.md",
     "40_Resources 资料/未命名 2.md",
