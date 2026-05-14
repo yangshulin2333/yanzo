@@ -210,6 +210,26 @@ ServerScriptService/Classes
 
 如果类里有服务端敏感逻辑，就放服务端。
 
+##### 举个超级简单的例子
+
+```lua
+local Spike = {}
+Spike.__index = Spike  -- 意思：我的方法都存在 Spike 这个表里，找不到就去那里查。
+
+function Spike:Attack()  -- 这个方法存在 Spike 里
+    print("攻击")
+end
+```
+然后你创建对象：
+```lua
+local spike = Spike.new()
+spike:Attack()
+```
+执行过程：
+1. `spike` 自己身上没有 `Attack` 方法
+2. 因为写了 `__index = Spike`
+3. 自动去 `Spike` 这个类里找 `Attack`
+4. 找到了，执行成功
 ## 7. Assets：模型、特效和实例资源统一管理
 
 自定义模型、VFX、UI 资源等，建议放在：
