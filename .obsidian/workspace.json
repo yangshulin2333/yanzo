@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "prompt",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,8 +89,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -210,10 +209,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "196eb72552b27a87",
+  "active": "983cca7b87cae4ca",
   "lastOpenFiles": [
-    "20_Areas 领域/英语/英语单词积累.md",
+    "conflict-files-obsidian-git.md",
     "20_Areas 领域/3D建模/2D转3D图片Prompt.md",
+    "20_Areas 领域/UI/UI界面生成.md",
+    "00_Inbox 收集箱/门禁卡.md",
+    "20_Areas 领域/英语/英语单词积累.md",
     "00_Inbox 收集箱/Roblox.md",
     "00_Inbox 收集箱/专业开发者如何搭建 Roblox 游戏.md",
     "40_Resources 资料/未命名 2.md",
@@ -245,9 +247,6 @@
     "20_Areas 领域/未命名.md",
     "笔记 1.md",
     "笔记 3.md",
-    "50_Notes 永久笔记/Git命令完全教程.md",
-    "assets/配置Obsidian/file-20251119200446037.png.md",
-    "assets/配置Obsidian/file-20251119200212550.png.md",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307428.png",
     "Pasted image 20260512124816.png",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307429.png",
