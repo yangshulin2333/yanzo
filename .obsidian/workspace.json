@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas 领域/英语/未命名.md",
+                "file": "20_Areas 领域/英语/音标.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "音标"
             }
           },
           {
@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -195,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/英语/未命名.md",
+                "file": "笔记导览.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "笔记导览 的大纲"
             }
           }
         ],
@@ -223,10 +223,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "983cca7b87cae4ca",
+  "active": "e8a9b9cde4e2af45",
   "lastOpenFiles": [
+    "20_Areas 领域/英语/音标.md",
     "20_Areas 领域/Roblox/框架/项目框架.md",
-    "20_Areas 领域/英语/未命名.md",
     "20_Areas 领域/Roblox/插件.md",
     "20_Areas 领域/Roblox/框架",
     "20_Areas 领域/3D建模/Blender快捷键.md",
