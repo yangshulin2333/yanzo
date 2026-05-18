@@ -87,3 +87,105 @@ Blender 分为多种模式，新手只需关注以下两种：
 - **撤销**：习惯使用 `Ctrl + Z` 返回上一步。
     
 - **轴向锁定**：在执行移动、缩放、旋转时，紧接着按 `X`、`Y` 或 `Z` 键，可以精准控制变换方向。
+
+
+---
+
+
+这是一份基于 Blender Guru 官方快捷键指南（Blender Shortcuts）翻译并整理的 **Blender 常用快捷键中文速查表**。内容已采用易于阅读的 Markdown 表格格式进行排版，涵盖了从基础操作、视图导航到建模和渲染的核心快捷键。
+
+# 🍩 Blender 核心快捷键速查表 (中英对照)
+
+## 🌍 通用与选择 (General Selection)
+
+| 操作 | 英文 | 快捷键 |
+| --- | --- | --- |
+| **选择** | Select | `鼠标左键 (LMB)` |
+| **全选** | Select All | `A` |
+| **取消全选** | Deselect All | `Alt` + `A` |
+| **框选** | Marquee Box Select | `B` |
+| **刷选 / 圈选** | Circle Select | `C` |
+| **套索选择** | Lasso Select | `Ctrl` + `鼠标右键拖拽` |
+| **反选** | Invert Selection | `Ctrl` + `I` |
+| **选择相连元素** | Select Linked | `Shift` + `L` |
+| **选择相似元素** | Select Similar | `Shift` + `G` |
+
+## 👁️ 视图导航 (Navigation - 3D Viewport)
+
+| 操作 | 英文 | 快捷键 |
+| --- | --- | --- |
+| **旋转视图 (环视)** | Orbit | `鼠标中键拖拽 (MMB)` |
+| **平移视图** | Pan | `Shift` + `鼠标中键拖拽` |
+| **缩放视图** | Zoom In/Out | `鼠标滚轮` 或 `Ctrl` + `鼠标中键` |
+| **飞行模式** | Fly / Walk Navigation | `Shift` + `~` (波浪号) |
+
+## 🎥 视图控制 (View - 3D Viewport)
+
+| 操作 | 英文 | 快捷键 |
+| --- | --- | --- |
+| **切换视角 (前/侧/顶)** | Numpad Views | 小键盘 `1`(前), `3`(侧), `7`(顶) |
+| **摄像机视角** | Camera View | 小键盘 `0` |
+| **切换 透视/正交 视图** | Perspective / Orthographic | 小键盘 `5` |
+| **聚焦选中物体** | View Selected | 小键盘 `.` (句号) |
+| **局部视图 (孤立显示)** | Local View (Isolate) | `/` (小键盘斜杠) |
+
+## 🧊 物体模式基础变换 (Object Mode)
+
+| 操作 | 英文 | 快捷键 |
+| --- | --- | --- |
+| **移动 / 抓取** | Move / Grab | `G` |
+| **缩放** | Scale | `S` |
+| **旋转** | Rotate | `R` |
+| **清除位置** | Clear Location | `Alt` + `G` |
+| **清除旋转** | Clear Rotation | `Alt` + `R` |
+| **清除缩放** | Clear Scale | `Alt` + `S` |
+| **应用变换** | Apply Transform | `Ctrl` + `A` |
+| **复制物体** | Duplicate | `Shift` + `D` |
+| **关联复制** | Duplicate Linked | `Alt` + `D` |
+| **删除** | Delete | `X` 或 `Delete` |
+| **隐藏选中项** | Hide | `H` |
+| **隐藏未选中项** | Hide Unselected | `Shift` + `H` |
+| **取消隐藏** | Unhide All | `Alt` + `H` |
+| **添加新物体** | Add Object | `Shift` + `A` |
+| **调出搜索菜单** | Search | `F3` |
+
+## 🛠️ 建模 (Modelling - Edit Mode)
+
+| 操作 | 英文 | 快捷键 |
+| --- | --- | --- |
+| **切换 顶点/边/面 模式** | Vertex/Edge/Face Select | 数字键 `1`, `2`, `3` |
+| **挤出** | Extrude | `E` |
+| **内插面** | Inset | `I` |
+| **倒角** | Bevel | `Ctrl` + `B` |
+| **顶点倒角** | Bevel Vertices | `Ctrl` + `Shift` + `B` |
+| **环切** | Loop Cut | `Ctrl` + `R` |
+| **顶点/边 滑移** | Vertex/Edge Slide | 连按两次 `G` |
+| **切刀工具** | Knife | `K` |
+| **填充面** | Fill Face | `F` |
+| **合并顶点** | Merge | `M` |
+| **重新计算法线(朝外)** | Recalculate Normals | `Shift` + `N` |
+| **翻转法线** | Flip Normals | `Ctrl` + `Shift` + `N` |
+| **开启/关闭衰减编辑** | Proportional Editing | `O` |
+| **标记接缝 (UV展开用)** | Mark Seam | 呼出菜单 `Ctrl` + `E` |
+
+## 🎨 材质与着色 (Shading)
+
+| 操作 | 英文 | 快捷键 |
+| --- | --- | --- |
+| **着色方式饼形菜单** | Shading Pie Menu | `Z` |
+| **开启/关闭透视模式** | Toggle X-Ray | `Alt` + `Z` |
+
+## 🎬 渲染 (Rendering)
+
+| 操作 | 英文 | 快捷键 |
+| --- | --- | --- |
+| **渲染当前帧图像** | Render Image | `F12` |
+| **渲染动画** | Render Animation | `Ctrl` + `F12` |
+| **查看渲染结果窗口** | View Render | `F11` |
+
+## 🔌 节点操作 (Nodes - Materials)
+
+| 操作 | 英文 | 快捷键 |
+| --- | --- | --- |
+| **切断连接线** | Cut Connection | `Ctrl` + `鼠标右键划过连线` |
+| **禁用选中节点** | Mute Selected | `M` |
