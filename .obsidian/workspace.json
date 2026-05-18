@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/英语/音标.md",
+                "file": "20_Areas 领域/Roblox/框架/项目框架.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "音标 的大纲"
+              "title": "项目框架 的大纲"
             }
           }
         ],
@@ -237,11 +237,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "983cca7b87cae4ca",
+  "active": "1788819145c6f371",
   "lastOpenFiles": [
+    "20_Areas 领域/英语/音标.md",
     "20_Areas 领域/Roblox/框架/项目框架.md",
     "20_Areas 领域/3D建模/Blender快捷键.md",
-    "20_Areas 领域/英语/音标.md",
     "笔记导览.md",
     "未命名.md",
     "20_Areas 领域/Roblox/插件.md",
