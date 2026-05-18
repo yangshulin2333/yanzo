@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas 领域/3D建模/Blender 5.0 零基础甜甜圈教程知识点整理.md",
+                "file": "20_Areas 领域/3D建模/Blender相关资源链接.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Blender 5.0 零基础甜甜圈教程知识点整理"
+              "title": "Blender相关资源链接"
             }
           },
           {
@@ -195,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/3D建模/Blender 5.0 零基础甜甜圈教程知识点整理.md",
+                "file": "20_Areas 领域/3D建模/Blender相关资源链接.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Blender 5.0 零基础甜甜圈教程知识点整理 的大纲"
+              "title": "Blender相关资源链接 的大纲"
             }
           }
         ],
@@ -225,8 +225,9 @@
   },
   "active": "983cca7b87cae4ca",
   "lastOpenFiles": [
-    "20_Areas 领域/3D建模/Blender快捷键.md",
     "20_Areas 领域/3D建模/Blender 5.0 零基础甜甜圈教程知识点整理.md",
+    "20_Areas 领域/3D建模/Blender相关资源链接.md",
+    "20_Areas 领域/3D建模/Blender快捷键.md",
     "笔记导览.md",
     "20_Areas 领域/Roblox/插件.md",
     "20_Areas 领域/UI/UI界面生成.md",
@@ -260,7 +261,6 @@
     "笔记 1.md",
     "笔记 3.md",
     "50_Notes 永久笔记/Git命令完全教程.md",
-    "assets/配置Obsidian/file-20251119200446037.png.md",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307428.png",
     "Pasted image 20260512124816.png",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307429.png",
