@@ -118,7 +118,6 @@ Blender 分为多种模式，新手只需关注以下两种：
 | **平移视图** | Pan | `Shift` + `鼠标中键拖拽` |
 | **缩放视图** | Zoom In/Out | `鼠标滚轮` 或 `Ctrl` + `鼠标中键` |
 | **飞行模式** | Fly / Walk Navigation | `Shift` + `~` (波浪号) |
-
 ## 🎥 视图控制 (View - 3D Viewport)
 
 | 操作 | 英文 | 快捷键 |
@@ -128,7 +127,6 @@ Blender 分为多种模式，新手只需关注以下两种：
 | **切换 透视/正交 视图** | Perspective / Orthographic | 小键盘 `5` |
 | **聚焦选中物体** | View Selected | 小键盘 `.` (句号) |
 | **局部视图 (孤立显示)** | Local View (Isolate) | `/` (小键盘斜杠) |
-
 ## 🧊 物体模式基础变换 (Object Mode)
 
 | 操作 | 英文 | 快捷键 |
@@ -148,7 +146,6 @@ Blender 分为多种模式，新手只需关注以下两种：
 | **取消隐藏** | Unhide All | `Alt` + `H` |
 | **添加新物体** | Add Object | `Shift` + `A` |
 | **调出搜索菜单** | Search | `F3` |
-
 ## 🛠️ 建模 (Modelling - Edit Mode)
 
 | 操作 | 英文 | 快捷键 |
