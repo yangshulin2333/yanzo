@@ -11,12 +11,14 @@
             "id": "f345b1880f9e94f2",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "00_Inbox 收集箱/assets/门禁卡/file-20260521133242254.png"
+                "file": "00_Inbox 收集箱/门禁卡.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "file-20260521133242254"
+              "icon": "lucide-file",
+              "title": "门禁卡"
             }
           }
         ]
@@ -164,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_Inbox 收集箱/assets/门禁卡/file-20260521133242254.png",
+                "file": "00_Inbox 收集箱/门禁卡.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "file-20260521133242254 的大纲"
+              "title": "门禁卡 的大纲"
             }
           }
         ],
@@ -194,8 +196,8 @@
   },
   "active": "f345b1880f9e94f2",
   "lastOpenFiles": [
-    "00_Inbox 收集箱/门禁卡.md",
     "00_Inbox 收集箱/assets/门禁卡/file-20260521133242254.png",
+    "00_Inbox 收集箱/门禁卡.md",
     "00_Inbox 收集箱/assets/门禁卡/file-20260521132441434.png",
     "00_Inbox 收集箱/assets/门禁卡",
     "60_Templates 模板/Roblox/07_Roblox_AI喂资料模板.md",
