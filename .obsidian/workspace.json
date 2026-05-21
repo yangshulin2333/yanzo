@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/项目掌握/项目资产和编辑器里的对象结构.md",
+                "file": "10_Projects 项目/Roblox/项目掌握/宏观建议.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "项目资产和编辑器里的对象结构"
+              "title": "宏观建议"
             }
           }
         ]
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/项目掌握/项目资产和编辑器里的对象结构.md",
+                "file": "10_Projects 项目/Roblox/项目掌握/宏观建议.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "项目资产和编辑器里的对象结构 的大纲"
+              "title": "宏观建议 的大纲"
             }
           }
         ],
@@ -196,8 +196,9 @@
   },
   "active": "f345b1880f9e94f2",
   "lastOpenFiles": [
-    "10_Projects 项目/Roblox/项目掌握/整理思路.md",
     "10_Projects 项目/Roblox/项目掌握/项目资产和编辑器里的对象结构.md",
+    "10_Projects 项目/Roblox/项目掌握/宏观建议.md",
+    "10_Projects 项目/Roblox/项目掌握/整理思路.md",
     "20_Areas 领域/AI/ComfyUI/从零理解 ComfyUI.md",
     "10_Projects 项目/Roblox/项目掌握",
     "20_Areas 领域/AI/Codex实用功能.md",
@@ -227,7 +228,6 @@
     "F3ASTJuO82A_ytplayer.json",
     "60_Templates 模板/MOC通用模板.md",
     "30_MOC 内容地图/Obsidian MOC.md",
-    "20_Areas 领域/AI/Codex.md",
     "20_Areas 领域/UI/assets/未命名",
     "20_Areas 领域/UI/assets",
     "20_Areas 领域/UI",
