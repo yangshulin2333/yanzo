@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/项目掌握/宏观建议.md",
+                "file": "60_Templates 模板/Roblox/Roblox_项目接手模板.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "宏观建议"
+              "title": "Roblox_项目接手模板"
             }
           }
         ]
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/项目掌握/宏观建议.md",
+                "file": "60_Templates 模板/Roblox/Roblox_项目接手模板.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "宏观建议 的大纲"
+              "title": "Roblox_项目接手模板 的大纲"
             }
           }
         ],
@@ -196,8 +196,10 @@
   },
   "active": "f345b1880f9e94f2",
   "lastOpenFiles": [
-    "10_Projects 项目/Roblox/项目掌握/项目资产和编辑器里的对象结构.md",
     "10_Projects 项目/Roblox/项目掌握/宏观建议.md",
+    "60_Templates 模板/Roblox/Roblox_项目接手模板.md",
+    "60_Templates 模板/Roblox",
+    "10_Projects 项目/Roblox/项目掌握/项目资产和编辑器里的对象结构.md",
     "10_Projects 项目/Roblox/项目掌握/整理思路.md",
     "20_Areas 领域/AI/ComfyUI/从零理解 ComfyUI.md",
     "10_Projects 项目/Roblox/项目掌握",
@@ -227,11 +229,9 @@
     "F3ASTJuO82A_transcript.json",
     "F3ASTJuO82A_ytplayer.json",
     "60_Templates 模板/MOC通用模板.md",
-    "30_MOC 内容地图/Obsidian MOC.md",
     "20_Areas 领域/UI/assets/未命名",
     "20_Areas 领域/UI/assets",
     "20_Areas 领域/UI",
-    "video_transcript_tiny.json",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307428.png",
     "Pasted image 20260512124816.png",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307429.png",
