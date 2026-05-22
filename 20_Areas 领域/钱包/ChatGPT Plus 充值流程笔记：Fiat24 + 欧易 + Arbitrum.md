@@ -1,6 +1,4 @@
 
-# ChatGPT Plus 充值流程笔记：Fiat24 + 欧易 + Arbitrum
-
 ## 这次实际用的路线
 
 不是 TRON/TRC20，也不是 imToken 付款。
