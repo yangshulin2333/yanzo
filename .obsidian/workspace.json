@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Inbox 收集箱/deepseek对接codex/Gemini生成文档.md",
+                "file": "20_Areas 领域/钱包/买币流程.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Gemini生成文档"
+              "title": "买币流程"
             }
           }
         ]
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_Inbox 收集箱/deepseek对接codex/Gemini生成文档.md",
+                "file": "20_Areas 领域/钱包/买币流程.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Gemini生成文档 的大纲"
+              "title": "买币流程 的大纲"
             }
           }
         ],
@@ -196,8 +196,11 @@
   },
   "active": "f345b1880f9e94f2",
   "lastOpenFiles": [
-    "00_Inbox 收集箱/deepseek对接codex/gpt生成文档.md",
+    "20_Areas 领域/钱包/教程.md",
     "00_Inbox 收集箱/deepseek对接codex/Gemini生成文档.md",
+    "20_Areas 领域/钱包/买币流程.md",
+    "20_Areas 领域/钱包",
+    "00_Inbox 收集箱/deepseek对接codex/gpt生成文档.md",
     "10_Projects 项目/Roblox/项目掌握/吃东西模块代码解析.md",
     "00_Inbox 收集箱/deepseek对接codex",
     "10_Projects 项目/Roblox/项目掌握/吃东西模块.md",
@@ -226,14 +229,11 @@
     "60_Templates 模板/04_Roblox_问题排查模板.md",
     "60_Templates 模板/03_Roblox_资产审计模板.md",
     "60_Templates 模板/02_Roblox_功能拆解模板.md",
-    "60_Templates 模板/Roblox/Roblox_项目接手模板.md",
-    "10_Projects 项目/Roblox/项目掌握/项目资产和编辑器里的对象结构.md",
     "10_Projects 项目/Roblox/项目掌握",
     "20_Areas 领域/AI/ComfyUI",
     "20_Areas 领域/Roblox/框架",
     "F3ASTJuO82A_transcript.txt",
     "F3ASTJuO82A_transcript.json",
-    "F3ASTJuO82A_ytplayer.json",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307428.png",
     "Pasted image 20260512124816.png",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307429.png",
