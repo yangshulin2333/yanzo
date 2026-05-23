@@ -156,6 +156,132 @@ PowerShell 里跑的 rojo serve 才是 server。
 Studio 插件只是连接这个 server。
 ```
 
+## 当前项目不是双向同步
+
+当前项目的规则是：
+
+```text
+VSCode / 本地 Rojo 源码 = 代码源头
+Roblox Studio = 运行、测试、场景编辑、发布
+```
+
+不要把当前工作流理解成：
+
+```text
+VSCode 改代码会同步到 Studio
+Studio 改代码也会同步回 VSCode
+```
+
+我们现在不依赖双向同步。
+
+原因：
+
+```text
+1. Rojo 的稳定工作流是本地文件同步到 Studio
+2. Studio 里的脚本修改不一定可靠写回本地文件
+3. Rojo 插件里的 Two-Way Sync 标的是 UNSTABLE，不适合当前项目
+4. 双向同步一旦冲突，很容易出现谁覆盖谁的问题
+```
+
+所以当前明确规定：
+
+```text
+映射目录里的脚本，不在 Studio 里改。
+要改脚本，就去 VSCode 改本地 .luau 文件。
+```
+
+## 如果你不小心在 Studio 里改了脚本
+
+不要继续让 Rojo 自动同步，也不要马上让我继续改本地代码。
+
+按这个处理：
+
+```text
+1. 先停下来
+2. 不要点新的 Accept
+3. 告诉我：我刚才在 Studio 里改了哪个脚本
+4. 把 Studio 里改过的代码复制出来，或截图给我
+5. 我把这次改动补回 VSCode 的本地 .luau 文件
+6. 再让 Rojo 从本地同步回 Studio
+```
+
+如果你在 Studio 里改了：
+
+```text
+ServerScriptService/EatDemoServer
+```
+
+本地对应文件是：
+
+```text
+D:\AI\Codex\Codex_ProjectFixed\Replica_Demo_RojoKnit\src\ServerScriptService\EatDemoServer.server.luau
+```
+
+如果你在 Studio 里改了：
+
+```text
+ReplicatedStorage/Shared/EatDemoConfig
+```
+
+本地对应文件是：
+
+```text
+D:\AI\Codex\Codex_ProjectFixed\Replica_Demo_RojoKnit\src\ReplicatedStorage\Shared\EatDemoConfig.luau
+```
+
+如果你在 Studio 里改了：
+
+```text
+StarterPlayer/StarterPlayerScripts/ClientModules/UIController
+```
+
+本地对应文件是：
+
+```text
+D:\AI\Codex\Codex_ProjectFixed\Replica_Demo_RojoKnit\src\StarterPlayer\StarterPlayerScripts\ClientModules\UIController.luau
+```
+
+## 为什么 Studio 改脚本会危险
+
+例子：
+
+```text
+1. 你在 Studio 里改了 EatDemoServer
+2. VSCode 里的 EatDemoServer.server.luau 还是旧版本
+3. 我后面在 VSCode 里继续改 EatDemoServer.server.luau
+4. Rojo 同步到 Studio
+5. Studio 里你刚才手改的内容可能被覆盖
+```
+
+所以后面判断标准很简单：
+
+```text
+脚本代码：VSCode 改
+场景地图：Studio 改
+测试运行：Studio Play
+Output 报错：Studio 看
+```
+
+## Rojo 的 Two-Way Sync 要不要开
+
+当前不要开。
+
+你截图里 Rojo 设置有类似：
+
+```text
+UNSTABLE Two-Way Sync
+```
+
+意思是：
+
+```text
+这个功能还不稳定。
+```
+
+当前项目先不使用它。
+
+等你熟悉 Rojo 后，如果确实要试“双向同步”，也要先新建一个测试分支或测试项目，不要直接在当前 Demo 主流程里开。
+
 ## 你现在最容易混淆的点
 
 一句话版本：
