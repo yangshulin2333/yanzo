@@ -104,6 +104,58 @@ Studio 主要负责：
 5. Play 后功能正常
 ```
 
+## Studio 提示 Couldn't connect 怎么办
+
+如果 Roblox Studio 的 Rojo 插件弹出：
+
+```text
+Couldn't connect to the Rojo server.
+Make sure the server is running - use `rojo serve` to run it!
+```
+
+意思是：
+
+```text
+Studio 插件打开了，但本地 Rojo server 没有启动。
+```
+
+解决步骤：
+
+```text
+1. 打开 PowerShell
+2. 进入项目目录
+   cd D:\AI\Codex\Codex_ProjectFixed\Replica_Demo_RojoKnit
+
+3. 启动 Rojo server
+   rojo serve default.project.json --address 127.0.0.1 --port 34872
+
+4. 保持这个 PowerShell 窗口不要关闭
+5. 回到 Roblox Studio
+6. Rojo 插件里点 Connect
+```
+
+如果是 Codex 帮你启动，看到这句就说明启动成功：
+
+```text
+Rojo server listening:
+Address: localhost
+Port: 34872
+```
+
+当前固定连接地址：
+
+```text
+localhost:34872
+```
+
+注意：
+
+```text
+Rojo 插件不是 server。
+PowerShell 里跑的 rojo serve 才是 server。
+Studio 插件只是连接这个 server。
+```
+
 ## 你现在最容易混淆的点
 
 一句话版本：
