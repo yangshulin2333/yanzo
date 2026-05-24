@@ -21,7 +21,7 @@ updated:
 
 ## 快速入口
 
-- [Codex实用功能](../20_Areas%20领域/AI/Codex实用功能.md)
+- [Codex实用功能](../20_Areas%20领域/AI/Codex/Codex实用功能.md)
 - [Roblox UI 导入大师课](../20_Areas%20领域/UI/Roblox%20UI%20导入大师课.md)
 - 
 
