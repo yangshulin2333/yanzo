@@ -53,6 +53,7 @@ MyGame/
   .gitignore
   wally.toml
   stylua.toml
+  selene.toml
   .vscode/
     extensions.json
     settings.json
