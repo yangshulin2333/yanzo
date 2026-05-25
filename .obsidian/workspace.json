@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas 领域/Roblox/Growth/未命名.md",
+                "file": "20_Areas 领域/Roblox/Growth/Growth_01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "Growth_01"
             }
           }
         ],
@@ -181,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/Roblox/Growth/未命名.md",
+                "file": "20_Areas 领域/Roblox/Growth/Growth_01.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "Growth_01 的大纲"
             }
           }
         ],
@@ -212,7 +212,7 @@
   "active": "4136cedd7bac2ed2",
   "lastOpenFiles": [
     "20_Areas 领域/Roblox/框架/项目框架.md",
-    "20_Areas 领域/Roblox/Growth/未命名.md",
+    "20_Areas 领域/Roblox/Growth/Growth_01.md",
     "20_Areas 领域/Roblox/Growth",
     "10_Projects 项目/Roblox/项目掌握/初始内容/项目资产和编辑器里的对象结构.md",
     "10_Projects 项目/Roblox/Rojo/Default_Project_Json_Guide.md",
