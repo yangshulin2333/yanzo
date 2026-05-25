@@ -1,32 +1,26 @@
 ---
 name: roblox-rojo-project-init
-description: Initialize a new Roblox Rojo project or explain the initialization workflow for Roblox independent game development. Use when the user asks to create, scaffold, initialize, set up, or teach a new Roblox + Rojo project, especially with commented Luau starter code, client-server boundaries, RemoteEvent setup, VS Code/Studio workflow, Wally/Stylua files, or safe first-playable skeletons.
+description: Initialize a Roblox Rojo development workflow or explain how to set up a fresh Roblox + Rojo project environment. Use when the user asks to scaffold, initialize, or teach a Roblox Rojo workflow with default.project.json, VS Code recommendations, Rojo serve tasks, Luau starter entry files, Wally/Stylua files, and Immersive Translate API-key placeholder guidance. This skill is for development-environment setup, not for creating a default gameplay loop unless the user explicitly asks.
 ---
 
 # Roblox Rojo Project Init
 
 ## Purpose
 
-Use this skill to create a practical Roblox + Rojo starter project that teaches the user how an independent Roblox game is structured. Prefer a small, safe, commented client-server skeleton over a large framework-heavy template.
+Use this skill to create a practical Roblox + Rojo development workflow skeleton. The default output should prove that Rojo, VS Code, Luau files, and Studio sync are wired correctly; it should not assume the user's game genre or generate gameplay systems by default.
 
 ## Workflow
 
 1. Confirm or infer the project name and target folder.
 2. Inspect the target path before writing files.
-3. Resolve the skill directory from the current `SKILL.md`, then run `scripts/New-RobloxRojoProject.ps1` from that directory to create the base project. Do not hardcode a user-specific path such as `C:\Users\...\`.
-4. Explain the generated structure in learning order:
+3. Resolve the skill directory from the current `SKILL.md`, then run `scripts/New-RobloxRojoProject.ps1` from that directory. Do not hardcode a user-specific path such as `C:\Users\...\`.
+4. Explain the generated structure in environment-setup order:
    - `default.project.json` maps local files into Roblox Studio.
-   - `ReplicatedStorage/Shared` holds shared config, Remote names, and utilities.
-   - `ServerScriptService` holds authoritative gameplay and data logic.
-   - `StarterPlayerScripts` holds client UI/input/feedback logic.
+   - `ReplicatedStorage/Shared` holds shared workflow/config modules.
+   - `ServerScriptService/Main.server.luau` verifies server-side Rojo sync.
+   - `StarterPlayerScripts/Main.client.luau` verifies client-side Rojo sync.
    - `.vscode` recommends Roblox/Rojo/Luau development extensions and task shortcuts.
-5. Keep the first playable loop small:
-   - client button click
-   - RemoteEvent request
-   - server validation
-   - server-side data change
-   - client feedback
-6. Do not add monetization, DataStore schema expansion, UGC, Skin, Aura, or real asset pipelines in the first scaffold unless the user explicitly asks.
+5. Do not add a default UI button, reward loop, RemoteEvent loop, DataStore schema, monetization, UGC, Skin, Aura, or real asset pipeline unless the user explicitly asks for that next layer.
 
 ## Script
 
@@ -37,7 +31,7 @@ $skillDir = "<path-to-this-skill-folder>"
 powershell -ExecutionPolicy Bypass -File "$skillDir\scripts\New-RobloxRojoProject.ps1" -ProjectName "MyGame" -OutputPath "<parent-folder-for-new-projects>"
 ```
 
-If the user asks from a completely fresh environment, first explain that the skill must exist in that Codex environment before it can be invoked. Then create the project in the user-chosen folder, not in a hardcoded path.
+If the user asks from a completely fresh environment, explain that the skill files must exist in that Codex environment before invocation. Create the project in the user-chosen folder, not in a hardcoded path.
 
 Required tools for a fresh Windows Roblox setup:
 
@@ -68,25 +62,20 @@ MyGame/
     ReplicatedStorage/
       Shared/
         GameConfig.luau
-        RemoteNames.luau
         InstanceUtil.luau
     ServerScriptService/
       Main.server.luau
       Services/
-        DataService.luau
-        RewardService.luau
     StarterPlayer/
       StarterPlayerScripts/
         Main.client.luau
         ClientModules/
-          UIController.luau
-          RewardController.luau
 ```
 
 ## Teaching Rules
 
-- Explain `.server.luau`, `.client.luau`, and plain `.luau` every time the user is learning a new project skeleton.
-- Emphasize that client code can request actions but server code must decide rewards, purchases, inventory, and saved data.
+- Explain that this scaffold is only for Rojo workflow setup. Gameplay comes after the user chooses a game type.
+- Explain `.server.luau`, `.client.luau`, and plain `.luau` whenever the user is learning the generated skeleton.
 - Treat `rojo serve` as a local development session that must be restarted after reboot or terminal close.
 - Explain the generated VS Code recommendations:
   - `evaera.vscode-rojo`: Rojo project workflow support.
@@ -100,7 +89,7 @@ MyGame/
   - source language: `auto`
   - target language: `zh-CN`
   - cache: enabled
-- Do not put real translation API keys into generated project files. Generate `.vscode/immersive-translate-api-key.md` with the exact command-palette location:
+- Do not put real translation API keys into generated project files. Generate `.vscode/immersive-translate-api-key.md` with the command-palette location:
   - `Ctrl+Shift+P`
   - `Immersive Translate: Set API Key`
   - choose service
@@ -114,8 +103,6 @@ MyGame/
 ```powershell
 rojo serve default.project.json --address 127.0.0.1 --port 34872
 ```
-
-- If the user is still learning, do not hide the workflow behind automation too early. Give the command and explain why it works.
 
 ## Validation
 
