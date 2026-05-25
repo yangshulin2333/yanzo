@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas 领域/Roblox/WorkFlow/Roblox新项目工作流/SKILL.md",
+                "file": "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/SKILL.md",
                 "mode": "source",
                 "source": false
               },
@@ -41,7 +41,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas 领域/Roblox/WorkFlow/Roblox新项目工作流/使用手册.md",
+                "file": "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/使用手册.md",
                 "mode": "source",
                 "source": false
               },
@@ -195,7 +195,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/Roblox/WorkFlow/Roblox新项目工作流/使用手册.md",
+                "file": "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/使用手册.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -223,11 +223,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "426ee9cb907d2edb",
+  "active": "d3be8173c5b5c46c",
   "lastOpenFiles": [
-    "20_Areas 领域/Roblox/WorkFlow/Roblox新项目工作流/SKILL.md",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox新项目工作流/使用手册.md",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox新项目工作流",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/SKILL.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/使用手册.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流",
     "20_Areas 领域/Roblox/Rojo/Rojo 新项目前置准备.md",
     "20_Areas 领域/Roblox/WorkFlow",
     "20_Areas 领域/Roblox/Growth/Growth_01.md",
