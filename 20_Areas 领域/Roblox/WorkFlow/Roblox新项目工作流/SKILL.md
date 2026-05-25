@@ -1,6 +1,6 @@
 ---
 name: roblox-rojo-project-init
-description: Initialize a Roblox Rojo development workflow or explain how to set up a fresh Roblox + Rojo project environment. Use when the user asks to scaffold, initialize, or teach a Roblox Rojo workflow with default.project.json, VS Code recommendations, Rojo serve tasks, Luau starter entry files, Wally/Stylua files, and Immersive Translate API-key placeholder guidance. This skill is for development-environment setup, not for creating a default gameplay loop unless the user explicitly asks.
+description: Initialize a Roblox Rojo development workflow or explain how to set up a fresh Roblox + Rojo project environment. Use when the user asks to scaffold, initialize, or teach a Roblox Rojo workflow with default.project.json, VS Code recommendations, Rojo serve tasks, Luau starter entry files, Wally/Stylua files, and Comment Translate hover-translation setup. This skill is for development-environment setup, not for creating a default gameplay loop unless the user explicitly asks.
 ---
 
 # Roblox Rojo Project Init
@@ -57,7 +57,7 @@ MyGame/
     extensions.json
     settings.json
     tasks.json
-    immersive-translate-api-key.md
+    comment-translate-usage.md
   src/
     ReplicatedStorage/
       Shared/
@@ -83,17 +83,13 @@ MyGame/
   - `JohnnyMorganz.stylua`: format Luau/Lua code.
   - `tamasfe.even-better-toml`: edit `wally.toml` cleanly.
   - `ms-vscode.PowerShell`: edit/run helper scripts on Windows.
-  - `liujie2288.immersive-translate-vscode`: translate code comments and Markdown without modifying source files.
-- Configure Immersive Translate defaults in `.vscode/settings.json`:
-  - service: `deepl`
-  - source language: `auto`
+  - `intellsmi.comment-translate`: translate selected words, comments, strings, and error logs through hover.
+- Configure Comment Translate defaults in `.vscode/settings.json`:
   - target language: `zh-CN`
-  - cache: enabled
-- Do not put real translation API keys into generated project files. Generate `.vscode/immersive-translate-api-key.md` with the command-palette location:
-  - `Ctrl+Shift+P`
-  - `Immersive Translate: Set API Key`
-  - choose service
-  - paste the API key there
+  - hover translation: enabled
+  - concise hover mode: disabled, so selection + hover works directly
+  - string and hover-content translation: enabled
+- Generate `.vscode/comment-translate-usage.md` explaining selection + hover usage and terminal-error workflow.
 - Explain the generated VS Code tasks:
   - `Rojo: serve`: start the local Studio sync server.
   - `Rojo: sourcemap`: generate sourcemap for tooling.
