@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas 领域/Roblox/WorkFlow/网站系统项目搭建工作流/使用手册.md",
+                "file": "10_Projects 项目/Roblox/吃食物Demo/未命名.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "使用手册"
+              "title": "未命名"
             }
           }
         ],
@@ -195,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/Roblox/WorkFlow/网站系统项目搭建工作流/使用手册.md",
+                "file": "10_Projects 项目/Roblox/吃食物Demo/未命名.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "使用手册 的大纲"
+              "title": "未命名 的大纲"
             }
           }
         ],
@@ -225,11 +225,12 @@
   },
   "active": "426ee9cb907d2edb",
   "lastOpenFiles": [
+    "20_Areas 领域/Roblox/WorkFlow/网站系统项目搭建工作流/使用手册.md",
+    "10_Projects 项目/Roblox/吃食物Demo/未命名.md",
     "20_Areas 领域/Roblox/WorkFlow/网站系统项目搭建工作流/SKILL.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/SKILL.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/使用手册.md",
     "20_Areas 领域/钱包/地址.md",
-    "20_Areas 领域/Roblox/WorkFlow/网站系统项目搭建工作流/使用手册.md",
     "20_Areas 领域/Roblox/WorkFlow/网站系统项目搭建工作流",
     "20_Areas 领域/钱包/ChatGPT Plus 充值流程笔记：Fiat24 + 欧易 + Arbitrum.md",
     "20_Areas 领域/钱包/买币流程.md",
@@ -241,26 +242,25 @@
     "20_Areas 领域/Roblox/Rojo",
     "20_Areas 领域/Roblox/框架/项目框架.md",
     "20_Areas 领域/Roblox/Growth",
-    "10_Projects 项目/Roblox/项目掌握/初始内容/项目资产和编辑器里的对象结构.md",
+    "10_Projects 项目/Roblox/吃食物Demo/初始内容/项目资产和编辑器里的对象结构.md",
     "10_Projects 项目/Roblox/Rojo/Default_Project_Json_Guide.md",
     "20_Areas 领域/AI/Codex/Codex.md",
-    "10_Projects 项目/Roblox/项目掌握/Demo01版本/v0.71/v0.71 NPC 资产方案.md",
-    "10_Projects 项目/Roblox/项目掌握/Demo01版本/v0.71/v0.71 食物模型生成批次01.md",
-    "10_Projects 项目/Roblox/项目掌握/Demo01版本/v0.71/NPC 资产接入模板.md",
+    "10_Projects 项目/Roblox/吃食物Demo/Demo01版本/v0.71/v0.71 NPC 资产方案.md",
+    "10_Projects 项目/Roblox/吃食物Demo/Demo01版本/v0.71/v0.71 食物模型生成批次01.md",
+    "10_Projects 项目/Roblox/吃食物Demo/Demo01版本/v0.71/NPC 资产接入模板.md",
     "20_Areas 领域/AI/Codex/通用Codex新项目工作流_Obsidian版.md",
     "10_Projects 项目/Roblox/项目掌握/Demo01版本/未命名/未命名.md",
     "10_Projects 项目/Roblox/项目掌握/Demo01版本/未命名/NpcAssetIntake_Template_v0.71.0.md",
     "10_Projects 项目/Roblox/项目掌握/Demo01版本/未命名/NpcModelVfxPipeline_v0.71.0.md",
-    "10_Projects 项目/Roblox/项目掌握/Demo01版本/v0.71",
+    "10_Projects 项目/Roblox/吃食物Demo/Demo01版本/v0.71",
     "20_Areas 领域/AI/Codex/项目工作流.md",
     "20_Areas 领域/AI/Codex/Codex实用功能.md",
     "20_Areas 领域/AI/Codex",
     "10_Projects 项目/Roblox/WorkFlow/VSCode_Rojo_Workflow.md",
     "10_Projects 项目/Roblox/WorkFlow/Rojo_Project_Run_Map.md",
-    "10_Projects 项目/Roblox/项目掌握/Demo01版本/V0.13.0/PrePublish_Checklist_v0.13.0.md",
-    "10_Projects 项目/Roblox/项目掌握/Demo01版本/V0.13.0",
-    "10_Projects 项目/Roblox/项目掌握/初始内容",
-    "10_Projects 项目/Roblox/项目掌握/Demo01版本",
+    "10_Projects 项目/Roblox/吃食物Demo/Demo01版本/V0.13.0",
+    "10_Projects 项目/Roblox/吃食物Demo/初始内容",
+    "10_Projects 项目/Roblox/吃食物Demo/Demo01版本",
     "00_Inbox 收集箱/assets/门禁卡/file-20260521133242254.png",
     "00_Inbox 收集箱/assets/门禁卡/file-20260521132441434.png",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307428.png",
