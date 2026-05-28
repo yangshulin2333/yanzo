@@ -6,16 +6,49 @@
 把新接收的 Roblox 项目尽可能完整导出成 Codex 可读的文本资料。
 ```
 
-## 先准备目录
+## Codex 先做：创建目录和空 md
 
-在新项目根目录创建：
+推荐把这套工具放在新项目根目录的 `Tools/` 下，然后在新项目根目录运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\Tools\Bootstrap_RobloxProjectAuditWorkspace.ps1 -TargetRoot . -CopyExporters
+```
+
+如果工具包暂时放在新项目外面，也用相对路径，不写死盘符，例如：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ..\Tools\Bootstrap_RobloxProjectAuditWorkspace.ps1 -TargetRoot . -SourceToolsDir ..\Tools -CopyExporters
+```
+
+这个脚本会直接创建：
 
 ```text
 Project_Analysis_Package/
 Tools/
 ```
 
-从当前项目复制这些脚本到新项目 `Tools/`：
+并创建这些空 md：
+
+```text
+Project_Analysis_Package/Startup_Record.md
+Project_Analysis_Package/Audit_Quick_Focused_Output.md
+Project_Analysis_Package/Audit_Project_Assets_Output.md
+Project_Analysis_Package/Audit_Animation_Sound_Output.md
+Project_Analysis_Package/Audit_SourceAssetSearch_Output.md
+Project_Analysis_Package/Audit_TargetSource_Output.md
+Project_Analysis_Package/Audit_Raw_Output.md
+Project_Analysis_Package/Explorer_Tree.md
+Project_Analysis_Package/Script_Index.md
+Project_Analysis_Package/RemoteEvent_Map.md
+Project_Analysis_Package/Asset_Audit.md
+Project_Analysis_Package/Animation_Sound_Index.md
+Project_Analysis_Package/Source_Asset_Search_Index.md
+Project_Analysis_Package/Target_Source_Index.md
+Project_Analysis_Package/Project_Understanding_Report.md
+Project_Analysis_Package/Next_Steps.md
+```
+
+同时复制这些通用导出脚本到新项目 `Tools/`：
 
 ```text
 Tools/RobloxStudio_QuickFocusedAuditExporter.luau
@@ -23,6 +56,7 @@ Tools/RobloxStudio_ProjectOnlyAssetExporter.luau
 Tools/RobloxStudio_AnimationSoundExporter.luau
 Tools/RobloxStudio_SourceAssetSearchExporter.luau
 Tools/RobloxStudio_TargetSourceExporter.luau
+Tools/RobloxStudio_AuditExporter.luau
 ```
 
 ## Studio 运行方式
@@ -36,8 +70,8 @@ Tools/RobloxStudio_TargetSourceExporter.luau
 4. 复制 Tools/*.luau 全部内容。
 5. 粘贴到 Command Bar。
 6. 按 Enter。
-7. 把 Output 里以 # Roblox 开头的内容复制出来。
-8. 保存到 Project_Analysis_Package/ 对应 md 文件。
+7. 把这次运行后 Output 里的内容全部复制出来。
+8. 粘贴到 Codex 已经创建好的对应 `Project_Analysis_Package/*.md` 文件里。
 ```
 
 ## 必导 1：项目结构 / 脚本 / Remote / 基础素材
@@ -155,7 +189,21 @@ Mesh 资源
 
 ## 必导 5：关键源码
 
-先根据前 4 个导出结果，找出最关键的脚本路径。
+先运行一次：
+
+```text
+Tools/RobloxStudio_TargetSourceExporter.luau
+```
+
+如果 `TARGET_PATHS` 还是空的，它会输出当前项目可选脚本路径列表。
+
+先把这次 Output 粘贴到：
+
+```text
+Project_Analysis_Package/Audit_TargetSource_Output.md
+```
+
+让 Codex 根据脚本路径列表和前 4 个导出结果，告诉你应该填哪些关键脚本路径。
 
 然后编辑：
 
