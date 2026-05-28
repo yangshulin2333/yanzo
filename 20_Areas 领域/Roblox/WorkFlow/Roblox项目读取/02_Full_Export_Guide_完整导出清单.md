@@ -5,6 +5,7 @@ Codex should read first:
 ```text
 WORKFLOW_MANIFEST.json
 00_Start_Here_For_Codex_给Codex先读.md
+04_Status_And_Stop_Rules_状态与收口规则.md
 ```
 
 This file is the human-readable checklist.
@@ -213,6 +214,50 @@ Export selected Script / LocalScript / ModuleScript full source.
 导出选定 Script / LocalScript / ModuleScript 的完整源码。
 ```
 
+建议按功能分多轮保存，避免单个 Output 过长：
+
+```text
+Audit_TargetSource_Output.md
+Audit_TargetSource_Pass2_Output.md
+Audit_TargetSource_Pass3_Output.md
+```
+
+每轮由 Codex 修改 `TARGET_PATHS`，用户只负责在 Studio 运行并保存 Output。
+
+### 6. Target Explorer / 关键资源树
+
+当源码已经指向某些资源树，例如：
+
+```text
+ReplicatedStorage/Resource/Stage/stage1
+ReplicatedStorage/Resource/skill
+ReplicatedStorage/Resource/pfb
+ReplicatedStorage/Resource/ui
+ReplicatedStorage/Resource/Potion
+```
+
+运行：
+
+```text
+Tools/RobloxStudio_TargetExplorerExporter.luau
+-> Project_Analysis_Package/Audit_TargetExplorer_Output.md
+```
+
+作用：
+
+```text
+导出选定资源树的直接子节点、类型统计、关键属性和有限深度树结构。
+```
+
+如果输出缺少 `## End` 或出现 `[trimmed]`，不要继续扩大范围，改用紧凑导出：
+
+```text
+Tools/RobloxStudio_TargetExplorerCompactExporter.luau
+-> Project_Analysis_Package/Audit_TargetExplorer_Compact_Output.md
+```
+
+紧凑导出只打印直接子节点、类型统计和关键后代，适合补 `pfb/ui/Potion` 等细节。
+
 ## Optional Broad Export / 可选综合导出
 
 ```text
@@ -238,9 +283,16 @@ Asset_Audit.md
 Animation_Sound_Index.md
 Source_Asset_Search_Index.md
 Target_Source_Index.md
+Gameplay_Flow.md
+Replacement_Plan.md
 Project_Understanding_Report.md
 Next_Steps.md
+Project_Takeover_Final_Report.md
 ```
+
+## Stop Rule / 收口规则
+
+当 `Next_Steps.md` 已经写明“当前不需要继续导入”，并且最后一轮关键导出有 `## End`，Codex 应停止继续要求用户运行导出脚本。下一步是总接管报告和第一阶段目标选择。
 
 ## Minimal Version / 最小版
 
