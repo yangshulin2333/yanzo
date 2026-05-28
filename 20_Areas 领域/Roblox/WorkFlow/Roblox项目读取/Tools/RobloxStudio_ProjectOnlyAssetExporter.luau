@@ -1,5 +1,5 @@
--- Project-only asset exporter.
--- Paste into Roblox Studio Command Bar while the group project "吃东西测试服" is open.
+-- Generic project-only asset exporter.
+-- Paste into Roblox Studio Command Bar while your own project is open.
 -- It scans only project services and excludes PluginGuiService/CoreGui/plugin UI.
 
 local SERVICE_NAMES = {

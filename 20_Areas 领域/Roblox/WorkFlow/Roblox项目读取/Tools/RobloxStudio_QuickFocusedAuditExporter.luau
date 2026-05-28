@@ -1,6 +1,6 @@
 -- Quick focused audit exporter.
 -- Paste the whole file into Roblox Studio Command Bar, then press Enter.
--- Copy the Output block that starts with: # Roblox Quick Focused Audit Export
+-- Copy the Studio Output after running and save it as a markdown file.
 
 local out = {}
 local function add(s)

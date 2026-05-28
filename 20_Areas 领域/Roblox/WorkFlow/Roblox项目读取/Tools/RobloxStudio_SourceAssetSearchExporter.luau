@@ -1,6 +1,6 @@
--- Source asset search exporter.
--- Paste into Roblox Studio Command Bar while the group project "吃东西测试服" is open.
--- It searches Script/LocalScript/ModuleScript source for known failing asset IDs and asset-loading keywords.
+-- Generic source asset search exporter.
+-- Paste into Roblox Studio Command Bar while your own project is open.
+-- It scans Script/LocalScript/ModuleScript source for asset IDs and asset-loading keywords.
 
 local SERVICE_NAMES = {
 	"Workspace",
@@ -15,71 +15,32 @@ local SERVICE_NAMES = {
 	"SoundService",
 }
 
-local PROBLEM_IDS = {
-	["102814554762972"] = "Sound",
-	["114216952350666"] = "Sound",
-	["124084081676266"] = "Sound",
-	["12870804641"] = "Sound",
-	["12948869757"] = "Sound",
-	["12948869835"] = "Sound",
-	["12948869918"] = "Sound",
-	["12948870057"] = "Sound",
-	["12948870634"] = "Sound",
-	["12948870701"] = "Sound",
-	["12948870756"] = "Sound",
-	["12948870849"] = "Sound",
-	["12948893024"] = "Sound",
-	["130124802169027"] = "Sound",
-	["132824621769597"] = "Sound",
-	["13729764428"] = "Sound",
-	["13729765050"] = "Sound",
-	["13729765161"] = "Sound",
-	["137731412329263"] = "Sound",
-	["13807704092"] = "Sound",
-	["139096410428474"] = "Animation",
-	["140213505389116"] = "Sound",
-	["18407173712"] = "Sound",
-	["18407174112"] = "Sound",
-	["18407174514"] = "Sound",
-	["18407174851"] = "Sound",
-	["18407175306"] = "Sound",
-	["18407175645"] = "Sound",
-	["18407176357"] = "Sound",
-	["18407177042"] = "Sound",
-	["18407177374"] = "Sound",
-	["18451496611"] = "Sound",
-	["18721735423"] = "Sound",
-	["18846073707"] = "Sound",
-	["74841059300115"] = "Sound",
-	["85695794590263"] = "Animation",
-	["89441660388960"] = "Animation",
-}
-
 local KEYWORDS = {
 	"rbxassetid://",
 	"asset/?id=",
+	"asset?id=",
 	"assetdelivery.roblox.com",
 	"AnimationId",
 	"SoundId",
+	"MeshId",
+	"TextureID",
+	"TextureId",
+	"Image",
 	"LoadAnimation",
-	"Instance.new(\"Animation\")",
+	'Instance.new("Animation")',
 	"Instance.new('Animation')",
-	"Instance.new(\"Sound\")",
+	'Instance.new("Sound")',
 	"Instance.new('Sound')",
-	"PlaySound",
-	"PlaySoundEvent",
-	"SoundModule",
-	"PlaySoundModule",
-	"AnimationModule",
-	"DrawAnimaModule",
-	"DmgAni",
-	"FightEvent",
+	'Instance.new("ParticleEmitter")',
+	"Instance.new('ParticleEmitter')",
+	"MarketplaceService",
+	"InsertService",
 }
 
-local MAX_EXACT_ROWS = 300
-local MAX_KEYWORD_ROWS = 180
-local MAX_KEYWORD_ROWS_PER_SCRIPT = 8
-local MAX_SUMMARY_ROWS = 160
+local MAX_ASSET_ROWS = 400
+local MAX_KEYWORD_ROWS = 220
+local MAX_KEYWORD_ROWS_PER_SCRIPT = 10
+local MAX_SUMMARY_ROWS = 180
 local MAX_SNIPPET_LEN = 180
 
 local out = {}
@@ -120,6 +81,26 @@ local function snippet(line)
 	end
 	return line
 end
+local function collectAssetIds(line)
+	local ids = {}
+	local seen = {}
+	local function addId(id)
+		if id and id ~= "" and not seen[id] then
+			seen[id] = true
+			table.insert(ids, id)
+		end
+	end
+	for id in tostring(line):gmatch("rbxassetid://(%d+)") do
+		addId(id)
+	end
+	for id in tostring(line):gmatch("asset%?id=(%d+)") do
+		addId(id)
+	end
+	for id in tostring(line):gmatch("[Ii][Dd]=(%d+)") do
+		addId(id)
+	end
+	return ids
+end
 
 local roots = {}
 for _, serviceName in ipairs(SERVICE_NAMES) do
@@ -144,7 +125,7 @@ table.sort(scripts, function(a, b)
 	return pathOf(a) < pathOf(b)
 end)
 
-local exactRows = {}
+local assetRows = {}
 local keywordRows = {}
 local summaryRows = {}
 local unreadableRows = {}
@@ -158,7 +139,7 @@ for _, scriptObj in ipairs(scripts) do
 	if not ok then
 		table.insert(unreadableRows, { kind, scriptPath, tostring(source) })
 	else
-		local exactCount = 0
+		local assetHitCount = 0
 		local keywordCount = 0
 		local keywordAddedForThisScript = 0
 		local lineNumber = 0
@@ -166,12 +147,10 @@ for _, scriptObj in ipairs(scripts) do
 			lineNumber = lineNumber + 1
 			local lowerLine = line:lower()
 
-			for assetId, assetType in pairs(PROBLEM_IDS) do
-				if line:find(assetId, 1, true) then
-					exactCount = exactCount + 1
-					if #exactRows < MAX_EXACT_ROWS then
-						table.insert(exactRows, { assetType, assetId, kind, scriptPath, lineNumber, snippet(line) })
-					end
+			for _, assetId in ipairs(collectAssetIds(line)) do
+				assetHitCount = assetHitCount + 1
+				if #assetRows < MAX_ASSET_ROWS then
+					table.insert(assetRows, { assetId, kind, scriptPath, lineNumber, snippet(line) })
 				end
 			end
 
@@ -187,8 +166,8 @@ for _, scriptObj in ipairs(scripts) do
 			end
 		end
 
-		if exactCount > 0 or keywordCount > 0 then
-			table.insert(summaryRows, { kind, scriptPath, exactCount, keywordCount })
+		if assetHitCount > 0 or keywordCount > 0 then
+			table.insert(summaryRows, { kind, scriptPath, assetHitCount, keywordCount })
 		end
 	end
 end
@@ -215,24 +194,24 @@ row({ "CreatorId", game.CreatorId })
 row({ "CreatorType", game.CreatorType })
 row({ "ScannedServices", table.concat(SERVICE_NAMES, ", ") })
 row({ "ScriptCount", #scripts })
-row({ "ExactRowsPrinted", #exactRows })
+row({ "AssetRowsPrinted", #assetRows })
 row({ "KeywordRowsPrinted", #keywordRows })
 row({ "CandidateScriptCount", #summaryRows })
 row({ "CandidateRowsPrinted", math.min(#summaryRows, MAX_SUMMARY_ROWS) })
 add("")
 
-add("## Exact Problem AssetId Matches")
+add("## AssetId Matches")
 add("")
-add("| AssetType | AssetId | ScriptType | ScriptPath | Line | Snippet |")
-add("|---|---:|---|---|---:|---|")
-for _, r in ipairs(exactRows) do
+add("| AssetId | ScriptType | ScriptPath | Line | Snippet |")
+add("|---:|---|---|---:|---|")
+for _, r in ipairs(assetRows) do
 	row(r)
 end
 add("")
 
 add("## Candidate Scripts Summary")
 add("")
-add("| ScriptType | ScriptPath | ExactAssetIdHits | KeywordHits |")
+add("| ScriptType | ScriptPath | AssetIdHits | KeywordHits |")
 add("|---|---|---:|---:|")
 for i, r in ipairs(summaryRows) do
 	if i > MAX_SUMMARY_ROWS then

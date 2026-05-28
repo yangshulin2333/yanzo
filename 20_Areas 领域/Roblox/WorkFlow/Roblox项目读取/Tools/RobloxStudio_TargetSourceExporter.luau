@@ -1,22 +1,12 @@
--- Target source exporter.
--- Paste into Roblox Studio Command Bar while the group project "吃东西测试服" is open.
--- It exports full source for the key scripts needed to understand animation, sound, eat, and speed flows.
+-- Generic target source exporter.
+-- Paste into Roblox Studio Command Bar while your own project is open.
+-- Fill TARGET_PATHS with script paths from the quick audit output when you need full source.
 
 local TARGET_PATHS = {
-	"ReplicatedStorage/Tool/AnimationModule",
-	"ReplicatedFirst/FirstPreload/AnimationModule",
-	"ReplicatedStorage/Tool/SoundModule",
-	"ReplicatedStorage/Tool/PlaySoundModule",
-	"StarterPlayer/StarterPlayerScripts/Sound",
-	"ReplicatedStorage/System/SystemDefaultAnime",
-	"ServerStorage/System/SystemEatPlr",
-	"ServerScriptService/吃食物",
-	"ServerScriptService/按键加速",
-	"StarterPlayer/StarterCharacterScripts/本地检测吃东西",
-	"StarterPlayer/StarterCharacterScripts/自动吃东西",
-	"ReplicatedStorage/Tool/宠物动画",
-	"ReplicatedStorage/Tool/教练动画",
-	"ReplicatedStorage/Tool/RankUpLocal",
+	-- Example:
+	-- "StarterPlayer/StarterPlayerScripts/MainClient",
+	-- "ServerScriptService/MainServer",
+	-- "ReplicatedStorage/Modules/SomeModule",
 }
 
 local SERVICE_NAMES = {
@@ -80,13 +70,19 @@ for _, serviceName in ipairs(SERVICE_NAMES) do
 end
 
 local scriptsByPath = {}
+local scriptList = {}
 for _, root in ipairs(roots) do
 	for _, child in ipairs(root:GetDescendants()) do
 		if scriptType(child) then
-			scriptsByPath[pathOf(child)] = child
+			local scriptPath = pathOf(child)
+			scriptsByPath[scriptPath] = child
+			table.insert(scriptList, child)
 		end
 	end
 end
+table.sort(scriptList, function(a, b)
+	return pathOf(a) < pathOf(b)
+end)
 
 add("# Roblox Target Source Export")
 add("")
@@ -98,8 +94,29 @@ row({ "GameId", game.GameId })
 row({ "PlaceId", game.PlaceId })
 row({ "CreatorId", game.CreatorId })
 row({ "CreatorType", game.CreatorType })
+row({ "ScriptCount", #scriptList })
 row({ "TargetCount", #TARGET_PATHS })
 add("")
+
+if #TARGET_PATHS == 0 then
+	add("## No Target Paths Configured")
+	add("")
+	add(
+		"`TARGET_PATHS` is empty. Copy script paths from the table below, paste them into TARGET_PATHS, then run this exporter again."
+	)
+	add("")
+	add("## Available Scripts")
+	add("")
+	add("| ScriptType | ScriptPath |")
+	add("|---|---|")
+	for _, scriptObj in ipairs(scriptList) do
+		row({ scriptType(scriptObj), pathOf(scriptObj) })
+	end
+	add("")
+	add("## End")
+	print(table.concat(out, "\n"))
+	return
+end
 
 add("## Target Source Summary")
 add("")
