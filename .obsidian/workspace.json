@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/格挡模块/未命名.md",
+                "file": "10_Projects 项目/Roblox/精灵/PROJECT_TAKEOVER_DEVELOPMENT_GUIDE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "PROJECT_TAKEOVER_DEVELOPMENT_GUIDE"
             }
           }
         ],
@@ -195,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/格挡模块/未命名.md",
+                "file": "10_Projects 项目/Roblox/精灵/PROJECT_TAKEOVER_DEVELOPMENT_GUIDE.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "PROJECT_TAKEOVER_DEVELOPMENT_GUIDE 的大纲"
             }
           }
         ],
@@ -225,6 +225,7 @@
   },
   "active": "d3be8173c5b5c46c",
   "lastOpenFiles": [
+    "10_Projects 项目/Roblox/格挡模块/未命名.md",
     "10_Projects 项目/Roblox/精灵/PROJECT_TAKEOVER_DEVELOPMENT_GUIDE.md",
     "10_Projects 项目/Roblox/精灵",
     "10_Projects 项目/Roblox/格挡模块/assets/未命名/file-20260527133459201.png",
@@ -232,7 +233,6 @@
     "10_Projects 项目/Roblox/格挡模块/assets/未命名",
     "10_Projects 项目/Roblox/格挡模块/assets",
     "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/使用手册.md",
-    "10_Projects 项目/Roblox/格挡模块/未命名.md",
     "10_Projects 项目/Roblox/格挡模块",
     "20_Areas 领域/钱包/地址.md",
     "20_Areas 领域/Roblox/插件.md",
