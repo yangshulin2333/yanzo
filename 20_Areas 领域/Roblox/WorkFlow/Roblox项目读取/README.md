@@ -3,8 +3,11 @@
 如果你是新对话里的 Codex，请先读取：
 
 ```text
+WORKFLOW_MANIFEST.json
 00_START_HERE_给Codex.md
 ```
+
+工作流文件夹名可以是任意名称。不要根据文件夹名判断；请根据 `WORKFLOW_MANIFEST.json` 和 `00_START_HERE_给Codex.md` 判断。
 
 本文件夹的用途：
 

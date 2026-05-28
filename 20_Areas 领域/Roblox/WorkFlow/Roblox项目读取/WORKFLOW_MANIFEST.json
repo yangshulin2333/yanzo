@@ -1,0 +1,7 @@
+{
+  "workflow_type": "roblox_project_read",
+  "entry_file": "00_START_HERE_给Codex.md",
+  "bootstrap_script": "Tools/Bootstrap_RobloxProjectAuditWorkspace.ps1",
+  "description": "Prepare a Roblox project for Codex reading by creating analysis files and Studio exporter scripts.",
+  "folder_name_required": false
+}

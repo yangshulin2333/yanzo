@@ -3,6 +3,7 @@
 新对话里的 Codex 应该先读：
 
 ```text
+WORKFLOW_MANIFEST.json
 00_START_HERE_给Codex.md
 ```
 

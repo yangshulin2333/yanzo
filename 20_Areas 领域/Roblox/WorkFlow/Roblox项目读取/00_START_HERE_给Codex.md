@@ -4,6 +4,8 @@
 
 你是 Codex。用户刚接手一个 Roblox 项目，并把本工作流文件夹提供给你，或者复制到了项目根目录。
 
+重要：工作流文件夹的名字可以是任意名称。不要根据文件夹名判断它是不是工作流；只能根据本目录下的 `WORKFLOW_MANIFEST.json`、`00_START_HERE_给Codex.md` 和 `Tools/Bootstrap_RobloxProjectAuditWorkspace.ps1` 判断。
+
 你的目标只有一个：
 
 ```text
@@ -20,7 +22,7 @@
 
 ```text
 1. 确认当前工作目录是不是 Roblox 项目根目录。
-2. 找到本工作流里的 Tools/Bootstrap_RobloxProjectAuditWorkspace.ps1。
+2. 找到本工作流里的 `Tools/Bootstrap_RobloxProjectAuditWorkspace.ps1`。
 3. 在项目根目录创建 Project_Analysis_Package/。
 4. 在项目根目录创建 Tools/。
 5. 创建所有空的 Audit_*.md 和分析输出 md。
@@ -32,21 +34,31 @@
 
 按顺序判断：
 
-### 情况 A：工作流文件夹被复制到项目根目录
+### 情况 A：工作流文件夹被复制到项目根目录，且保留为单独子文件夹
 
 例如：
 
 ```text
 项目根目录/
-├─ Roblox项目读取/
+├─ <任意工作流文件夹名>/
 │  ├─ 00_START_HERE_给Codex.md
+│  ├─ WORKFLOW_MANIFEST.json
 │  └─ Tools/
 ```
 
-你在项目根目录运行：
+判断方法：
+
+```text
+在项目根目录的子目录里查找：
+1. WORKFLOW_MANIFEST.json
+2. 00_START_HERE_给Codex.md
+3. Tools/Bootstrap_RobloxProjectAuditWorkspace.ps1
+```
+
+找到后，用真实子目录名运行。示例：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File ".\Roblox项目读取\Tools\Bootstrap_RobloxProjectAuditWorkspace.ps1" -TargetRoot "." -SourceToolsDir ".\Roblox项目读取\Tools" -CopyExporters
+powershell -ExecutionPolicy Bypass -File ".\<任意工作流文件夹名>\Tools\Bootstrap_RobloxProjectAuditWorkspace.ps1" -TargetRoot "." -SourceToolsDir ".\<任意工作流文件夹名>\Tools" -CopyExporters
 ```
 
 ### 情况 B：工作流内容已经合并到项目根目录
@@ -83,6 +95,41 @@ powershell -ExecutionPolicy Bypass -File "工作流路径\Tools\Bootstrap_Roblox
 ```
 
 注意：实际执行时替换成真实路径。不要把某个固定盘符路径写死到文档里。
+
+### 如果当前目录本身就是工作流目录
+
+如果当前目录包含：
+
+```text
+WORKFLOW_MANIFEST.json
+00_START_HERE_给Codex.md
+Tools/Bootstrap_RobloxProjectAuditWorkspace.ps1
+```
+
+那当前目录是工作流目录，不一定是 Roblox 项目根目录。
+
+优先判断当前目录的父目录是不是项目根目录。判断依据：
+
+```text
+1. 父目录里有 .rbxl / .rbxlx。
+2. 父目录里有 default.project.json。
+3. 父目录里有 src/、ReplicatedStorage/、ServerScriptService/、StarterPlayer/ 等 Roblox 项目结构。
+4. 用户明确说“工作流文件夹放在项目根目录下”。
+```
+
+如果父目录符合，就把父目录作为 `TargetRoot`。示例：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ".\Tools\Bootstrap_RobloxProjectAuditWorkspace.ps1" -TargetRoot ".." -SourceToolsDir ".\Tools" -CopyExporters
+```
+
+如果无法判断父目录是不是项目根目录，再问用户项目根目录在哪里，然后用：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ".\Tools\Bootstrap_RobloxProjectAuditWorkspace.ps1" -TargetRoot "<当前 Roblox 项目根目录>" -SourceToolsDir ".\Tools" -CopyExporters
+```
+
+不要把工作流目录本身误判为 Roblox 项目根目录。
 
 ## 初始化后应该出现什么
 
