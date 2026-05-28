@@ -1,63 +1,74 @@
-# Roblox Studio 通用导出脚本说明
+# Studio Exporter Reference / Studio 导出脚本说明
 
-新对话里的 Codex 应该先读：
+These scripts are read-only exporters for the Roblox project currently open in Studio.
+
+这些脚本只读取当前 Studio 打开的 Roblox 项目，用来导出结构、脚本、Remote、素材、动画和音效。
+
+## Codex Entry / Codex 入口
+
+Codex should read first:
 
 ```text
 WORKFLOW_MANIFEST.json
-00_START_HERE_给Codex.md
+00_Start_Here_For_Codex_给Codex先读.md
 ```
 
-这份 README 只作为脚本用途速查。
+This file is only a script reference.
 
-这些脚本只读当前打开的 Roblox 项目，用来把 Studio 里的结构、脚本、Remote、素材、动画和音效导出成 Codex 可读文本。
+本文件只是脚本用途速查，不是主入口。
 
-## Codex 先做
-
-推荐把这套工具放在新项目根目录的 `Tools/` 下，然后在新项目根目录运行：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\Tools\Bootstrap_RobloxProjectAuditWorkspace.ps1 -TargetRoot . -CopyExporters
-```
-
-如果工具包暂时放在新项目外面，也用相对路径，例如：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File ..\Tools\Bootstrap_RobloxProjectAuditWorkspace.ps1 -TargetRoot . -SourceToolsDir ..\Tools -CopyExporters
-```
-
-它会创建：
+## User Actions In Studio / 用户在 Studio 中必须做的事
 
 ```text
-Project_Analysis_Package/
-Tools/
+1. Open the Roblox project in Roblox Studio.
+   用 Roblox Studio 打开项目。
+
+2. Open View -> Output.
+   打开 View -> Output。
+
+3. Open View -> Command Bar.
+   打开 View -> Command Bar。
+
+4. Copy the whole target Tools/*.luau file.
+   复制目标 Tools/*.luau 的全部内容。
+
+5. Paste it into Command Bar and press Enter.
+   粘贴到 Command Bar 并按 Enter。
+
+6. Copy all Output from this run.
+   复制本次运行后的全部 Output。
+
+7. Paste it into the md file that Codex prepared.
+   粘贴到 Codex 已创建好的对应 md 文件。
 ```
 
-并创建空的 `Audit_*.md`、索引文档和报告文档，同时复制通用导出脚本。
+## Exporter Map / 导出脚本表
 
-## 用户必须在 Studio 做
-
-```text
-1. Roblox Studio 打开新项目。
-2. View -> Output。
-3. View -> Command Bar。
-4. 复制 Tools/*.luau 全部内容。
-5. 粘贴到 Command Bar。
-6. 按 Enter。
-7. 把这次运行后的 Output 全部复制出来。
-8. 粘贴到 Codex 已经创建好的对应 md 文件。
-```
-
-## 脚本用途
-
-| 脚本 | 输出文件 | 用途 |
+| Script | Output File | Purpose |
 |---|---|---|
-| `RobloxStudio_QuickFocusedAuditExporter.luau` | `Audit_Quick_Focused_Output.md` | 结构、脚本、Remote、基础素材概览 |
-| `RobloxStudio_ProjectOnlyAssetExporter.luau` | `Audit_Project_Assets_Output.md` | 项目服务内素材引用 |
-| `RobloxStudio_AnimationSoundExporter.luau` | `Audit_Animation_Sound_Output.md` | Animation / Sound 对象和 AssetId |
-| `RobloxStudio_SourceAssetSearchExporter.luau` | `Audit_SourceAssetSearch_Output.md` | 脚本源码里的 AssetId 和资源关键词 |
-| `RobloxStudio_TargetSourceExporter.luau` | `Audit_TargetSource_Output.md` | 指定脚本完整源码 |
-| `RobloxStudio_AuditExporter.luau` | `Audit_Raw_Output.md` | 更宽的综合导出，Output 太长时可以不用 |
+| `RobloxStudio_QuickFocusedAuditExporter.luau` | `Audit_Quick_Focused_Output.md` | Structure, scripts, Remote/Bindable, basic assets / 结构、脚本、Remote、基础素材 |
+| `RobloxStudio_ProjectOnlyAssetExporter.luau` | `Audit_Project_Assets_Output.md` | Project asset references / 项目服务内素材引用 |
+| `RobloxStudio_AnimationSoundExporter.luau` | `Audit_Animation_Sound_Output.md` | Animation and Sound objects / 动画和音效对象 |
+| `RobloxStudio_SourceAssetSearchExporter.luau` | `Audit_SourceAssetSearch_Output.md` | Asset IDs and asset keywords inside script source / 源码里的 AssetId 和资源关键词 |
+| `RobloxStudio_TargetSourceExporter.luau` | `Audit_TargetSource_Output.md` | Full source for selected scripts / 指定脚本完整源码 |
+| `RobloxStudio_AuditExporter.luau` | `Audit_Raw_Output.md` | Broad fallback export / 更宽的兜底导出 |
 
-## 关键说明
+## TargetSourceExporter Note / 关键源码导出说明
 
-`RobloxStudio_TargetSourceExporter.luau` 默认不带任何旧项目路径。第一次运行会输出可选脚本路径列表；把需要的路径填进 `TARGET_PATHS` 后再运行一次，才会导出完整源码。
+`RobloxStudio_TargetSourceExporter.luau` starts with an empty `TARGET_PATHS`.
+
+`RobloxStudio_TargetSourceExporter.luau` 默认不带任何旧项目路径。
+
+First run:
+
+```text
+It prints available script paths.
+第一次运行会输出可选脚本路径。
+```
+
+Second run:
+
+```text
+After Codex fills TARGET_PATHS, it exports full source for those scripts.
+Codex 填好 TARGET_PATHS 后，第二次运行才会导出完整源码。
+```
