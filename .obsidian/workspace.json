@@ -84,7 +84,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -121,7 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 377.5
   },
   "right": {
     "id": "439580f3972becc9",
@@ -237,12 +237,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4136cedd7bac2ed2",
+  "active": "d3be8173c5b5c46c",
   "lastOpenFiles": [
-    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/RobloxStudio_AuditExporter.luau",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/Bootstrap_RobloxProjectAuditWorkspace.ps1",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/README.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/00_START_HERE_给Codex.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Roblox_NewProject_FullExport_Only_CN.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/README_Studio_Export.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/RobloxStudio_AuditExporter.luau",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/Bootstrap_RobloxProjectAuditWorkspace.ps1",
     "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/SKILL.md",
     "10_Projects 项目/Roblox/精灵/商店/UI.md",
     "10_Projects 项目/Roblox/精灵/PROJECT_TAKEOVER_DEVELOPMENT_GUIDE.md",
@@ -255,7 +257,6 @@
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取",
     "10_Projects 项目/Roblox/精灵/商店",
     "10_Projects 项目/Roblox/格挡模块/未命名.md",
-    "10_Projects 项目/Roblox/精灵",
     "10_Projects 项目/Roblox/格挡模块/assets/未命名/file-20260527133459201.png",
     "10_Projects 项目/Roblox/格挡模块/assets/未命名/file-20260527133459183.png",
     "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/使用手册.md",
@@ -276,7 +277,6 @@
     "10_Projects 项目/Roblox/吃食物Demo/初始内容/项目资产和编辑器里的对象结构.md",
     "10_Projects 项目/Roblox/Rojo/Default_Project_Json_Guide.md",
     "20_Areas 领域/AI/Codex/Codex.md",
-    "10_Projects 项目/Roblox/吃食物Demo/Demo01版本/v0.71/v0.71 NPC 资产方案.md",
     "00_Inbox 收集箱/assets/门禁卡/file-20260521133242254.png",
     "00_Inbox 收集箱/assets/门禁卡/file-20260521132441434.png",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307428.png",

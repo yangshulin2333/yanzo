@@ -1,5 +1,13 @@
 # Roblox Studio 通用导出脚本说明
 
+新对话里的 Codex 应该先读：
+
+```text
+00_START_HERE_给Codex.md
+```
+
+这份 README 只作为脚本用途速查。
+
 这些脚本只读当前打开的 Roblox 项目，用来把 Studio 里的结构、脚本、Remote、素材、动画和音效导出成 Codex 可读文本。
 
 ## Codex 先做
