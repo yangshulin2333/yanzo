@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas 领域/UI/UI资源.md",
+                "file": "10_Projects 项目/Roblox/精灵/核心内容.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UI资源"
+              "title": "核心内容"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/UI/UI资源.md",
+                "file": "10_Projects 项目/Roblox/精灵/核心内容.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "UI资源 的大纲"
+              "title": "核心内容 的大纲"
             }
           }
         ],
@@ -239,6 +239,9 @@
   },
   "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
+    "10_Projects 项目/Roblox/精灵/PROJECT_TAKEOVER_DEVELOPMENT_GUIDE.md",
+    "10_Projects 项目/Roblox/精灵/核心内容.md",
+    "20_Areas 领域/UI/UI资源.md",
     "00_Inbox 收集箱/探灵笔记.md",
     "20_Areas 领域/UI/Roblox UI 导入大师课.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/RobloxStudio_GuiSnapshotExporter.luau",
@@ -256,9 +259,7 @@
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/00_Start_Here_For_Codex_给Codex先读.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取",
     "20_Areas 领域/UI/UI界面生成.md",
-    "20_Areas 领域/UI/UI资源.md",
     "00_Inbox 收集箱/老版本3D建模软件下载安装.md",
-    "10_Projects 项目/Roblox/精灵/PROJECT_TAKEOVER_DEVELOPMENT_GUIDE.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/RobloxStudio_TargetExplorerExporter.luau",
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/RobloxStudio_TargetExplorerCompactExporter.luau",
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/05_Final_Report_Template_总接管报告模板.md",
@@ -274,7 +275,6 @@
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/README.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Roblox_NewProject_FullExport_Only_CN.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/SKILL.md",
-    "10_Projects 项目/Roblox/精灵/商店/UI.md",
     "10_Projects 项目/Roblox/格挡模块/assets/未命名/file-20260527133459201.png",
     "10_Projects 项目/Roblox/格挡模块/assets/未命名/file-20260527133459183.png",
     "00_Inbox 收集箱/assets/门禁卡/file-20260521133242254.png",
