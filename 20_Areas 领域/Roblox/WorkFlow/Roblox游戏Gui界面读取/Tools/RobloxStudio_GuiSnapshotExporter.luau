@@ -1,16 +1,22 @@
--- Roblox GUI snapshot exporter.
+-- Roblox focused GUI snapshot exporter.
 -- Paste this file into Roblox Studio Command Bar while the project is open.
 -- Save the printed output as Project_Analysis_Package/GuiSnapshots/<name>.md.
+--
+-- This exporter is intentionally compact. Full ScreenGui exports are easy to
+-- trim in Studio Output, so target one page/panel whenever possible.
 
 local HttpService = game:GetService("HttpService")
 
 local TARGET_PATHS = {
-	"StarterGui/MainGui",
+	-- Fill this after running RobloxStudio_GuiOverviewExporter.luau.
+	-- Examples:
+	-- "StarterGui/<ScreenGuiName>/<PageOrPanelName>",
+	-- "ReplicatedStorage/Resource/ui/<GuiTemplateName>",
 }
 
-local EXPORT_NAME = "Roblox GUI Snapshot"
-local MAX_NODES_PER_TARGET = 1600
-local JSON_CHUNK_SIZE = 18000
+local EXPORT_NAME = "Roblox Focused GUI Snapshot"
+local MAX_NODES_PER_TARGET = 700
+local JSON_CHUNK_SIZE = 12000
 
 local out = {}
 
@@ -65,6 +71,18 @@ end
 local function sortedChildren(inst)
 	local children = inst:GetChildren()
 	table.sort(children, function(a, b)
+		local orderA = 0
+		local orderB = 0
+		pcall(function()
+			orderA = a.LayoutOrder
+		end)
+		pcall(function()
+			orderB = b.LayoutOrder
+		end)
+
+		if orderA ~= orderB then
+			return orderA < orderB
+		end
 		if a.ClassName == b.ClassName then
 			return a.Name < b.Name
 		end
@@ -81,13 +99,6 @@ local function prop(inst, name)
 		return value
 	end
 	return nil
-end
-
-local function enumName(value)
-	if typeof(value) == "EnumItem" then
-		return value.Name
-	end
-	return tostring(value)
 end
 
 local function valueToData(value)
@@ -143,6 +154,8 @@ local function valueToData(value)
 				y = value.Max.Y,
 			},
 		}
+	elseif kind == "NumberSequence" or kind == "ColorSequence" then
+		return tostring(value)
 	elseif kind == "Font" then
 		return tostring(value)
 	end
@@ -179,9 +192,6 @@ local function commonGuiProps(inst)
 				"IgnoreGuiInset",
 				"ResetOnSpawn",
 				"ZIndexBehavior",
-				"ScreenInsets",
-				"SafeAreaCompatibility",
-				"ClipToDeviceSafeArea",
 			})
 		)
 	end
@@ -191,40 +201,17 @@ local function commonGuiProps(inst)
 			props,
 			readProps(inst, {
 				"Visible",
-				"Active",
-				"Interactable",
-				"Selectable",
-				"SelectionOrder",
 				"AnchorPoint",
 				"Position",
 				"Size",
-				"Rotation",
 				"AutomaticSize",
 				"SizeConstraint",
 				"BackgroundColor3",
 				"BackgroundTransparency",
-				"BorderColor3",
-				"BorderMode",
 				"BorderSizePixel",
 				"ClipsDescendants",
 				"LayoutOrder",
 				"ZIndex",
-				"NextSelectionUp",
-				"NextSelectionDown",
-				"NextSelectionLeft",
-				"NextSelectionRight",
-				"SelectionGroup",
-			})
-		)
-	end
-
-	if inst:IsA("GuiBase2d") then
-		mergeProps(
-			props,
-			readProps(inst, {
-				"AbsolutePosition",
-				"AbsoluteSize",
-				"AbsoluteRotation",
 			})
 		)
 	end
@@ -245,8 +232,6 @@ local function classProps(inst)
 				"ScaleType",
 				"SliceCenter",
 				"SliceScale",
-				"TileSize",
-				"ResampleMode",
 			})
 		)
 	end
@@ -257,8 +242,6 @@ local function classProps(inst)
 			readProps(inst, {
 				"AutoButtonColor",
 				"Modal",
-				"HoverImage",
-				"PressedImage",
 			})
 		)
 	end
@@ -281,8 +264,6 @@ local function classProps(inst)
 				"TextTruncate",
 				"LineHeight",
 				"RichText",
-				"TextFits",
-				"TextBounds",
 			})
 		)
 	end
@@ -306,15 +287,10 @@ local function classProps(inst)
 				"CanvasSize",
 				"AutomaticCanvasSize",
 				"CanvasPosition",
-				"AbsoluteCanvasSize",
 				"ScrollingDirection",
 				"ScrollingEnabled",
 				"ScrollBarThickness",
-				"ScrollBarImageColor3",
-				"ScrollBarImageTransparency",
 				"VerticalScrollBarInset",
-				"VerticalScrollBarPosition",
-				"HorizontalScrollBarInset",
 			})
 		)
 	end
@@ -334,12 +310,7 @@ local function classProps(inst)
 	end
 
 	if inst:IsA("UICorner") then
-		mergeProps(
-			props,
-			readProps(inst, {
-				"CornerRadius",
-			})
-		)
+		mergeProps(props, readProps(inst, { "CornerRadius" }))
 	end
 
 	if inst:IsA("UIAspectRatioConstraint") then
@@ -354,32 +325,15 @@ local function classProps(inst)
 	end
 
 	if inst:IsA("UIScale") then
-		mergeProps(
-			props,
-			readProps(inst, {
-				"Scale",
-			})
-		)
+		mergeProps(props, readProps(inst, { "Scale" }))
 	end
 
 	if inst:IsA("UISizeConstraint") then
-		mergeProps(
-			props,
-			readProps(inst, {
-				"MaxSize",
-				"MinSize",
-			})
-		)
+		mergeProps(props, readProps(inst, { "MaxSize", "MinSize" }))
 	end
 
 	if inst:IsA("UITextSizeConstraint") then
-		mergeProps(
-			props,
-			readProps(inst, {
-				"MaxTextSize",
-				"MinTextSize",
-			})
-		)
+		mergeProps(props, readProps(inst, { "MaxTextSize", "MinTextSize" }))
 	end
 
 	if inst:IsA("UIPadding") then
@@ -401,8 +355,6 @@ local function classProps(inst)
 				"FillDirection",
 				"HorizontalAlignment",
 				"VerticalAlignment",
-				"HorizontalFlex",
-				"VerticalFlex",
 				"SortOrder",
 				"Padding",
 			})
@@ -479,7 +431,11 @@ local function addTreeLine(inst, depth)
 		table.insert(extra, "Image=" .. tostring(image))
 	end
 
-	add(indent .. "- " .. inst.Name .. " [" .. inst.ClassName .. "] " .. table.concat(extra, "; "))
+	local suffix = ""
+	if #extra > 0 then
+		suffix = " " .. table.concat(extra, "; ")
+	end
+	add(indent .. "- " .. inst.Name .. " [" .. inst.ClassName .. "]" .. suffix)
 end
 
 local function walk(inst, depth, nodes, treeLines, state)
@@ -508,18 +464,20 @@ local treeLines = {}
 local missingTargets = {}
 local trimmedTargets = {}
 
-for _, targetPath in ipairs(TARGET_PATHS) do
-	local root = resolvePath(targetPath)
-	if not root then
-		table.insert(missingTargets, targetPath)
-	else
-		local state = {
-			count = 0,
-			trimmed = false,
-		}
-		walk(root, 0, allNodes, treeLines, state)
-		if state.trimmed then
-			table.insert(trimmedTargets, targetPath)
+if #TARGET_PATHS > 0 then
+	for _, targetPath in ipairs(TARGET_PATHS) do
+		local root = resolvePath(targetPath)
+		if not root then
+			table.insert(missingTargets, targetPath)
+		else
+			local state = {
+				count = 0,
+				trimmed = false,
+			}
+			walk(root, 0, allNodes, treeLines, state)
+			if state.trimmed then
+				table.insert(trimmedTargets, targetPath)
+			end
 		end
 	end
 end
@@ -528,11 +486,21 @@ add("# " .. EXPORT_NAME)
 add("")
 add("ExportedAt: " .. os.date("!%Y-%m-%dT%H:%M:%SZ"))
 add("NodeCount: " .. tostring(#allNodes))
+add("OutputStatus: COMPLETE only if END_ROBLOX_GUI_SNAPSHOT_JSON is present")
 add("")
 
 add("## Target Paths")
-for _, targetPath in ipairs(TARGET_PATHS) do
-	add("- " .. targetPath)
+if #TARGET_PATHS == 0 then
+	add("- none")
+	add("")
+	add("## Need Target Paths")
+	add("- Run Tools/RobloxStudio_GuiOverviewExporter.luau first.")
+	add("- Copy one candidate GUI path into TARGET_PATHS.")
+	add("- Then run this focused exporter again.")
+else
+	for _, targetPath in ipairs(TARGET_PATHS) do
+		add("- " .. targetPath)
+	end
 end
 add("")
 
@@ -547,7 +515,7 @@ end
 if #trimmedTargets > 0 then
 	add("## Trimmed Targets")
 	for _, targetPath in ipairs(trimmedTargets) do
-		add("- " .. targetPath .. " exceeded MAX_NODES_PER_TARGET")
+		add("- " .. targetPath .. " exceeded MAX_NODES_PER_TARGET; export a smaller subtree.")
 	end
 	add("")
 end
@@ -558,22 +526,26 @@ for _, item in ipairs(treeLines) do
 end
 add("")
 
-local payload = {
+local data = {
 	exportName = EXPORT_NAME,
 	exportedAt = os.date("!%Y-%m-%dT%H:%M:%SZ"),
 	targetPaths = TARGET_PATHS,
+	nodeCount = #allNodes,
 	missingTargets = missingTargets,
 	trimmedTargets = trimmedTargets,
-	nodeCount = #allNodes,
 	nodes = allNodes,
 }
 
-local json = HttpService:JSONEncode(payload)
+local json = HttpService:JSONEncode(data)
 
 add("## BEGIN_ROBLOX_GUI_SNAPSHOT_JSON")
 for i = 1, #json, JSON_CHUNK_SIZE do
-	add(json:sub(i, i + JSON_CHUNK_SIZE - 1))
+	add(string.sub(json, i, i + JSON_CHUNK_SIZE - 1))
 end
 add("## END_ROBLOX_GUI_SNAPSHOT_JSON")
+add("")
+add("## Notes")
+add("- If Studio Output still ends with [trimmed], export a smaller subtree.")
+add("- This exporter is generic. Project-specific paths must be supplied in TARGET_PATHS.")
 
 print(table.concat(out, "\n"))

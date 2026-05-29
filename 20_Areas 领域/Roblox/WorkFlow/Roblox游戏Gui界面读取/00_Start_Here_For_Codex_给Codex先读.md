@@ -27,20 +27,76 @@
 ```text
 1. 找到本工作流目录。
 2. 读取 WORKFLOW_MANIFEST.json 和本文件。
-3. 确认用户要读取的 GUI 根节点路径。
-   常见路径：
-   - StarterGui/MainGui
-   - StarterGui/<某个 ScreenGui>
-   - ReplicatedStorage/Resource/ui/<某个 UI 模板>
-   - PlayerGui/<运行时 GUI>，仅在 Play 模式需要时使用
-4. 让用户在 Studio Command Bar 运行导出脚本。
-5. 解析导出的快照。
-6. 输出 UI 读懂报告。
+3. 如果用户只说“读一下项目 / 读一下文件”，默认先做 GUI 总览。
+4. 从总览结果里挑一个目标 GUI 路径。
+5. 把目标路径填进聚焦导出器的 TARGET_PATHS。
+6. 解析导出的快照。
+7. 输出 UI 读懂报告。
 ```
+
+## 两段式导出
+
+### 第一步：总览导出
+
+新接手项目、用户没有说明具体 UI 路径时，先让用户在 Studio Command Bar 运行：
+
+```text
+Tools/RobloxStudio_GuiOverviewExporter.luau
+```
+
+总览只负责找候选 GUI 根节点，不导出大量属性，避免 Output 被截断。
+
+### 第二步：聚焦快照
+
+确认要读的界面后，再运行：
+
+```text
+Tools/RobloxStudio_GuiSnapshotExporter.luau
+```
+
+修改脚本顶部的 `TARGET_PATHS`，只导出一个页面、一个面板、一个弹窗、或一个模板。
+
+路径格式示例：
+
+```text
+StarterGui/<ScreenGuiName>
+StarterGui/<ScreenGuiName>/<PageName>
+StarterGui/<ScreenGuiName>/<PageName>/<PanelName>
+ReplicatedStorage/Resource/ui/<GuiTemplateName>
+PlayerGui/<运行时 GUI>，仅在 Play 模式需要时使用
+```
+
+整棵大 GUI 只作为兜底，不作为默认方式：
+
+```text
+StarterGui/<ScreenGuiName>
+```
+
+因为整棵 GUI 往往包含多个页面、模板、弹窗，Studio Output 容易出现 `[trimmed]`。
+
+## 完整性判断
+
+聚焦快照必须同时包含：
+
+```text
+## BEGIN_ROBLOX_GUI_SNAPSHOT_JSON
+## END_ROBLOX_GUI_SNAPSHOT_JSON
+```
+
+如果只有 `BEGIN` 没有 `END`，或者末尾出现 `[trimmed]`，这份快照不能用于精确同步模板。应缩小 `TARGET_PATHS` 重新导出。
 
 ## 重要规则
 
 如果只有一份导出快照，只能说“当前状态是什么”，不能武断说“用户改了什么”。
+
+本工作流必须低耦合：
+
+```text
+1. 不内置某个项目的 ScreenGui 名字。
+2. 不内置某个页面名、面板名、模板名。
+3. 目标路径必须来自总览导出、用户说明、或当前项目文档。
+4. 当前项目示例只能放在报告或示例区，不能变成工作流规则。
+```
 
 如果要准确知道用户改动，必须有两份快照：
 
@@ -62,10 +118,10 @@ powershell -ExecutionPolicy Bypass -File ".\Tools\Compare-GuiSnapshots.ps1" -Bef
 ```text
 Project_Analysis_Package/
 └─ GuiSnapshots/
-   ├─ MainGui_Before.md
-   ├─ MainGui_After.md
-   ├─ MainGui_After.summary.md
-   └─ MainGui_Before_vs_After.diff.md
+   ├─ <GuiName>_<Scope>_Before.md
+   ├─ <GuiName>_<Scope>_After.md
+   ├─ <GuiName>_<Scope>_After.summary.md
+   └─ <GuiName>_<Scope>_Before_vs_After.diff.md
 ```
 
 最终报告建议放：
@@ -73,4 +129,3 @@ Project_Analysis_Package/
 ```text
 Project_Analysis_Package/Gui_Understanding_Report.md
 ```
-

@@ -5,8 +5,18 @@
 在项目根目录或工作流目录运行：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File ".\Tools\Parse-GuiSnapshot.ps1" -InputPath "Project_Analysis_Package\GuiSnapshots\MainGui_AfterManualEdit.md"
+powershell -ExecutionPolicy Bypass -File ".\Tools\Parse-GuiSnapshot.ps1" -InputPath "Project_Analysis_Package\GuiSnapshots\<GuiName>_<Scope>_After.md"
 ```
+
+解析前先确认快照完整：
+
+```text
+必须有 ## BEGIN_ROBLOX_GUI_SNAPSHOT_JSON
+必须有 ## END_ROBLOX_GUI_SNAPSHOT_JSON
+不能以 [trimmed] 结尾
+```
+
+如果缺少 `END`，先让用户缩小 `TARGET_PATHS` 重新导出，不要用不完整 JSON 做模板同步。
 
 输出：
 
@@ -33,13 +43,13 @@ powershell -ExecutionPolicy Bypass -File ".\Tools\Parse-GuiSnapshot.ps1" -InputP
 如果用户问“我改了哪些”，必须使用 before / after 两份导出。
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File ".\Tools\Compare-GuiSnapshots.ps1" -Before "Project_Analysis_Package\GuiSnapshots\MainGui_Before.md" -After "Project_Analysis_Package\GuiSnapshots\MainGui_After.md"
+powershell -ExecutionPolicy Bypass -File ".\Tools\Compare-GuiSnapshots.ps1" -Before "Project_Analysis_Package\GuiSnapshots\<GuiName>_<Scope>_Before.md" -After "Project_Analysis_Package\GuiSnapshots\<GuiName>_<Scope>_After.md"
 ```
 
 输出：
 
 ```text
-MainGui_Before_vs_MainGui_After.diff.md
+<GuiName>_<Scope>_Before_vs_<GuiName>_<Scope>_After.diff.md
 ```
 
 对比报告会列出：
@@ -63,4 +73,3 @@ MainGui_Before_vs_MainGui_After.diff.md
 ```text
 我能确认这些路径、属性、数值发生了变化。
 ```
-

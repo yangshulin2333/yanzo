@@ -43,7 +43,11 @@ function Get-SnapshotJsonText {
     }
 
     if (-not $endLine) {
-        throw "Cannot find GUI snapshot end marker in $Path"
+        $allText = $lines -join [Environment]::NewLine
+        if ($allText -match '\[trimmed\]') {
+            throw "Cannot find GUI snapshot end marker in $Path. The Studio Output is truncated (`[trimmed`] was found). Re-run Tools/RobloxStudio_GuiSnapshotExporter.luau with a smaller TARGET_PATHS subtree, for example MainPage/HudLayer/TaskPanel or MainPage/HudLayer/KeyTipPanel."
+        }
+        throw "Cannot find GUI snapshot end marker in $Path. The export is incomplete. Make sure the copied Output includes ## END_ROBLOX_GUI_SNAPSHOT_JSON."
     }
 
     $chunks = New-Object System.Collections.Generic.List[string]
@@ -91,6 +95,33 @@ function Get-NodePathTail {
         return $Path
     }
     return "..." + $Path.Substring($Path.Length - 117)
+}
+
+function Format-Udim2 {
+    param($Value)
+    if ($null -eq $Value) {
+        return ""
+    }
+    return ("x=({0},{1}) y=({2},{3})" -f $Value.x.scale, $Value.x.offset, $Value.y.scale, $Value.y.offset)
+}
+
+function Format-Vector2 {
+    param($Value)
+    if ($null -eq $Value) {
+        return ""
+    }
+    return ("({0},{1})" -f $Value.x, $Value.y)
+}
+
+function Get-DirectChildren {
+    param(
+        [array]$Nodes,
+        [string]$ParentPath
+    )
+    $prefix = $ParentPath + "/"
+    return @($Nodes | Where-Object {
+        $_.path.StartsWith($prefix) -and ($_.path.Substring($prefix.Length) -notmatch "/")
+    } | Sort-Object path)
 }
 
 $resolvedInput = (Resolve-Path -Path $InputPath).Path
@@ -159,6 +190,28 @@ $scrollNodes = $nodes | Where-Object { $_.className -eq "ScrollingFrame" }
 foreach ($node in $scrollNodes | Sort-Object path) {
     Add-Line $lines "- $(Get-NodePathTail $node.path)"
     Add-Line $lines "  - AutomaticCanvasSize=$(To-ShortJson $node.props.AutomaticCanvasSize); CanvasSize=$(To-ShortJson $node.props.CanvasSize); ScrollingDirection=$(To-ShortJson $node.props.ScrollingDirection); ScrollBarThickness=$(To-ShortJson $node.props.ScrollBarThickness)"
+}
+Add-Line $lines ""
+
+Add-Line $lines "## Template Nodes"
+$templateNodes = $nodes | Where-Object {
+    $_.attributes.IsTemplate -eq $true -or $_.name -match "Template$"
+}
+if (@($templateNodes).Count -eq 0) {
+    Add-Line $lines "- none"
+} else {
+    foreach ($node in $templateNodes | Sort-Object path) {
+        Add-Line $lines "- $(Get-NodePathTail $node.path) [$($node.className)]"
+        Add-Line $lines "  - Visible=$(To-ShortJson $node.props.Visible); Anchor=$(Format-Vector2 $node.props.AnchorPoint); Position=$(Format-Udim2 $node.props.Position); Size=$(Format-Udim2 $node.props.Size); ZIndex=$(To-ShortJson $node.props.ZIndex)"
+        Add-Line $lines "  - attributes: $(To-ShortJson $node.attributes)"
+
+        $children = Get-DirectChildren -Nodes $nodes -ParentPath $node.path
+        foreach ($child in $children) {
+            $text = To-ShortJson $child.props.Text
+            $image = To-ShortJson $child.props.Image
+            Add-Line $lines "  - child $(Get-NodePathTail $child.path) [$($child.className)]: Visible=$(To-ShortJson $child.props.Visible); Position=$(Format-Udim2 $child.props.Position); Size=$(Format-Udim2 $child.props.Size); Text=$text; Image=$image"
+        }
+    }
 }
 Add-Line $lines ""
 
