@@ -48,6 +48,20 @@
               "icon": "lucide-file",
               "title": "Roblox UI 导入大师课"
             }
+          },
+          {
+            "id": "37dcfd4209b68cab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "20_Areas 领域/UI/UI资源.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "UI资源"
+            }
           }
         ],
         "currentTab": 2
@@ -223,10 +237,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d85026bdb6a05f2d",
+  "active": "d3be8173c5b5c46c",
   "lastOpenFiles": [
-    "20_Areas 领域/UI/UI资源.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/RobloxStudio_GuiSnapshotExporter.luau",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/Parse-GuiSnapshot.ps1",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/Compare-GuiSnapshots.ps1",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Templates/Gui_Understanding_Report_Template.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Templates",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/WORKFLOW_MANIFEST.json",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/README.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/04_Report_Template_UI读懂报告模板.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/03_Gui_Understanding_Checklist_UI理解清单.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/02_Codex_Parse_And_Diff_Codex解析对比.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/01_Studio_Gui_Export_Guide_Studio导出说明.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/00_Start_Here_For_Codex_给Codex先读.md",
+    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取",
     "20_Areas 领域/UI/UI界面生成.md",
+    "20_Areas 领域/UI/UI资源.md",
     "20_Areas 领域/UI/Roblox UI 导入大师课.md",
     "00_Inbox 收集箱/老版本3D建模软件下载安装.md",
     "10_Projects 项目/Roblox/精灵/PROJECT_TAKEOVER_DEVELOPMENT_GUIDE.md",
@@ -245,24 +273,10 @@
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/README.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Roblox_NewProject_FullExport_Only_CN.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/RobloxStudio_AuditExporter.luau",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/Bootstrap_RobloxProjectAuditWorkspace.ps1",
     "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/SKILL.md",
     "10_Projects 项目/Roblox/精灵/商店/UI.md",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/RobloxStudio_TargetSourceExporter.luau",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/RobloxStudio_SourceAssetSearchExporter.luau",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/RobloxStudio_QuickFocusedAuditExporter.luau",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/RobloxStudio_ProjectOnlyAssetExporter.luau",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox项目读取/Tools/RobloxStudio_AnimationSoundExporter.luau",
-    "10_Projects 项目/Roblox/格挡模块/未命名.md",
     "10_Projects 项目/Roblox/格挡模块/assets/未命名/file-20260527133459201.png",
     "10_Projects 项目/Roblox/格挡模块/assets/未命名/file-20260527133459183.png",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox新项目环境搭建工作流/使用手册.md",
-    "20_Areas 领域/钱包/地址.md",
-    "20_Areas 领域/Roblox/插件.md",
-    "20_Areas 领域/Roblox/WorkFlow/项目注释Skill/SKILL.md",
-    "10_Projects 项目/Roblox/WorkFlow/Rojo_Project_Run_Map.md",
-    "10_Projects 项目/Roblox/吃食物Demo/开发学习文档.md",
-    "10_Projects 项目/Roblox/吃食物Demo/未命名.md",
     "00_Inbox 收集箱/assets/门禁卡/file-20260521133242254.png",
     "00_Inbox 收集箱/assets/门禁卡/file-20260521132441434.png",
     "00_Inbox 收集箱/assets/豆包总结Obsidian/file-20260512130307428.png",

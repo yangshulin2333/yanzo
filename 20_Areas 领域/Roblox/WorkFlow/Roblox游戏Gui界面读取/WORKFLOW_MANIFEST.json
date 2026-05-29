@@ -1,0 +1,23 @@
+{
+  "workflow_type": "roblox_gui_reading",
+  "workflow_name": "Roblox Game GUI Reading Workflow",
+  "workflow_version": "1.0",
+  "folder_name_required": false,
+  "language_preference": "zh-CN-first",
+  "entry_file": "00_Start_Here_For_Codex_给Codex先读.md",
+  "studio_export_guide": "01_Studio_Gui_Export_Guide_Studio导出说明.md",
+  "codex_parse_and_diff": "02_Codex_Parse_And_Diff_Codex解析对比.md",
+  "understanding_checklist": "03_Gui_Understanding_Checklist_UI理解清单.md",
+  "report_template": "04_Report_Template_UI读懂报告模板.md",
+  "core_exporters": [
+    "Tools/RobloxStudio_GuiSnapshotExporter.luau"
+  ],
+  "core_tools": [
+    "Tools/Parse-GuiSnapshot.ps1",
+    "Tools/Compare-GuiSnapshots.ps1"
+  ],
+  "templates": [
+    "Templates/Gui_Understanding_Report_Template.md"
+  ],
+  "description": "Export, parse, compare, and explain Roblox GUI trees so Codex can understand UI structure, layout, assets, Slice settings, scrolling, tab states, and manual Studio edits."
+}

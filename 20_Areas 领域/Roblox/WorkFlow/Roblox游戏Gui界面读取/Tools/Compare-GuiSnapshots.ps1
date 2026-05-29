@@ -1,0 +1,238 @@
+param(
+    [Parameter(Mandatory=$true)]
+    [string]$Before,
+
+    [Parameter(Mandatory=$true)]
+    [string]$After,
+
+    [string]$OutputPath = ""
+)
+
+$ErrorActionPreference = "Stop"
+
+function Get-SnapshotJsonText {
+    param([string]$Path)
+
+    $lines = Get-Content -Path $Path -Encoding UTF8
+    $beginPatterns = @(
+        "## BEGIN_ROBLOX_GUI_SNAPSHOT_JSON",
+        "## BEGIN_MAIN_GUI_UI_SNAPSHOT_JSON"
+    )
+    $endPatterns = @(
+        "## END_ROBLOX_GUI_SNAPSHOT_JSON",
+        "## END_MAIN_GUI_UI_SNAPSHOT_JSON"
+    )
+
+    $beginLine = $null
+    foreach ($pattern in $beginPatterns) {
+        $match = $lines | Select-String -Pattern ([regex]::Escape($pattern)) | Select-Object -Last 1
+        if ($match) {
+            $beginLine = $match.LineNumber
+            break
+        }
+    }
+    if (-not $beginLine) {
+        throw "Cannot find GUI snapshot begin marker in $Path"
+    }
+
+    $endLine = $null
+    foreach ($pattern in $endPatterns) {
+        $match = $lines | Select-String -Pattern ([regex]::Escape($pattern)) | Where-Object { $_.LineNumber -gt $beginLine } | Select-Object -First 1
+        if ($match) {
+            $endLine = $match.LineNumber
+            break
+        }
+    }
+    if (-not $endLine) {
+        throw "Cannot find GUI snapshot end marker in $Path"
+    }
+
+    $chunks = New-Object System.Collections.Generic.List[string]
+    for ($i = $beginLine; $i -le $endLine; $i++) {
+        $line = $lines[$i - 1]
+        $hadStudioPrefix = $line -match '^\s*\d{2}:\d{2}:\d{2}\.\d+\s+'
+        $line = $line -replace '^\s*\d{2}:\d{2}:\d{2}\.\d+\s+', ''
+        if ($hadStudioPrefix) {
+            $line = $line -replace '\s+-\s+[^-]*$', ''
+        }
+        if ($line -match '## BEGIN_.*GUI.*SNAPSHOT_JSON') {
+            continue
+        }
+        if ($line -match '## END_.*GUI.*SNAPSHOT_JSON') {
+            continue
+        }
+        [void]$chunks.Add($line)
+    }
+
+    return ($chunks -join "")
+}
+
+function Add-Line {
+    param(
+        [System.Collections.Generic.List[string]]$Lines,
+        [string]$Text = ""
+    )
+    [void]$Lines.Add($Text)
+}
+
+function To-ShortJson {
+    param($Value)
+    if ($null -eq $Value) {
+        return ""
+    }
+    if ($Value -is [string] -or $Value -is [bool] -or $Value -is [int] -or $Value -is [double]) {
+        return [string]$Value
+    }
+    return ($Value | ConvertTo-Json -Compress -Depth 20)
+}
+
+function Get-ValueByPath {
+    param(
+        $Object,
+        [string]$Path
+    )
+
+    $current = $Object
+    foreach ($part in $Path.Split(".")) {
+        if ($null -eq $current) {
+            return $null
+        }
+        $prop = $current.PSObject.Properties[$part]
+        if ($null -eq $prop) {
+            return $null
+        }
+        $current = $prop.Value
+    }
+    return $current
+}
+
+function Get-NodeMap {
+    param($Data)
+    $map = @{}
+    foreach ($node in @($Data.nodes)) {
+        $map[$node.path] = $node
+    }
+    return $map
+}
+
+$beforePath = (Resolve-Path -Path $Before).Path
+$afterPath = (Resolve-Path -Path $After).Path
+
+$beforeData = (Get-SnapshotJsonText -Path $beforePath) | ConvertFrom-Json
+$afterData = (Get-SnapshotJsonText -Path $afterPath) | ConvertFrom-Json
+
+$beforeMap = Get-NodeMap $beforeData
+$afterMap = Get-NodeMap $afterData
+
+if ([string]::IsNullOrWhiteSpace($OutputPath)) {
+    $beforeBase = [System.IO.Path]::GetFileNameWithoutExtension($beforePath)
+    $afterBase = [System.IO.Path]::GetFileNameWithoutExtension($afterPath)
+    $outName = "${beforeBase}_vs_${afterBase}.diff.md"
+    $OutputPath = Join-Path (Split-Path -Parent $afterPath) $outName
+}
+
+$keyPaths = @(
+    "className",
+    "attributes",
+    "props.Visible",
+    "props.AnchorPoint",
+    "props.Position",
+    "props.Size",
+    "props.ZIndex",
+    "props.LayoutOrder",
+    "props.ClipsDescendants",
+    "props.BackgroundTransparency",
+    "props.Image",
+    "props.ImageTransparency",
+    "props.ScaleType",
+    "props.SliceCenter",
+    "props.SliceScale",
+    "props.Text",
+    "props.TextScaled",
+    "props.TextSize",
+    "props.TextColor3",
+    "props.TextXAlignment",
+    "props.TextYAlignment",
+    "props.CanvasSize",
+    "props.AutomaticCanvasSize",
+    "props.ScrollingDirection",
+    "props.ScrollBarThickness"
+)
+
+$lines = New-Object System.Collections.Generic.List[string]
+
+Add-Line $lines "# Roblox GUI Snapshot Diff"
+Add-Line $lines ""
+Add-Line $lines "- Before: $beforePath"
+Add-Line $lines "- After: $afterPath"
+Add-Line $lines "- Before ExportedAt: $($beforeData.exportedAt)"
+Add-Line $lines "- After ExportedAt: $($afterData.exportedAt)"
+Add-Line $lines "- Before NodeCount: $($beforeData.nodeCount)"
+Add-Line $lines "- After NodeCount: $($afterData.nodeCount)"
+Add-Line $lines ""
+
+$beforePaths = @($beforeMap.Keys | Sort-Object)
+$afterPaths = @($afterMap.Keys | Sort-Object)
+$beforeSet = @{}
+$afterSet = @{}
+foreach ($path in $beforePaths) { $beforeSet[$path] = $true }
+foreach ($path in $afterPaths) { $afterSet[$path] = $true }
+
+$added = @($afterPaths | Where-Object { -not $beforeSet.ContainsKey($_) })
+$removed = @($beforePaths | Where-Object { -not $afterSet.ContainsKey($_) })
+$common = @($afterPaths | Where-Object { $beforeSet.ContainsKey($_) })
+
+Add-Line $lines "## Added Nodes"
+if ($added.Count -eq 0) {
+    Add-Line $lines "- none"
+} else {
+    foreach ($path in $added) {
+        $node = $afterMap[$path]
+        Add-Line $lines "- $path [$($node.className)]"
+    }
+}
+Add-Line $lines ""
+
+Add-Line $lines "## Removed Nodes"
+if ($removed.Count -eq 0) {
+    Add-Line $lines "- none"
+} else {
+    foreach ($path in $removed) {
+        $node = $beforeMap[$path]
+        Add-Line $lines "- $path [$($node.className)]"
+    }
+}
+Add-Line $lines ""
+
+Add-Line $lines "## Changed Nodes"
+$changedCount = 0
+foreach ($path in $common) {
+    $beforeNode = $beforeMap[$path]
+    $afterNode = $afterMap[$path]
+    $nodeChanges = New-Object System.Collections.Generic.List[string]
+
+    foreach ($keyPath in $keyPaths) {
+        $beforeValue = To-ShortJson (Get-ValueByPath $beforeNode $keyPath)
+        $afterValue = To-ShortJson (Get-ValueByPath $afterNode $keyPath)
+        if ($beforeValue -ne $afterValue) {
+            [void]$nodeChanges.Add(('  - {0}: `{1}` -> `{2}`' -f $keyPath, $beforeValue, $afterValue))
+        }
+    }
+
+    if ($nodeChanges.Count -gt 0) {
+        $changedCount += 1
+        Add-Line $lines "- $path [$($afterNode.className)]"
+        foreach ($line in $nodeChanges) {
+            Add-Line $lines $line
+        }
+    }
+}
+
+if ($changedCount -eq 0) {
+    Add-Line $lines "- none"
+}
+
+Set-Content -Path $OutputPath -Value $lines -Encoding UTF8
+
+Write-Output "Compared GUI snapshots:"
+Write-Output "  Diff: $OutputPath"
