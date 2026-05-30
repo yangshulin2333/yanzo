@@ -16,7 +16,45 @@ Tools/RobloxStudio_GuiOverviewExporter.luau
 
 它只输出候选 GUI 根节点、类数量、简化树结构。它不负责精确属性同步。
 
-### 2. 聚焦快照：真正读 UI 用
+### 2. HTTP 分段快照：正式读取默认用
+
+正式读取 GUI 时，不论目标大还是小，默认使用 HTTP 分段模式。这个模式不会把完整 JSON 打到 Studio Output，而是把每一段发给 Codex 本机开的接收器。
+
+Codex 先启动接收器：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "<WorkflowDir>\Tools\Start-GuiSnapshotReceiver.ps1" `
+  -OutDir "<ProjectDir>\Project_Analysis_Package\GuiSnapshots" `
+  -Name "<GuiName>_Current_Http"
+```
+
+然后 Codex 填写并让用户运行：
+
+```text
+Tools/RobloxStudio_GuiHttpSnapshotExporter.luau
+```
+
+脚本顶部只改项目参数：
+
+```lua
+local POST_URL = "http://127.0.0.1:18765/gui-snapshot"
+local TARGET_JOBS = {
+	{ name = "Root", path = "StarterGui/<ScreenGuiName>", maxDepth = 2 },
+	{ name = "PageName", path = "StarterGui/<ScreenGuiName>/<PageName>" },
+}
+```
+
+运行成功后，接收器会生成：
+
+```text
+<Name>.combined.json
+<Name>.summary.md
+<Name>_<SegmentName>.json
+```
+
+如果 Studio 报 HTTP 相关错误，先检查 `Game Settings > Security > Allow HTTP Requests` 是否开启。不能开启时，退回聚焦快照或 Output 分段快照。
+
+### 3. Output 聚焦快照：备用
 
 确认目标界面后运行：
 
@@ -59,58 +97,20 @@ local TARGET_PATHS = {
 }
 ```
 
-### 3. HTTP 分段快照：大 GUI 用
-
-当目标是完整 ScreenGui，或者 Output 已经被截断时，使用 HTTP 分段模式。这个模式不会把大 JSON 打到 Studio Output，而是把每一段发给 Codex 本机开的接收器。
-
-Codex 先启动接收器：
-
-```powershell
-python "<WorkflowDir>\Tools\Receive-GuiSnapshotHttp.py" `
-  --out-dir "<ProjectDir>\Project_Analysis_Package\GuiSnapshots" `
-  --name "<GuiName>_Current_Http"
-```
-
-然后 Codex 填写并让用户运行：
-
-```text
-Tools/RobloxStudio_GuiHttpSnapshotExporter.luau
-```
-
-脚本顶部只改项目参数：
-
-```lua
-local POST_URL = "http://127.0.0.1:18765/gui-snapshot"
-local TARGET_JOBS = {
-	{ name = "Root", path = "StarterGui/<ScreenGuiName>", maxDepth = 2 },
-	{ name = "PageName", path = "StarterGui/<ScreenGuiName>/<PageName>" },
-}
-```
-
-运行成功后，接收器会生成：
-
-```text
-<Name>.combined.json
-<Name>.summary.md
-<Name>_<SegmentName>.json
-```
-
-如果 Studio 报 HTTP 相关错误，先检查 `Game Settings > Security > Allow HTTP Requests` 是否开启。不能开启时，退回聚焦快照或 Output 分段快照。
-
 ## 操作步骤
 
 1. 打开 Roblox Studio，并打开目标项目。
 2. 打开 `View > Output` 和 `View > Command Bar`。
-3. 打开本工作流的导出脚本。
-4. 如果是聚焦快照，先按目标 UI 修改 `TARGET_PATHS`。
-5. 把整个脚本粘贴到 Studio 的 Command Bar，按 Enter 运行。
-6. 从 Output 复制导出内容，保存到：
+3. 默认由 Codex 启动 HTTP 接收器，并修改 HTTP 导出脚本的 `TARGET_JOBS`。
+4. 用户把 Codex 准备好的脚本粘贴到 Studio 的 Command Bar，按 Enter 运行。
+5. 如果使用 HTTP 模式，Output 里只看状态信息，不需要复制完整 JSON。
+6. 如果使用 Output 备用模式，才从 Output 复制导出内容，保存到：
 
 ```text
 Project_Analysis_Package/GuiSnapshots/<有意义的名字>.md
 ```
 
-如果使用 HTTP 分段快照，Output 里只需要看状态信息，不需要复制完整 JSON。Codex 直接读取接收器生成的 `.combined.json` 和 `.summary.md`。
+HTTP 模式下，Codex 直接读取接收器生成的 `.combined.json` 和 `.summary.md`。
 
 推荐命名：
 

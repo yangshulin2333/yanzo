@@ -67,6 +67,92 @@ function Get-SnapshotJsonText {
     return ($chunks -join "")
 }
 
+function Test-Prop {
+    param(
+        $Object,
+        [string]$Name
+    )
+    return $null -ne $Object -and $null -ne $Object.PSObject.Properties[$Name]
+}
+
+function Normalize-SnapshotData {
+    param(
+        $Data,
+        [string]$SourcePath
+    )
+
+    if (Test-Prop $Data "nodes") {
+        return $Data
+    }
+
+    if (Test-Prop $Data "snapshot") {
+        return Normalize-SnapshotData -Data $Data.snapshot -SourcePath $SourcePath
+    }
+
+    if (Test-Prop $Data "segments") {
+        $allNodes = New-Object System.Collections.Generic.List[object]
+        $segmentNames = New-Object System.Collections.Generic.List[string]
+        $segmentValue = $Data.segments
+
+        if ($segmentValue -is [System.Array]) {
+            foreach ($segment in @($segmentValue)) {
+                $segmentName = $segment.name
+                if ([string]::IsNullOrWhiteSpace($segmentName)) {
+                    $segmentName = $segment.jobName
+                }
+                if ([string]::IsNullOrWhiteSpace($segmentName)) {
+                    $segmentName = "Segment$($segmentNames.Count + 1)"
+                }
+                [void]$segmentNames.Add($segmentName)
+
+                $snapshot = $segment
+                if (Test-Prop $segment "snapshot") {
+                    $snapshot = $segment.snapshot
+                }
+                foreach ($node in @($snapshot.nodes)) {
+                    [void]$allNodes.Add($node)
+                }
+            }
+        } else {
+            foreach ($prop in @($segmentValue.PSObject.Properties)) {
+                $segmentName = $prop.Name
+                [void]$segmentNames.Add($segmentName)
+
+                $segment = $prop.Value
+                $snapshot = $segment
+                if (Test-Prop $segment "snapshot") {
+                    $snapshot = $segment.snapshot
+                }
+                foreach ($node in @($snapshot.nodes)) {
+                    [void]$allNodes.Add($node)
+                }
+            }
+        }
+
+        return [pscustomobject]@{
+            exportedAt = $Data.exportedAt
+            nodeCount = $allNodes.Count
+            nodes = $allNodes.ToArray()
+            targetPaths = $segmentNames.ToArray()
+            sourceKind = "http-combined"
+        }
+    }
+
+    throw "Cannot find GUI snapshot nodes in $SourcePath. Expected Output markdown, segment JSON, or HTTP combined JSON."
+}
+
+function Read-SnapshotData {
+    param([string]$Path)
+
+    $ext = [System.IO.Path]::GetExtension($Path).ToLowerInvariant()
+    if ($ext -eq ".json") {
+        $raw = Get-Content -Raw -Path $Path -Encoding UTF8
+        return Normalize-SnapshotData -Data ($raw | ConvertFrom-Json) -SourcePath $Path
+    }
+
+    return Normalize-SnapshotData -Data ((Get-SnapshotJsonText -Path $Path) | ConvertFrom-Json) -SourcePath $Path
+}
+
 function Add-Line {
     param(
         [System.Collections.Generic.List[string]]$Lines,
@@ -118,8 +204,8 @@ function Get-NodeMap {
 $beforePath = (Resolve-Path -Path $Before).Path
 $afterPath = (Resolve-Path -Path $After).Path
 
-$beforeData = (Get-SnapshotJsonText -Path $beforePath) | ConvertFrom-Json
-$afterData = (Get-SnapshotJsonText -Path $afterPath) | ConvertFrom-Json
+$beforeData = Read-SnapshotData -Path $beforePath
+$afterData = Read-SnapshotData -Path $afterPath
 
 $beforeMap = Get-NodeMap $beforeData
 $afterMap = Get-NodeMap $afterData

@@ -8,8 +8,8 @@
 --
 -- TARGET_JOBS example:
 -- local TARGET_JOBS = {
---     { name = "Root", path = "StarterGui/MainGui", maxDepth = 2 },
---     { name = "MainPage", path = "StarterGui/MainGui/Root/Pages/MainPage" },
+--     { name = "Root", path = "StarterGui/<ScreenGuiName>", maxDepth = 2 },
+--     { name = "PageA", path = "StarterGui/<ScreenGuiName>/<PageName>" },
 -- }
 
 local HttpService = game:GetService("HttpService")

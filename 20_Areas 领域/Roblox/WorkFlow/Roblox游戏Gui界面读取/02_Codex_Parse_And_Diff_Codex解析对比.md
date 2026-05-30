@@ -1,6 +1,6 @@
 # Codex 解析与对比步骤
 
-## 解析单个快照
+## 解析 Output 单个快照（备用）
 
 在项目根目录或工作流目录运行：
 
@@ -50,7 +50,7 @@ Project_Analysis_Package/GuiSnapshots/<Name>.combined.json
 <Name>_<SegmentName>.json
 ```
 
-例如用户只让同步商店页，就只分析 `ShopPage` 对应分段，不要把整个 `combined.json` 都塞进上下文。
+例如用户只让同步某个页面，就只分析对应分段，不要把整个 `combined.json` 都塞进上下文。
 
 ## 解析 Output 分段快照
 
@@ -93,8 +93,16 @@ END_ROBLOX_GUI_SNAPSHOT_JSON <SegmentName>
 
 如果用户问“我改了哪些”，必须使用 before / after 两份导出。
 
+`Compare-GuiSnapshots.ps1` 支持三种输入：
+
+```text
+1. Output markdown 快照。
+2. HTTP 单段 JSON。
+3. HTTP combined JSON。
+```
+
 ```powershell
-powershell -ExecutionPolicy Bypass -File ".\Tools\Compare-GuiSnapshots.ps1" -Before "Project_Analysis_Package\GuiSnapshots\<GuiName>_<Scope>_Before.md" -After "Project_Analysis_Package\GuiSnapshots\<GuiName>_<Scope>_After.md"
+powershell -ExecutionPolicy Bypass -File ".\Tools\Compare-GuiSnapshots.ps1" -Before "Project_Analysis_Package\GuiSnapshots\<Before>" -After "Project_Analysis_Package\GuiSnapshots\<After>"
 ```
 
 输出：

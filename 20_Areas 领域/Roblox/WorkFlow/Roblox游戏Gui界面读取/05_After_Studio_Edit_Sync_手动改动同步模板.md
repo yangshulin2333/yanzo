@@ -22,9 +22,9 @@
 ```text
 1. 用户在 Studio 里改 UI。
 2. 用户告诉 Codex：改了哪个界面、哪个区域、想让 Codex 知道还是同步回脚本。
-3. Codex 根据当前项目结构，把聚焦导出器的 TARGET_PATHS 改成最小范围。
-4. 用户只需要复制导出脚本到 Studio Command Bar 运行，并把 Output 保存到指定文件。
-5. Codex 解析快照。
+3. Codex 根据当前项目结构，用 `Start-GuiSnapshotReceiver.ps1` 启动 HTTP 接收器，并把 HTTP 导出器的 TARGET_JOBS 改成合理范围。
+4. 用户只需要复制导出脚本到 Studio Command Bar 运行，不需要复制完整 Output。
+5. Codex 读取接收器生成的 `.combined.json` / `.summary.md` / 分段 JSON。
 6. 如果只是“让 Codex 知道”，Codex 更新理解和说明即可。
 7. 如果需要“同步回脚本”，Codex 修改生成脚本或模块代码。
 8. 如果涉及素材表，Codex 先运行 `Test-UiAssetMap.py`，直接读取用户指定的 `.xlsx` 或 `.csv`，确认 AssetId 可用后再改脚本。
@@ -42,7 +42,7 @@
 我不确定改了哪里，你先按当前界面读一下。
 ```
 
-如果用户已经知道具体区域，Codex 不应该让用户手动编辑导出脚本；应该由 Codex 修改 `TARGET_PATHS`，用户只负责在 Studio 执行脚本。
+如果用户已经知道具体区域，Codex 不应该让用户手动编辑导出脚本；应该由 Codex 修改 `TARGET_JOBS` 或备用导出器的 `TARGET_PATHS`，用户只负责在 Studio 执行脚本。
 
 如果 Codex 发现疑点，例如素材表里没读到 AssetId、快照缺节点、或者截图和磁盘文件不一致：
 
@@ -56,7 +56,7 @@
 如果用户说“改了几处”“还有一些细微修改”，但没有逐项列清：
 
 ```text
-1. Codex 必须先确认所有被改动的区域，或者把 TARGET_PATHS 扩大到当前页面/当前 HUD 的合理范围。
+1. Codex 必须先确认所有被改动的区域，或者把 TARGET_JOBS 扩大到当前页面/当前 HUD 的合理范围。
 2. Codex 不能只根据已导出的局部快照判断整个界面已经掌握。
 3. 未导出的区域不能沿用旧生成脚本状态后再声称已同步最新 Studio 状态。
 4. 如果某个区域没有导出，但用户明确指出了改动，Codex 可以按用户说明直接修正生成脚本，并说明该区域不是从快照反推的。
@@ -66,10 +66,11 @@
 
 如果只有一份改动后的快照，Codex 可以确认当前状态，并按当前状态改模板。
 
-推荐保存为：
+HTTP 模式推荐输出为：
 
 ```text
-<ProjectDir>/Project_Analysis_Package/GuiSnapshots/<GuiName>_<Scope>_After.md
+<ProjectDir>/Project_Analysis_Package/GuiSnapshots/<GuiName>_<Scope>_After_Http.combined.json
+<ProjectDir>/Project_Analysis_Package/GuiSnapshots/<GuiName>_<Scope>_After_Http.summary.md
 ```
 
 ## 精确知道改动，需要 Before + After
@@ -89,7 +90,7 @@ powershell -ExecutionPolicy Bypass -File "<WorkflowDir>\Tools\Compare-GuiSnapsho
 
 ## 选择 TargetPath 的原则
 
-不要默认导出整个 `ScreenGui`。优先导出最小可用范围：
+HTTP 模式可以导出完整 GUI，但后续分析仍优先按功能分段读取。`TARGET_JOBS` 选择原则：
 
 ```text
 1. 只改一个模板：导出这个模板节点。
@@ -108,14 +109,17 @@ ReplicatedStorage/Resource/ui/<GuiTemplateName>
 
 ## 解析 After 快照
 
-```powershell
-powershell -ExecutionPolicy Bypass -File "<WorkflowDir>\Tools\Parse-GuiSnapshot.ps1" -InputPath "<AfterSnapshot>"
-```
-
-解析摘要会生成：
+HTTP 模式不需要再运行 `Parse-GuiSnapshot.ps1`。接收器会直接生成：
 
 ```text
+<AfterSnapshot>.combined.json
 <AfterSnapshot>.summary.md
+```
+
+如果使用 Output 备用模式，再运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "<WorkflowDir>\Tools\Parse-GuiSnapshot.ps1" -InputPath "<AfterSnapshot>"
 ```
 
 重点查看：
@@ -146,6 +150,7 @@ powershell -ExecutionPolicy Bypass -File "<WorkflowDir>\Tools\Parse-GuiSnapshot.
 
 ```text
 1. 不能按这份文件做精确同步。
-2. 重新导出更小的 TARGET_PATHS。
-3. 如果仍然太大，就把一个面板拆成多个子节点分别导出。
+2. 优先改用 HTTP 模式。
+3. 如果不能用 HTTP，再重新导出更小的 TARGET_PATHS。
+4. 如果仍然太大，就把一个面板拆成多个子节点分别导出。
 ```
