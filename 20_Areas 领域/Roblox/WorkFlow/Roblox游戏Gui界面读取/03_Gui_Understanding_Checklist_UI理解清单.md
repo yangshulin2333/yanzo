@@ -53,6 +53,28 @@ Button / Text / Icon
 3. NormalImage / SelectedImage
 4. 顶部分割线、面板背景、按钮底图是否漏掉
 5. Icon 和 Text 是否分层清楚
+6. 本地 PNG 是否存在
+7. AssetId 表里是空、纯数字、rbxassetid://数字，还是异常格式
+```
+
+AssetId 判断规则：
+
+```text
+1. 纯数字是合法的，写入 Roblox UI 前统一成 rbxassetid://数字。
+2. rbxassetid://数字 是合法的，不应该被当成缺失。
+3. Roblox URL 里带 id=数字 也是可解析格式。
+4. 空值才是缺 AssetId；reference_only_layout_screenshot / no_asset_id_needed 例外。
+5. 本地有 PNG 但 AssetId 为空时，应该说“本地图存在，但脚本暂时不能显示，需要上传或补 ID”。
+```
+
+如果素材表和用户看到的不一致：
+
+```text
+1. 先说明 Codex 读取的磁盘文件路径。
+2. 运行 Tools/Test-UiAssetMap.py 生成检查报告，优先直接读取用户指定的 `.xlsx`。
+3. 如果报告为空但用户表格界面有值，提醒用户保存表格，再重新读取。
+4. 必要时帮用户打开表格，而不是让用户自己找。
+5. 如果 `.xlsx` 和 `.csv` 不一致，使用用户明确指定的源文件，并同步或重生成辅助 CSV。
 ```
 
 ## 5. Slice / 九宫格
@@ -115,4 +137,3 @@ TextLabel 自己的 Size 是否够大
 3. Studio 重新打开后可能失效
 4. 正式项目后续要单独做 UI Controller / LocalScript
 ```
-

@@ -25,6 +25,57 @@ powershell -ExecutionPolicy Bypass -File ".\Tools\Parse-GuiSnapshot.ps1" -InputP
 <原文件名>.summary.md
 ```
 
+## 解析 HTTP 分段快照
+
+HTTP 分段模式已经由接收器写好了 JSON，不需要再从 Studio Output 里抠 JSON。
+
+优先读取：
+
+```text
+Project_Analysis_Package/GuiSnapshots/<Name>.summary.md
+Project_Analysis_Package/GuiSnapshots/<Name>.combined.json
+```
+
+完整性检查：
+
+```text
+1. Missing Jobs 必须为 none。
+2. 每个 segment 的 trimmed 必须为 False。
+3. combined.json 里每个 segment 都应该有 snapshot。
+```
+
+如果需要只分析某一页，直接读取对应分段文件：
+
+```text
+<Name>_<SegmentName>.json
+```
+
+例如用户只让同步商店页，就只分析 `ShopPage` 对应分段，不要把整个 `combined.json` 都塞进上下文。
+
+## 解析 Output 分段快照
+
+如果项目不能使用 HTTP，只能让 Studio Output 分段输出，则保存 Output 后运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ".\Tools\Parse-ChunkedGuiSnapshot.ps1" -InputPath "Project_Analysis_Package\GuiSnapshots\<Name>.md"
+```
+
+这个工具会读取多个：
+
+```text
+BEGIN_ROBLOX_GUI_SNAPSHOT_JSON <SegmentName>
+END_ROBLOX_GUI_SNAPSHOT_JSON <SegmentName>
+```
+
+并输出：
+
+```text
+<原文件名>.chunked.combined.json
+<原文件名>.chunked.summary.md
+```
+
+如果某一段缺少 END 或出现 `[trimmed]`，不能用于精确同步，只能当结构参考。
+
 摘要里重点看：
 
 ```text

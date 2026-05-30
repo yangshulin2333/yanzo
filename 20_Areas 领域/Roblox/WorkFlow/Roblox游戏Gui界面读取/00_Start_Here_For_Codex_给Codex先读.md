@@ -20,6 +20,7 @@
 7. 滚动区域：ScrollingFrame、CanvasSize、AutomaticCanvasSize、ScrollBar。
 8. 文字设置：TextScaled、TextXAlignment、TextYAlignment、TextStroke。
 9. 用户手动改动：通过 before / after 两份快照对比，不靠截图猜。
+10. 素材表状态：本地 PNG 是否存在、AssetId 是否为空、AssetId 格式是否可被 Roblox 使用。
 ```
 
 ## Codex 先做什么
@@ -33,6 +34,39 @@
 6. 解析导出的快照。
 7. 输出 UI 读懂报告。
 ```
+
+## 素材表读取规则
+
+如果当前工作涉及 ImageLabel、ImageButton、按钮底图、卡片图、物品框图案，Codex 必须把“素材文件存在”和“AssetId 可用”分开判断。
+
+合法 AssetId 格式包括：
+
+```text
+123456789
+rbxassetid://123456789
+https://www.roblox.com/library/123456789/xxx
+```
+
+如果 Codex 认为某行缺 AssetId，不能只在聊天里说“没找到”。必须先准备证据：
+
+```powershell
+python "<WorkflowDir>\Tools\Test-UiAssetMap.py" `
+  --table "<ProjectDir>\Project_Analysis_Package\UI_AssetId_Map_For_UI_Build.xlsx" `
+  --asset-root "<ProjectDir>\切图_正确解压" `
+  --out "<ProjectDir>\Project_Analysis_Package\UI_AssetId_Map_Check_Report.md"
+```
+
+然后告诉用户：
+
+```text
+1. 我读取的是哪个表格文件。
+2. 哪些 rel_path 行需要确认。
+3. 这些行是“本地 PNG 不存在”、“AssetId 为空”，还是“AssetId 格式不合法”。
+4. 如果用户表格窗口里有 ID，但报告里为空，先让用户保存表格，再重新运行检查。
+5. 如果 `.xlsx` 和 `.csv` 结果不一致，以用户明确指定的表格源文件为准。
+```
+
+需要用户确认时，Codex 应该把能准备的东西先准备好：生成检查报告，必要时用 `-OpenCsv` 打开表格，而不是让用户自己找文件。
 
 ## 两段式导出
 
@@ -74,6 +108,40 @@ StarterGui/<ScreenGuiName>
 
 因为整棵 GUI 往往包含多个页面、模板、弹窗，Studio Output 容易出现 `[trimmed]`。
 
+### 第三步：大 GUI 用 HTTP 分段快照
+
+当目标 GUI 很大，或者用户已经遇到 Output 截断时，不要继续让 Studio 输出完整 JSON。Codex 应该先在本机启动 HTTP 接收器：
+
+```powershell
+python "<WorkflowDir>\Tools\Receive-GuiSnapshotHttp.py" `
+  --out-dir "<ProjectDir>\Project_Analysis_Package\GuiSnapshots" `
+  --name "<GuiName>_Current_Http"
+```
+
+然后由 Codex 打开并按当前项目填写：
+
+```text
+Tools/RobloxStudio_GuiHttpSnapshotExporter.luau
+```
+
+只需要改脚本顶部这些项目参数：
+
+```text
+POST_URL：本机接收地址，默认 http://127.0.0.1:18765/gui-snapshot。
+TARGET_JOBS：要导出的 GUI 路径列表，例如 Root、某几个 Page、某个 Popup。
+MAX_NODES_PER_JOB：单段最大节点数，太大时接收器仍会标记 trimmed。
+JOB_FILTER：可选，只重跑某一段。
+```
+
+用户只需要在 Studio Command Bar 运行脚本。成功后 Codex 读取：
+
+```text
+<GuiName>_Current_Http.combined.json
+<GuiName>_Current_Http.summary.md
+```
+
+HTTP 模式仍然是通用工作流。`TARGET_JOBS` 里的 `MainGui`、`ShopPage` 等名字只能来自当前项目，不能写成工作流固定规则。
+
 ## 完整性判断
 
 聚焦快照必须同时包含：
@@ -84,6 +152,13 @@ StarterGui/<ScreenGuiName>
 ```
 
 如果只有 `BEGIN` 没有 `END`，或者末尾出现 `[trimmed]`，这份快照不能用于精确同步模板。应缩小 `TARGET_PATHS` 重新导出。
+
+如果走 HTTP 模式，则以 `<Name>.summary.md` 为完整性依据：
+
+```text
+Missing Jobs 必须为 none。
+每个 segment 的 trimmed 必须为 False。
+```
 
 ## 重要规则
 

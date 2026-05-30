@@ -59,6 +59,44 @@ local TARGET_PATHS = {
 }
 ```
 
+### 3. HTTP 分段快照：大 GUI 用
+
+当目标是完整 ScreenGui，或者 Output 已经被截断时，使用 HTTP 分段模式。这个模式不会把大 JSON 打到 Studio Output，而是把每一段发给 Codex 本机开的接收器。
+
+Codex 先启动接收器：
+
+```powershell
+python "<WorkflowDir>\Tools\Receive-GuiSnapshotHttp.py" `
+  --out-dir "<ProjectDir>\Project_Analysis_Package\GuiSnapshots" `
+  --name "<GuiName>_Current_Http"
+```
+
+然后 Codex 填写并让用户运行：
+
+```text
+Tools/RobloxStudio_GuiHttpSnapshotExporter.luau
+```
+
+脚本顶部只改项目参数：
+
+```lua
+local POST_URL = "http://127.0.0.1:18765/gui-snapshot"
+local TARGET_JOBS = {
+	{ name = "Root", path = "StarterGui/<ScreenGuiName>", maxDepth = 2 },
+	{ name = "PageName", path = "StarterGui/<ScreenGuiName>/<PageName>" },
+}
+```
+
+运行成功后，接收器会生成：
+
+```text
+<Name>.combined.json
+<Name>.summary.md
+<Name>_<SegmentName>.json
+```
+
+如果 Studio 报 HTTP 相关错误，先检查 `Game Settings > Security > Allow HTTP Requests` 是否开启。不能开启时，退回聚焦快照或 Output 分段快照。
+
 ## 操作步骤
 
 1. 打开 Roblox Studio，并打开目标项目。
@@ -71,6 +109,8 @@ local TARGET_PATHS = {
 ```text
 Project_Analysis_Package/GuiSnapshots/<有意义的名字>.md
 ```
+
+如果使用 HTTP 分段快照，Output 里只需要看状态信息，不需要复制完整 JSON。Codex 直接读取接收器生成的 `.combined.json` 和 `.summary.md`。
 
 推荐命名：
 
@@ -105,3 +145,11 @@ Gui_Overview.md
 ```
 
 只有 `BEGIN` 没有 `END` 的快照，不能用于精确同步生成脚本。
+
+HTTP 分段快照的成功标准：
+
+```text
+1. 接收器日志里出现 [done]。
+2. summary 里 Missing Jobs = none。
+3. 每个 segment 的 trimmed = False。
+```
