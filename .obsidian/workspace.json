@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "81_WorkFlow 工作流/Note/未命名.md",
+                "file": "81_WorkFlow 工作流/Note/Codex_Rules.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "Codex_Rules"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "81_WorkFlow 工作流/Note/未命名.md",
+                "file": "81_WorkFlow 工作流/Note/Codex_Rules.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "Codex_Rules 的大纲"
             }
           }
         ],
@@ -240,7 +240,7 @@
   "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
     "10_Projects 项目/Roblox/精灵/hotpot框架理解/第 1 课开始.md",
-    "81_WorkFlow 工作流/Note/未命名.md",
+    "81_WorkFlow 工作流/Note/Codex_Rules.md",
     "81_WorkFlow 工作流/Note",
     "81_WorkFlow 工作流/Web",
     "81_WorkFlow 工作流",
