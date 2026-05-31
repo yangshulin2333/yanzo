@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/精灵/核心内容.md",
+                "file": "10_Projects 项目/Roblox/精灵/hotpot框架理解/未命名.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "核心内容"
+              "title": "未命名"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/精灵/核心内容.md",
+                "file": "10_Projects 项目/Roblox/精灵/hotpot框架理解/未命名.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "核心内容 的大纲"
+              "title": "未命名 的大纲"
             }
           }
         ],
@@ -237,8 +237,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d3be8173c5b5c46c",
+  "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
+    "10_Projects 项目/Roblox/精灵/核心内容.md",
+    "10_Projects 项目/Roblox/精灵/hotpot框架理解/未命名.md",
+    "10_Projects 项目/Roblox/精灵/hotpot框架理解",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/Start-GuiSnapshotReceiver.ps1",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/README.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/07_Continuous_Improvement_经验复盘与自我改良.md",
@@ -250,15 +253,12 @@
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/RobloxStudio_GuiHttpSnapshotExporter.luau",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/Receive-GuiSnapshotHttp.py",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/Parse-ChunkedGuiSnapshot.ps1",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/RobloxStudio_GuiOverviewExporter.luau",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/06_Low_Coupling_Rules_低耦合规则.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/05_After_Studio_Edit_Sync_手动改动同步模板.md",
     "10_Projects 项目/Roblox/精灵/PROJECT_TAKEOVER_DEVELOPMENT_GUIDE.md",
-    "10_Projects 项目/Roblox/精灵/核心内容.md",
     "20_Areas 领域/UI/UI资源.md",
     "00_Inbox 收集箱/探灵笔记.md",
     "20_Areas 领域/UI/Roblox UI 导入大师课.md",
-    "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Tools/RobloxStudio_GuiSnapshotExporter.luau",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/Templates/Gui_Understanding_Report_Template.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/README.md",
     "20_Areas 领域/Roblox/WorkFlow/Roblox游戏Gui界面读取/04_Report_Template_UI读懂报告模板.md",
