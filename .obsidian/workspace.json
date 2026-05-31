@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/精灵/hotpot框架理解/第 1 课开始.md",
+                "file": "81_WorkFlow 工作流/Note/未命名.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第 1 课开始"
+              "title": "未命名"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/精灵/hotpot框架理解/第 1 课开始.md",
+                "file": "81_WorkFlow 工作流/Note/未命名.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第 1 课开始 的大纲"
+              "title": "未命名 的大纲"
             }
           }
         ],
@@ -237,12 +237,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d3be8173c5b5c46c",
+  "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
+    "10_Projects 项目/Roblox/精灵/hotpot框架理解/第 1 课开始.md",
+    "81_WorkFlow 工作流/Note/未命名.md",
+    "81_WorkFlow 工作流/Note",
     "81_WorkFlow 工作流/Web",
     "81_WorkFlow 工作流",
     "10_Projects 项目/Roblox/精灵/核心内容.md",
-    "10_Projects 项目/Roblox/精灵/hotpot框架理解/第 1 课开始.md",
     "10_Projects 项目/Roblox/精灵/hotpot框架理解",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/Tools/Start-GuiSnapshotReceiver.ps1",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/Tools/README.md",
@@ -252,8 +254,6 @@
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/Tools/__pycache__",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/Tools/Test-UiAssetMap.py",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/Tools/Test-UiAssetMap.ps1",
-    "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/Tools/RobloxStudio_GuiHttpSnapshotExporter.luau",
-    "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/Tools/Receive-GuiSnapshotHttp.py",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/06_Low_Coupling_Rules_低耦合规则.md",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/05_After_Studio_Edit_Sync_手动改动同步模板.md",
     "10_Projects 项目/Roblox/精灵/PROJECT_TAKEOVER_DEVELOPMENT_GUIDE.md",
