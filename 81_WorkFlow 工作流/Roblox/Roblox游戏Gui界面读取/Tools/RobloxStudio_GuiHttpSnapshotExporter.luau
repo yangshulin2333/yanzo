@@ -13,11 +13,17 @@
 -- }
 
 local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
 
 local EXPORT_NAME = "Roblox GUI HTTP Snapshot"
 local POST_URL = "http://127.0.0.1:18765/gui-snapshot"
 local MAX_NODES_PER_JOB = 1200
 local JOB_FILTER = ""
+local AUTO_DISCOVER_GUI_ROOTS = true
+local AUTO_INCLUDE_STARTERGUI = true
+local AUTO_INCLUDE_REPLICATED_RESOURCE_UI = true
+local AUTO_INCLUDE_PLAYERGUI = true
+local AUTO_MAX_DEPTH = nil
 
 local TARGET_JOBS = {
 	-- { name = "Root", path = "StarterGui/<ScreenGuiName>", maxDepth = 2 },
@@ -66,6 +72,10 @@ local function pathOf(inst)
 		inst = inst.Parent
 	end
 	return table.concat(parts, "/")
+end
+
+local function safeSegmentName(path)
+	return tostring(path):gsub("[^%w_]+", "_")
 end
 
 local function sortedChildren(inst)
@@ -415,12 +425,93 @@ local function shouldRunJob(job, filter)
 	return JOB_FILTER == "" or filter[job.name] == true
 end
 
+local function addAutoJob(jobs, seen, root, maxDepth)
+	local path = pathOf(root)
+	local name = safeSegmentName(path)
+	if seen[name] then
+		return
+	end
+	seen[name] = true
+	table.insert(jobs, {
+		name = name,
+		path = path,
+		maxDepth = maxDepth,
+	})
+end
+
+local function findResourceUi()
+	local replicatedStorage = game:GetService("ReplicatedStorage")
+	local resource = replicatedStorage:FindFirstChild("Resource")
+	if not resource then
+		return nil
+	end
+	return resource:FindFirstChild("ui") or resource:FindFirstChild("UI")
+end
+
+local function appendAutoDiscoveredJobs()
+	local seen = {}
+	for _, job in ipairs(TARGET_JOBS) do
+		seen[job.name] = true
+	end
+
+	if AUTO_INCLUDE_STARTERGUI then
+		local starterGui = game:GetService("StarterGui")
+		for _, child in ipairs(sortedChildren(starterGui)) do
+			if child:IsA("LayerCollector") then
+				addAutoJob(TARGET_JOBS, seen, child, AUTO_MAX_DEPTH)
+			end
+		end
+	end
+
+	if AUTO_INCLUDE_REPLICATED_RESOURCE_UI then
+		local resourceUi = findResourceUi()
+		if resourceUi then
+			for _, child in ipairs(sortedChildren(resourceUi)) do
+				if child:IsA("LayerCollector") or child:IsA("GuiObject") then
+					addAutoJob(TARGET_JOBS, seen, child, AUTO_MAX_DEPTH)
+				end
+			end
+		end
+	end
+
+	if AUTO_INCLUDE_PLAYERGUI then
+		for _, player in ipairs(Players:GetPlayers()) do
+			local playerGui = player:FindFirstChildOfClass("PlayerGui") or player:FindFirstChild("PlayerGui")
+			if playerGui then
+				for _, child in ipairs(sortedChildren(playerGui)) do
+					if child:IsA("LayerCollector") then
+						addAutoJob(TARGET_JOBS, seen, child, AUTO_MAX_DEPTH)
+					end
+				end
+			end
+		end
+	end
+end
+
+local function postPayload(payload)
+	local ok, err = pcall(function()
+		HttpService:PostAsync(POST_URL, HttpService:JSONEncode(payload), Enum.HttpContentType.ApplicationJson, false)
+	end)
+	if not ok then
+		warn("[GuiHttpSnapshotExporter] HTTP POST failed; no JSON was printed to Output: " .. tostring(err))
+		return false
+	end
+	return true
+end
+
 local exportedJobs = {}
 local missingJobs = {}
 local jobFilter = buildJobFilter()
 
+if #TARGET_JOBS == 0 and AUTO_DISCOVER_GUI_ROOTS then
+	appendAutoDiscoveredJobs()
+	print(
+		"[GuiHttpSnapshotExporter] TARGET_JOBS was empty; auto-discovered " .. tostring(#TARGET_JOBS) .. " GUI roots."
+	)
+end
+
 if #TARGET_JOBS == 0 then
-	print("[GuiHttpSnapshotExporter] TARGET_JOBS is empty. Fill it before running.")
+	print("[GuiHttpSnapshotExporter] TARGET_JOBS is empty and auto-discovery found no GUI roots.")
 	return
 end
 
@@ -450,14 +541,13 @@ for _, job in ipairs(TARGET_JOBS) do
 				nodes = nodes,
 			}
 
-			local payload = HttpService:JSONEncode({
+			local ok = postPayload({
 				kind = "segment",
 				exportName = EXPORT_NAME,
 				segmentName = job.name,
 				targetPath = job.path,
 				data = data,
 			})
-			HttpService:PostAsync(POST_URL, payload, Enum.HttpContentType.ApplicationJson, false)
 
 			table.insert(exportedJobs, {
 				name = job.name,
@@ -465,6 +555,7 @@ for _, job in ipairs(TARGET_JOBS) do
 				nodeCount = #nodes,
 				trimmed = state.trimmed,
 				depthLimited = state.depthLimited,
+				posted = ok,
 			})
 
 			print(
@@ -479,17 +570,12 @@ for _, job in ipairs(TARGET_JOBS) do
 	end
 end
 
-HttpService:PostAsync(
-	POST_URL,
-	HttpService:JSONEncode({
-		kind = "done",
-		exportName = EXPORT_NAME,
-		exportedAt = os.date("!%Y-%m-%dT%H:%M:%SZ"),
-		exportedJobs = exportedJobs,
-		missingJobs = missingJobs,
-	}),
-	Enum.HttpContentType.ApplicationJson,
-	false
-)
+postPayload({
+	kind = "done",
+	exportName = EXPORT_NAME,
+	exportedAt = os.date("!%Y-%m-%dT%H:%M:%SZ"),
+	exportedJobs = exportedJobs,
+	missingJobs = missingJobs,
+})
 
 print("[GuiHttpSnapshotExporter] DONE")

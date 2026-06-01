@@ -1,7 +1,7 @@
 {
   "workflow_type": "roblox_gui_reading",
   "workflow_name": "Roblox Game GUI Reading Workflow",
-  "workflow_version": "1.4",
+  "workflow_version": "1.5",
   "folder_name_required": false,
   "language_preference": "zh-CN-first",
   "entry_file": "00_Start_Here_For_Codex_给Codex先读.md",
@@ -30,5 +30,7 @@
     "Templates/Gui_Understanding_Report_Template.md"
   ],
   "tool_guide": "Tools/README.md",
+  "recent_update": "v1.5: HTTP exporter can auto-discover StarterGui, ReplicatedStorage.Resource.ui, and runtime PlayerGui GUI roots when TARGET_JOBS is empty; Compare-GuiSnapshots supports BeforeRoot/AfterRoot path normalization and includes Rotation plus more visual/layout fields.",
+  "recent_update_file": "08_2026-06-01_GuiReading_Workflow_Fix.md",
   "description": "Export, receive, parse, compare, and explain Roblox GUI trees. Default snapshots use local HTTP so Studio Output truncation is avoided; Output exporters remain as a fallback. Workflow mistakes and user corrections are captured in the continuous-improvement file."
 }

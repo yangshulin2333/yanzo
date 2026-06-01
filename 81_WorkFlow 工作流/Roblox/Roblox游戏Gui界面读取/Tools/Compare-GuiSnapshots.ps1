@@ -5,7 +5,11 @@ param(
     [Parameter(Mandatory=$true)]
     [string]$After,
 
-    [string]$OutputPath = ""
+    [string]$OutputPath = "",
+
+    [string]$BeforeRoot = "",
+
+    [string]$AfterRoot = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -192,11 +196,34 @@ function Get-ValueByPath {
     return $current
 }
 
+function Normalize-NodePath {
+    param(
+        [string]$Path,
+        [string]$Root
+    )
+
+    if ([string]::IsNullOrWhiteSpace($Root)) {
+        return $Path
+    }
+
+    $cleanRoot = $Root.TrimEnd("/")
+    if ($Path -eq $cleanRoot) {
+        return ""
+    }
+    if ($Path.StartsWith($cleanRoot + "/")) {
+        return $Path.Substring($cleanRoot.Length + 1)
+    }
+    return $Path
+}
+
 function Get-NodeMap {
-    param($Data)
+    param(
+        $Data,
+        [string]$Root = ""
+    )
     $map = @{}
     foreach ($node in @($Data.nodes)) {
-        $map[$node.path] = $node
+        $map[(Normalize-NodePath -Path $node.path -Root $Root)] = $node
     }
     return $map
 }
@@ -207,8 +234,8 @@ $afterPath = (Resolve-Path -Path $After).Path
 $beforeData = Read-SnapshotData -Path $beforePath
 $afterData = Read-SnapshotData -Path $afterPath
 
-$beforeMap = Get-NodeMap $beforeData
-$afterMap = Get-NodeMap $afterData
+$beforeMap = Get-NodeMap -Data $beforeData -Root $BeforeRoot
+$afterMap = Get-NodeMap -Data $afterData -Root $AfterRoot
 
 if ([string]::IsNullOrWhiteSpace($OutputPath)) {
     $beforeBase = [System.IO.Path]::GetFileNameWithoutExtension($beforePath)
@@ -219,30 +246,60 @@ if ([string]::IsNullOrWhiteSpace($OutputPath)) {
 
 $keyPaths = @(
     "className",
-    "attributes",
+    "attributes.SourceAsset",
+    "attributes.NormalImage",
+    "attributes.SelectedImage",
+    "attributes.TargetAttrContent",
+    "attributes.CurrentAttrContent",
+    "attributes.IsTemplate",
+    "attributes.IsWindow",
+    "attributes.IsPage",
+    "attributes.CenteredItemGapPx",
+    "attributes.DesignW",
+    "attributes.DesignH",
     "props.Visible",
     "props.AnchorPoint",
     "props.Position",
     "props.Size",
+    "props.Rotation",
     "props.ZIndex",
     "props.LayoutOrder",
     "props.ClipsDescendants",
+    "props.BackgroundColor3",
     "props.BackgroundTransparency",
     "props.Image",
+    "props.ImageColor3",
     "props.ImageTransparency",
     "props.ScaleType",
     "props.SliceCenter",
     "props.SliceScale",
     "props.Text",
+    "props.Font",
     "props.TextScaled",
     "props.TextSize",
+    "props.TextWrapped",
     "props.TextColor3",
+    "props.TextTransparency",
+    "props.TextStrokeColor3",
+    "props.TextStrokeTransparency",
     "props.TextXAlignment",
     "props.TextYAlignment",
+    "props.RichText",
     "props.CanvasSize",
     "props.AutomaticCanvasSize",
     "props.ScrollingDirection",
-    "props.ScrollBarThickness"
+    "props.ScrollBarThickness",
+    "props.Padding",
+    "props.PaddingTop",
+    "props.PaddingBottom",
+    "props.PaddingLeft",
+    "props.PaddingRight",
+    "props.CellPadding",
+    "props.CellSize",
+    "props.FillDirection",
+    "props.HorizontalAlignment",
+    "props.VerticalAlignment",
+    "props.SortOrder"
 )
 
 $lines = New-Object System.Collections.Generic.List[string]
@@ -251,6 +308,12 @@ Add-Line $lines "# Roblox GUI Snapshot Diff"
 Add-Line $lines ""
 Add-Line $lines "- Before: $beforePath"
 Add-Line $lines "- After: $afterPath"
+if (-not [string]::IsNullOrWhiteSpace($BeforeRoot)) {
+    Add-Line $lines "- BeforeRoot: $BeforeRoot"
+}
+if (-not [string]::IsNullOrWhiteSpace($AfterRoot)) {
+    Add-Line $lines "- AfterRoot: $AfterRoot"
+}
 Add-Line $lines "- Before ExportedAt: $($beforeData.exportedAt)"
 Add-Line $lines "- After ExportedAt: $($afterData.exportedAt)"
 Add-Line $lines "- Before NodeCount: $($beforeData.nodeCount)"
