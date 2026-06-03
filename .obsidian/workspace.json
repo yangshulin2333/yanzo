@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/精灵/hotpot框架理解/未命名.md",
+                "file": "10_Projects 项目/Roblox/玩具/玩具箱守卫者_发条拼装核心特色策划方案.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "玩具箱守卫者_发条拼装核心特色策划方案"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/精灵/hotpot框架理解/未命名.md",
+                "file": "10_Projects 项目/Roblox/玩具/玩具箱守卫者_发条拼装核心特色策划方案.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "玩具箱守卫者_发条拼装核心特色策划方案 的大纲"
             }
           }
         ],
@@ -237,8 +237,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d3be8173c5b5c46c",
+  "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
+    "10_Projects 项目/Roblox/精灵/hotpot框架理解/未命名.md",
+    "10_Projects 项目/Roblox/玩具/玩具箱守卫者_发条拼装核心特色策划方案.md",
+    "10_Projects 项目/Roblox/玩具",
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/WORKFLOW_MANIFEST.json",
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/README.md",
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/05_Final_Report_Template_总接管报告模板.md",
@@ -255,18 +258,15 @@
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/Tools/RobloxStudio_ProjectOnlyAssetExporter.luau",
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/Tools/RobloxStudio_AuditExporter.luau",
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/Tools/RobloxStudio_AnimationSoundExporter.luau",
-    "81_WorkFlow 工作流/Roblox/Roblox项目读取/Tools/Bootstrap_RobloxProjectAuditWorkspace.ps1",
     "10_Projects 项目/Roblox/精灵/hotpot框架理解/UI 框架速览.md",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/08_2026-06-01_GuiReading_Workflow_Fix.md",
     "10_Projects 项目/Roblox/精灵/hotpot框架理解/Hotpot UI 框架第 3 课.md",
-    "10_Projects 项目/Roblox/精灵/hotpot框架理解/未命名.md",
     "10_Projects 项目/Roblox/精灵/hotpot框架理解/第 2 课 路径登记表.md",
     "10_Projects 项目/Roblox/精灵/hotpot框架理解/第 1 课开始.md",
     "10_Projects 项目/Roblox/精灵/hotpot框架理解/路径登记表.md",
     "10_Projects 项目/Roblox/精灵/hotpot框架理解/大纲.md",
     "10_Projects 项目/Roblox/精灵/商店/UI.md",
     "81_WorkFlow 工作流/Note/Codex_Rules.md",
-    "81_WorkFlow 工作流/Note",
     "10_Projects 项目/Roblox/精灵/核心内容.md",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/Tools/README.md",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/07_Continuous_Improvement_经验复盘与自我改良.md",
