@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/玩具箱守卫者_发条拼装核心特色策划方案.md",
+                "file": "80_Idea 灵感/通用.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "玩具箱守卫者_发条拼装核心特色策划方案"
+              "title": "通用"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/玩具箱守卫者_发条拼装核心特色策划方案.md",
+                "file": "80_Idea 灵感/通用.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "玩具箱守卫者_发条拼装核心特色策划方案 的大纲"
+              "title": "通用 的大纲"
             }
           }
         ],
@@ -239,8 +239,10 @@
   },
   "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
-    "10_Projects 项目/Roblox/精灵/hotpot框架理解/未命名.md",
+    "80_Idea 灵感/PUBG.md",
+    "80_Idea 灵感/通用.md",
     "10_Projects 项目/Roblox/玩具/玩具箱守卫者_发条拼装核心特色策划方案.md",
+    "10_Projects 项目/Roblox/精灵/hotpot框架理解/未命名.md",
     "10_Projects 项目/Roblox/玩具",
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/WORKFLOW_MANIFEST.json",
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/README.md",
@@ -273,8 +275,6 @@
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/06_Low_Coupling_Rules_低耦合规则.md",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/05_After_Studio_Edit_Sync_手动改动同步模板.md",
     "10_Projects 项目/Roblox/精灵/PROJECT_TAKEOVER_DEVELOPMENT_GUIDE.md",
-    "20_Areas 领域/UI/UI资源.md",
-    "00_Inbox 收集箱/探灵笔记.md",
     "10_Projects 项目/Roblox/格挡模块/assets/未命名/file-20260527133459201.png",
     "10_Projects 项目/Roblox/格挡模块/assets/未命名/file-20260527133459183.png",
     "00_Inbox 收集箱/assets/门禁卡/file-20260521133242254.png",
