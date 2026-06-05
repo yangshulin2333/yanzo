@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas 领域/UI/Roblox UI 导入大师课.md",
+                "file": "00_Inbox 收集箱/结构.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Roblox UI 导入大师课"
+              "title": "结构"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/UI/Roblox UI 导入大师课.md",
+                "file": "00_Inbox 收集箱/结构.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Roblox UI 导入大师课 的大纲"
+              "title": "结构 的大纲"
             }
           }
         ],
@@ -237,8 +237,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d3be8173c5b5c46c",
+  "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
+    "20_Areas 领域/UI/Roblox UI 导入大师课.md",
     "20_Areas 领域/UI/roblox_ui_importing_masterclass_codex.json",
     "20_Areas 领域/UI/roblox_ui_importing_masterclass_codex.md",
     "00_Inbox 收集箱/结构.md",
@@ -262,7 +263,6 @@
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/Tools/RobloxStudio_QuickFocusedAuditExporter.luau",
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/Tools/RobloxStudio_ProjectOnlyAssetExporter.luau",
     "81_WorkFlow 工作流/Roblox/Roblox项目读取/Tools/RobloxStudio_AuditExporter.luau",
-    "81_WorkFlow 工作流/Roblox/Roblox项目读取/Tools/RobloxStudio_AnimationSoundExporter.luau",
     "10_Projects 项目/Roblox/精灵/hotpot框架理解/UI 框架速览.md",
     "81_WorkFlow 工作流/Roblox/Roblox游戏Gui界面读取/08_2026-06-01_GuiReading_Workflow_Fix.md",
     "10_Projects 项目/Roblox/精灵/hotpot框架理解/Hotpot UI 框架第 3 课.md",
