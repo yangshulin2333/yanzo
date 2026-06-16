@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas 领域/Roblox/框架/RobloxGameFramework/第二课：服务端启动链路.md",
+                "file": "20_Areas 领域/Roblox/框架/RobloxGameFramework/第三课：客户端启动链路.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第二课：服务端启动链路"
+              "title": "第三课：客户端启动链路"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/Roblox/框架/RobloxGameFramework/第二课：服务端启动链路.md",
+                "file": "20_Areas 领域/Roblox/框架/RobloxGameFramework/第三课：客户端启动链路.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第二课：服务端启动链路 的大纲"
+              "title": "第三课：客户端启动链路 的大纲"
             }
           }
         ],
@@ -239,8 +239,9 @@
   },
   "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
-    "20_Areas 领域/Roblox/框架/RobloxGameFramework/通用 Roblox 工程骨架.md",
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/第二课：服务端启动链路.md",
+    "20_Areas 领域/Roblox/框架/RobloxGameFramework/第三课：客户端启动链路.md",
+    "20_Areas 领域/Roblox/框架/RobloxGameFramework/通用 Roblox 工程骨架.md",
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/配置环境.md",
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/第一课：default.project.json.md",
     "20_Areas 领域/Roblox/框架/项目框架.md",
@@ -283,7 +284,6 @@
     "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/generated_views/void_hammer_variant_20260610_three_views/PROMPT.md",
     "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/generated_views/void_chain_scythe_2026-06-10_three_views/PROMPT.md",
     "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/generated_views/venom_bone_greatsword_variant_2026-06-12_three_views/PROMPT.md",
-    "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/generated_views/trident_variant_20260610_three_views/PROMPT.md",
-    "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/generated_views/sun_moon_scythe_variant_20260612_three_views/PROMPT.md"
+    "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/generated_views/trident_variant_20260610_three_views/PROMPT.md"
   ]
 }
