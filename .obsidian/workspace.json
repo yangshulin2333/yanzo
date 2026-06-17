@@ -237,8 +237,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "37dcfd4209b68cab",
+  "active": "d3be8173c5b5c46c",
   "lastOpenFiles": [
+    "20_Areas 领域/Roblox/框架/未命名/AI-Agent-架构复盘版.md",
+    "20_Areas 领域/Roblox/框架/未命名/AI-Agent-工程实践SOP.md",
+    "20_Areas 领域/Roblox/框架/未命名/AI-Agent-学习笔记版.md",
+    "20_Areas 领域/Roblox/框架/未命名",
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/第4课：网络通信：NetService  NetClient  NetResult.md",
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/Prompt.md",
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/通用 Roblox 工程骨架.md",
@@ -279,11 +283,7 @@
     "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/outputs/2026-06-07_weapon_series_06_ruby_poleaxe_three_view",
     "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/outputs/2026-06-07_weapon_series_05_amber_blue_sword_three_view",
     "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/outputs/2026-06-07_weapon_series_04_burgundy_crystal_spear_three_view",
-    "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/outputs/2026-06-06_champagne_sword_variant",
     "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/handoff/NEXT_CHAT_HANDOFF_第二把武器.md",
-    "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/handoff/NEXT_CHAT_HANDOFF_模型下载直接打包.md",
-    "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/handoff/NEXT_CHAT_HANDOFF_三视图独立生成.md",
-    "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/generated_views/weathered_iron_sword_variant_v2_20260610_three_views/PROMPT.md",
-    "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/generated_views/weathered_iron_sword_variant_20260610_three_views/PROMPT.md"
+    "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/handoff/NEXT_CHAT_HANDOFF_模型下载直接打包.md"
   ]
 }
