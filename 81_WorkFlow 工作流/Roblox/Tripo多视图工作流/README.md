@@ -50,7 +50,34 @@ left / right 必须是真 90 度侧视。
 如果是长枪 / 矛 / 戟这类长柄枪头型，侧视不能压成普通细针；枪头长度、护颈 / 枪托轮廓必须保留，只是宽度变窄。
 ```
 
-### B. 体块型武器
+### B. 长柄枪头型武器
+
+这是平面型里的特殊类，需要单独处理侧视。
+
+典型例子：
+
+1. 长枪
+2. 矛
+3. 戟
+4. 枪头较长、带宝石或护颈的长柄武器
+
+判断标准：
+
+1. 主体仍然是长杆 + 薄枪头，不是圆体块。
+2. 主要识别点集中在枪头、宝石、护颈 / 枪托。
+3. 侧视应变窄，但不能变成普通细针。
+
+侧视规则：
+
+```text
+left / right 必须是真 90 度侧视。
+枪头宽度要变窄，但枪头长度、侧面斜面轮廓、护颈 / 枪托外形必须保留。
+正面宝石不能以完整正面形状露出来；只能变成窄边、被护颈遮住，或只露很薄的侧面厚度。
+left 和 right 必须是相反方向，不允许两张都像同一侧。
+如果左右结构基本对称，优先生成一张合格侧视，再镜像出另一侧。
+```
+
+### C. 体块型武器
 
 不能直接套“细线侧视”规则。
 
@@ -159,6 +186,12 @@ front 通过后，立刻把它升级为“唯一设计锁”。
 front 确认 -> back -> left 细线侧视 -> right 细线侧视
 ```
 
+长柄枪头型武器：
+
+```text
+front 确认 -> back -> 生成一张合格侧视 -> 镜像另一侧
+```
+
 体块型武器：
 
 ```text
@@ -204,6 +237,10 @@ No 3/4 angle, no broad front face, no new geometry, no extra side spikes.
 
 ```text
 For spear / lance / polearm heads, do not reduce the head into a plain needle. Keep the elongated spearhead length, side bevel silhouette, gold collar / socket outline, and bottom cap. The head should be narrow from the side, but still recognizable as the same spearhead.
+
+Do not show the front-facing gem as a full visible front gem in side view. The gem may appear only as a thin edge, a tiny side sliver, or be hidden by the collar/socket.
+
+Generate one clean true side view first. If the weapon is mostly symmetrical, mirror the approved side view for the opposite side instead of independently inventing another side.
 ```
 
 ### 体块型 Side Prompt
@@ -250,6 +287,8 @@ SIDE_VIEW_NOT_90_DEGREE
 SIDE_TOO_THIN_FOR_VOLUME_WEAPON
 SIDE_VOLUME_MISSING
 SIDE_SPIKES_MISSING
+SIDE_FRONT_GEM_VISIBLE
+LEFT_RIGHT_SAME_SIDE
 LEFT_RIGHT_MISMATCH
 MULTIVIEW_SHEET_INCONSISTENT
 TEXT_UI_WATERMARK
