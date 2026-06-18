@@ -71,7 +71,9 @@ left / right 必须是真 90 度侧视。
 
 ```text
 left / right 仍然必须是真 90 度侧视，但不能压成一条线。
-侧视要显示主体厚度，例如圆鼓、椭圆桶形、锤头厚度。
+侧视要显示主体厚度。
+圆体块武器（狼牙棒、球锤、圆鼓锤）侧视也要接近圆鼓体积，宽度只略窄于正面 / 背面。
+扁体块武器才允许侧视明显变窄。
 环绕结构中真正位于侧面的尖刺必须保留。
 正面和背面的尖刺可以被遮挡或压缩，但不能把整套尖刺系统删掉。
 ```
@@ -196,7 +198,7 @@ No 3/4 angle, no broad front face, no new geometry, no extra side spikes.
 ```text
 Using the accepted front-view weapon image as the exact design lock, generate ONE independent LEFT/RIGHT 90-degree side view image of the same Roblox low-poly fantasy weapon.
 
-This is a volume weapon type, not a flat blade. The side view must still show the main head thickness as a rounded barrel / oval drum / thick hammer volume, not a thin line.
+This is a volume weapon type, not a flat blade. If the weapon head is a round mace / round drum / ball hammer, the side view must remain bulky and round, with width close to the front/back view, only slightly narrower due to true 90-degree rotation. Do not flatten it into an oval plate or a thin line.
 
 Preserve side-visible structural parts: side-facing spikes, metal rings, handle alignment, top cap, bottom cap, and the same material palette.
 
@@ -216,7 +218,7 @@ This is one same weapon rotated, not four redesigns. Keep the same total height,
 
 Volume structure lock: <paste structure card here>.
 
-For side views, show the head as a narrow rounded barrel / thick oval drum from the side, not a flat line. Preserve side-facing spikes. Front-facing and back-facing spikes may be partially hidden or compressed.
+For side views, keep round-volume weapons bulky and round. A mace head should still look like a round drum / short cylinder from the side, with width close to the front/back view, not a flat oval plate or thin line. Preserve side-facing spikes. Front-facing and back-facing spikes may be partially hidden or compressed.
 
 Roblox low-poly viewport screenshot feel, clean light background, full weapon visible, centered.
 No text labels on the weapon, no watermark, no UI, no character, no hand, no 3/4 views, no new geometry, no missing side spikes.
@@ -251,8 +253,8 @@ UNRELATED_IMAGE
 
 修正：
 
-1. 狼牙棒归类为体块型武器。
-2. 侧视必须显示圆鼓 / 桶形锤头厚度。
+1. 狼牙棒归类为圆体块武器，不是扁体块武器。
+2. 侧视必须接近圆鼓 / 短圆柱体积，宽度只略窄于正面 / 背面。
 3. 侧向尖刺是结构，不是额外装饰，必须保留。
 4. 体块型优先生成一张多视图板，再裁图。
 
@@ -267,7 +269,7 @@ UNRELATED_IMAGE
 体块型武器：
 
 ```text
-这把是体块型武器。先做同系列改款 front，我确认后，先写结构卡，再生成一张正交多视图板。left / right 必须是真 90 度厚度侧视，保留侧向体积和侧向尖刺。
+这把是圆体块武器。先做同系列改款 front，我确认后，先写结构卡，再生成一张正交多视图板。left / right 必须是真 90 度厚度侧视，侧面仍要接近圆鼓体积，并保留侧向尖刺。
 ```
 
 ## 交付边界
