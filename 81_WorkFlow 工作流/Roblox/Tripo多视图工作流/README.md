@@ -47,6 +47,7 @@
 left / right 必须是真 90 度侧视。
 主体应压缩成窄边缘，只保留厚度和边缘细节。
 不能出现大面积正面轮廓。
+如果是长枪 / 矛 / 戟这类长柄枪头型，侧视不能压成普通细针；枪头长度、护颈 / 枪托轮廓必须保留，只是宽度变窄。
 ```
 
 ### B. 体块型武器
@@ -197,6 +198,12 @@ Using the accepted front-view weapon image as the exact design lock, generate ON
 This is a flat weapon type. The side view should be a true thin side profile. Compress the front-facing blade/head details into a narrow side edge. Keep only thickness and edge details.
 
 No 3/4 angle, no broad front face, no new geometry, no extra side spikes.
+```
+
+长柄枪头型补充：
+
+```text
+For spear / lance / polearm heads, do not reduce the head into a plain needle. Keep the elongated spearhead length, side bevel silhouette, gold collar / socket outline, and bottom cap. The head should be narrow from the side, but still recognizable as the same spearhead.
 ```
 
 ### 体块型 Side Prompt
