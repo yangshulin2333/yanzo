@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/2-1.md",
+                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第3课.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2-1"
+              "title": "第3课"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/2-1.md",
+                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第3课.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2-1 的大纲"
+              "title": "第3课 的大纲"
             }
           }
         ],
@@ -239,8 +239,9 @@
   },
   "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
-    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/2 FirstLoopController 点击按钮后做了什么。.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/2-1.md",
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第3课.md",
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/2 FirstLoopController 点击按钮后做了什么。.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/1 FirstLoop 文件地图.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame",
@@ -283,7 +284,6 @@
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/第1课：default.project.json.md",
     "20_Areas 领域/Roblox/框架/项目框架.md",
     "20_Areas 领域/钱包/地址.md",
-    "20_Areas 领域/钱包/教程.md",
-    "81_WorkFlow 工作流/Roblox/Roblox 武器模型制作工作流/提示词.md"
+    "20_Areas 领域/钱包/教程.md"
   ]
 }
