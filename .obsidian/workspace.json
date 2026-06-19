@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 6 课：Server 返回后 UI 怎么刷新.md",
+                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 7 课：为什么 FirstLoop 算一个最小 Feature Pack.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第 6 课：Server 返回后 UI 怎么刷新"
+              "title": "第 7 课：为什么 FirstLoop 算一个最小 Feature Pack"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 6 课：Server 返回后 UI 怎么刷新.md",
+                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 7 课：为什么 FirstLoop 算一个最小 Feature Pack.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第 6 课：Server 返回后 UI 怎么刷新 的大纲"
+              "title": "第 7 课：为什么 FirstLoop 算一个最小 Feature Pack 的大纲"
             }
           }
         ],
@@ -239,8 +239,9 @@
   },
   "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
-    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/0 大纲.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 6 课：Server 返回后 UI 怎么刷新.md",
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 7 课：为什么 FirstLoop 算一个最小 Feature Pack.md",
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/0 大纲.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 5 课：DataService  DataSchema 在 FirstLoop 里怎么配合.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 3 课 RemoteFunction 怎么从 Client 到 Server.md",
     "10_Projects 项目/Roblox/玩具/玩具箱守卫者_发条拼装核心特色策划方案.md",
@@ -283,7 +284,6 @@
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/Prompt.md",
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/通用 Roblox 工程骨架.md",
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/配置环境.md",
-    "20_Areas 领域/钱包/ChatGPT Plus 充值流程笔记：Fiat24 + 欧易 + Arbitrum.md",
-    "20_Areas 领域/钱包/买币流程.md"
+    "20_Areas 领域/钱包/ChatGPT Plus 充值流程笔记：Fiat24 + 欧易 + Arbitrum.md"
   ]
 }
