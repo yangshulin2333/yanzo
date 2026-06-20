@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 8 课：FirstLoop 涉及的 Luau 语法点.md",
+                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/大纲.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第 8 课：FirstLoop 涉及的 Luau 语法点"
+              "title": "大纲"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 8 课：FirstLoop 涉及的 Luau 语法点.md",
+                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/大纲.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "第 8 课：FirstLoop 涉及的 Luau 语法点 的大纲"
+              "title": "大纲 的大纲"
             }
           }
         ],
@@ -239,8 +239,10 @@
   },
   "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
-    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 7 课：为什么 FirstLoop 算一个最小 Feature Pack.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 8 课：FirstLoop 涉及的 Luau 语法点.md",
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/大纲.md",
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy",
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 7 课：为什么 FirstLoop 算一个最小 Feature Pack.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 6 课：Server 返回后 UI 怎么刷新.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/0 大纲.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 5 课：DataService  DataSchema 在 FirstLoop 里怎么配合.md",
@@ -275,7 +277,6 @@
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/黑铁战镰_平面型四视图",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/冰晶细剑_平面型四视图",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/金色长剑_平面型四视图",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/狼牙棒_圆体块四视图/_rejected_regenerated",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/README.md",
     "20_Areas 领域/钱包/汇丰香港 HSBC One + HSBC Mastercard Debit Card.md",
     "20_Areas 领域/Roblox/游戏市场判断框架.md",
@@ -283,7 +284,6 @@
     "20_Areas 领域/Roblox/框架/框架/AI-Agent-学习笔记版.md",
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/第4课：网络通信：NetService  NetClient  NetResult.md",
     "20_Areas 领域/Roblox/框架/RobloxGameFramework/Prompt.md",
-    "20_Areas 领域/Roblox/框架/RobloxGameFramework/通用 Roblox 工程骨架.md",
-    "20_Areas 领域/Roblox/框架/RobloxGameFramework/配置环境.md"
+    "20_Areas 领域/Roblox/框架/RobloxGameFramework/通用 Roblox 工程骨架.md"
   ]
 }
