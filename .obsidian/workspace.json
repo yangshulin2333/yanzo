@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.1 大纲.md",
+                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "002.1 大纲"
+              "title": "002.2"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.1 大纲.md",
+                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.2.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "002.1 大纲 的大纲"
+              "title": "002.2 的大纲"
             }
           }
         ],
@@ -239,7 +239,8 @@
   },
   "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
-    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/大纲.md",
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/000大纲.md",
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.2.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.1 大纲.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 8 课：FirstLoop 涉及的 Luau 语法点.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy",
@@ -283,7 +284,6 @@
     "20_Areas 领域/Roblox/游戏市场判断框架.md",
     "20_Areas 领域/Roblox/框架/框架/AI-Agent-工程实践SOP.md",
     "20_Areas 领域/Roblox/框架/框架/AI-Agent-学习笔记版.md",
-    "20_Areas 领域/Roblox/框架/RobloxGameFramework/第4课：网络通信：NetService  NetClient  NetResult.md",
-    "20_Areas 领域/Roblox/框架/RobloxGameFramework/Prompt.md"
+    "20_Areas 领域/Roblox/框架/RobloxGameFramework/第4课：网络通信：NetService  NetClient  NetResult.md"
   ]
 }
