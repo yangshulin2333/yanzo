@@ -46,5 +46,16 @@ No text, no watermark, no UI, no character, no hand, no side serrations, no saw 
 ## Candidate Preservation
 
 - front_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜赤金长剑_2026-06-22\front_candidate_01.png
+- back_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜赤金长剑_2026-06-22\back_candidate_01.png
+- left_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜赤金长剑_2026-06-22\left_candidate_01.png
+- right_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜赤金长剑_2026-06-22\right_candidate_01.png
 - status: user approved; promoted to formal design lock
 - formal_front: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_front.png
+
+## Final Outputs
+
+- front: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_front.png
+- back: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_back.png
+- left: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_left.png
+- right: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_right.png
+- contact_sheet: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_contact_sheet.png

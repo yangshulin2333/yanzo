@@ -15,9 +15,20 @@ candidate_dir: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工
   - front_candidate_01_user_approved
   - front_view_copied_to_formal_output
   - design_lock_activated
-- current_step: generate_missing_views_from_accepted_front
-- next_step: back_view_generation
-- last_verification_result: front_design_lock_active
+  - back_candidate_01_generated
+  - back_candidate_01_visual_checked
+  - back_view_copied_to_formal_output
+  - left_candidate_01_generated
+  - left_candidate_01_visual_checked
+  - left_view_copied_to_formal_output
+  - right_candidate_01_mirrored_from_left_candidate_01
+  - right_candidate_01_visual_checked
+  - right_view_copied_to_formal_output
+  - contact_sheet_generated
+  - copy_audit_written
+- current_step: complete
+- next_step: ready_for_tripo_reference_use
+- last_verification_result: all_four_views_approved_and_copied
 
 ## Design Lock
 
@@ -38,9 +49,9 @@ candidate_dir: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工
 ## View Gates
 
 - front: approved
-- back: pending
-- left: pending
-- right: pending
+- back: approved
+- left: approved
+- right: approved
 
 ## Candidate Outputs
 
@@ -49,11 +60,16 @@ candidate_dir: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工
 ## Formal Outputs
 
 - front: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_front.png
+- back: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_back.png
+- left: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_left.png
+- right: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_right.png
+- contact_sheet: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_contact_sheet.png
+- audit: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\COPY_AUDIT.txt
 
 ## Rules
 
-- Generate and confirm front first.
-- After front approval, use it as the only design lock for back / left / right.
-- For side views, this is a flat weapon type: true 90-degree thin side profile.
-- If left side passes and the sword is symmetrical, mirror it for right side.
+- Front was confirmed first and used as the only design lock.
+- Back / left / right were generated from the accepted front design lock.
+- Side views use the flat weapon rule: true 90-degree thin side profile.
+- Right side was mirrored from approved left side because the sword is symmetrical.
 - This workflow creates Tripo / 3D AI reference images only; no Roblox FBX / GLB packaging.
