@@ -239,6 +239,9 @@
   },
   "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/黑曜银月战镰_平面型四视图/COPY_AUDIT.txt",
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/黑曜银月战镰_平面型四视图/PROMPT.md",
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/黑曜银月战镰_平面型四视图/RUN_STATE.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/黑曜银月战镰_平面型四视图/obsidian_silver_scythe_contact_sheet.png",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/碧潮三叉戟_长柄枪头型四视图/COPY_AUDIT.txt",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/碧潮三叉戟_长柄枪头型四视图/RUN_STATE.md",
@@ -258,7 +261,6 @@
     "20_Areas 领域/3D建模/修面",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/寒铁冰蓝重锤_圆体块四视图/四视图交付说明.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/寒铁冰蓝重锤_圆体块四视图/right.png",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/寒铁冰蓝重锤_圆体块四视图/left.png",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/寒铁冰蓝重锤_圆体块四视图",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/赤金重锤_圆体块四视图/四视图交付说明.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/赤金重锤_圆体块四视图",
@@ -282,8 +284,6 @@
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/0 大纲.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 5 课：DataService  DataSchema 在 FirstLoop 里怎么配合.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 3 课 RemoteFunction 怎么从 Client 到 Server.md",
-    "10_Projects 项目/Roblox/玩具/玩具箱守卫者_发条拼装核心特色策划方案.md",
-    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 3.5 课 context 补课.md",
-    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 4 课：FirstLoopService 怎么校验、写 DataService、返回结果.md"
+    "10_Projects 项目/Roblox/玩具/玩具箱守卫者_发条拼装核心特色策划方案.md"
   ]
 }

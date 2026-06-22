@@ -4,7 +4,7 @@ created_at: 2026-06-22
 workflow_source: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\README.md
 generation_route: built-in image_gen
 weapon_type: 平面型长柄战镰
-status: waiting_for_front_candidate_03_approval
+status: promoted_to_formal_four_view_output
 
 ## Current State
 
@@ -22,8 +22,8 @@ status: waiting_for_front_candidate_03_approval
   - front_candidate_03_visual_checked
   - front_candidate_03_copied_to_run_folder
 - current_step: wait_for_user_front_candidate_03_approval
-- next_step: if approved, promote front_candidate_03 as the only design lock and generate back / left / right from it
-- last_verification_result: front_candidate_03 removes the unreasonable bulky right-angle plate and restores a cleaner open scythe-head structure, but is not approved yet
+- next_step: use formal four-view output folder for Tripo reference
+- last_verification_result: front_candidate_03 was approved by user and promoted to formal four-view output
 
 ## Input Reference
 
