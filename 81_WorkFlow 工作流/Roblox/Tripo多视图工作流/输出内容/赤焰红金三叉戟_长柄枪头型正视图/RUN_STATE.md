@@ -4,7 +4,7 @@ created_at: 2026-06-22
 workflow_source: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\README.md
 generation_route: built-in image_gen
 weapon_type: 长柄枪头型三叉戟
-status: waiting_for_front_candidate_01_approval
+status: promoted_to_formal_four_view_output
 
 ## Current State
 
@@ -15,9 +15,9 @@ status: waiting_for_front_candidate_01_approval
   - red_theme_front_candidate_01_generated
   - red_theme_front_candidate_01_visual_checked
   - red_theme_front_candidate_01_copied_to_run_folder
-- current_step: wait_for_user_approval
-- next_step: after approval, use the accepted red front image as the only design lock for back / left / right
-- last_verification_result: front_candidate_01 keeps the approved trident silhouette and changes the color theme to crimson / ruby red with aged gold and ivory accents
+- current_step: complete
+- next_step: use formal four-view output folder for Tripo reference
+- last_verification_result: front_candidate_01 was approved by user and promoted to formal four-view output
 
 ## Shape Lock Source
 
