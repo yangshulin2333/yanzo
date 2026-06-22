@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.3.md",
+                "file": "20_Areas 领域/3D建模/修面/进入编辑模式后，用顶点选择移动点，用边选择加点、切线、连线.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "002.3"
+              "title": "进入编辑模式后，用顶点选择移动点，用边选择加点、切线、连线"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.3.md",
+                "file": "20_Areas 领域/3D建模/修面/进入编辑模式后，用顶点选择移动点，用边选择加点、切线、连线.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "002.3 的大纲"
+              "title": "进入编辑模式后，用顶点选择移动点，用边选择加点、切线、连线 的大纲"
             }
           }
         ],
@@ -237,8 +237,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d3be8173c5b5c46c",
+  "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.3.md",
+    "20_Areas 领域/3D建模/修面/进入编辑模式后，用顶点选择移动点，用边选择加点、切线、连线.md",
+    "20_Areas 领域/3D建模/修面",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/寒铁冰蓝重锤_圆体块四视图/四视图交付说明.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/寒铁冰蓝重锤_圆体块四视图/right.png",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/寒铁冰蓝重锤_圆体块四视图/left.png",
@@ -267,9 +270,7 @@
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/黑曜赤金长剑_平面型四视图/COPY_AUDIT.txt",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/黑曜赤金长剑_平面型四视图/PROMPT.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/黑曜赤金长剑_平面型四视图/RUN_STATE.md",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/_imagegen_candidates/黑曜赤金长剑_2026-06-22",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.1 大纲.md",
-    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.3.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/002.2.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/02_CombatTrainingEnemy/000大纲.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 8 课：FirstLoop 涉及的 Luau 语法点.md",
@@ -283,7 +284,6 @@
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/第 4 课：FirstLoopService 怎么校验、写 DataService、返回结果.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/2-1.md",
     "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/2 FirstLoopController 点击按钮后做了什么。.md",
-    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/1 FirstLoop 文件地图.md",
-    "20_Areas 领域/Roblox/框架/框架/AI-Agent-架构复盘版.md"
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/FirstLoop/1 FirstLoop 文件地图.md"
   ]
 }
