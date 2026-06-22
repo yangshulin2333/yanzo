@@ -4,7 +4,7 @@ created_at: 2026-06-22 20:48:47 +08:00
 workflow_source: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\README.md
 generation_route: built-in image_gen
 weapon_type: flat long-handled war scythe
-status: waiting_for_front_candidate_01_approval
+status: promoted_to_formal_four_view_output
 
 ## Current State
 
@@ -16,8 +16,8 @@ status: waiting_for_front_candidate_01_approval
   - front_candidate_01_copied_to_candidate_pool
   - front_candidate_01_copied_to_preview_folder
   - visual_gate_checked
-- current_step: waiting_for_user_front_approval
-- next_step: if approved, promote front_candidate_01 as the only design lock and generate back/left/right
+- current_step: promoted_to_four_view_output
+- next_step: use formal four-view output folder for Tripo reference
 
 ## Source Reference
 
@@ -52,6 +52,15 @@ status: waiting_for_front_candidate_01_approval
 
 ## Rule Reminder
 
-- Do not generate back/left/right until the user approves the front candidate.
-- After approval, use only this accepted front image as the design lock.
+- User approved front_candidate_01 and it was promoted to the design lock.
+- Back / left / right were generated only from this accepted front image.
 - This workflow creates Tripo / 3D AI reference images only; no Roblox FBX / GLB packaging.
+
+## Formal Four-View Output
+
+- output_folder: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\熔焰暗月战镰_平面型四视图
+- front: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\熔焰暗月战镰_平面型四视图\molten_darkmoon_scythe_front.png
+- back: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\熔焰暗月战镰_平面型四视图\molten_darkmoon_scythe_back.png
+- left: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\熔焰暗月战镰_平面型四视图\molten_darkmoon_scythe_left.png
+- right: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\熔焰暗月战镰_平面型四视图\molten_darkmoon_scythe_right.png
+- contact_sheet: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\熔焰暗月战镰_平面型四视图\molten_darkmoon_scythe_contact_sheet.png
