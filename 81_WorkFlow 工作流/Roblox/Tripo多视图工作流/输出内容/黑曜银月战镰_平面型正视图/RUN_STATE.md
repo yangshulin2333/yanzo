@@ -4,7 +4,7 @@ created_at: 2026-06-22
 workflow_source: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\README.md
 generation_route: built-in image_gen
 weapon_type: 平面型长柄战镰
-status: waiting_for_front_candidate_02_approval
+status: waiting_for_front_candidate_03_approval
 
 ## Current State
 
@@ -18,9 +18,12 @@ status: waiting_for_front_candidate_02_approval
   - front_candidate_02_local_head_support_edit_generated
   - front_candidate_02_visual_checked
   - front_candidate_02_copied_to_run_folder
-- current_step: wait_for_user_front_candidate_02_approval
-- next_step: if approved, promote front_candidate_02 as the only design lock and generate back / left / right from it
-- last_verification_result: front_candidate_02 improves the circled inner support area and passes basic gates, but is not approved yet
+  - front_candidate_03_right_angle_support_refined
+  - front_candidate_03_visual_checked
+  - front_candidate_03_copied_to_run_folder
+- current_step: wait_for_user_front_candidate_03_approval
+- next_step: if approved, promote front_candidate_03 as the only design lock and generate back / left / right from it
+- last_verification_result: front_candidate_03 removes the unreasonable bulky right-angle plate and restores a cleaner open scythe-head structure, but is not approved yet
 
 ## Input Reference
 
@@ -30,8 +33,10 @@ status: waiting_for_front_candidate_02_approval
 
 - front_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\front_candidate_01.png
 - front_candidate_02: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\front_candidate_02.png
+- front_candidate_03: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\front_candidate_03.png
 - preview_copy_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜银月战镰_平面型正视图\obsidian_silver_scythe_front_candidate_01.png
 - preview_copy_candidate_02: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜银月战镰_平面型正视图\obsidian_silver_scythe_front_candidate_02.png
+- preview_copy_candidate_03: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜银月战镰_平面型正视图\obsidian_silver_scythe_front_candidate_03.png
 
 ## Front Candidate 01 Visual Check
 
@@ -47,17 +52,25 @@ status: waiting_for_front_candidate_02_approval
 - preserved: tall handle, crescent blade, dark metal frame, pale sharpened edge, lower pointed end, bottom grip and spike
 - changed: circled inner support area became a thicker integrated low-poly metal brace; blue accent became embedded rather than dangling
 - style: Roblox low-poly model screenshot feel
+- issues: user disliked the bulky added structure at the scythe right-angle corner; it looked visually unreasonable
+
+## Front Candidate 03 Visual Check
+
+- identity: long vertical Roblox low-poly fantasy war scythe
+- preserved: tall handle, crescent blade, dark metal frame, pale sharpened edge, lower pointed end, bottom grip and spike
+- changed: removed candidate 02's bulky right-angle triangular filler plate; restored more open negative space; kept only a smaller slanted connector rib near the socket
+- style: Roblox low-poly model screenshot feel
 - issues: none blocking at this stage
 
 ## Design Lock Draft
 
-Only activate this section after the user approves `front_candidate_02`.
+Only activate this section after the user approves `front_candidate_03`.
 
 - weapon class: long-handled fantasy war scythe
 - palette: obsidian black, cold silver, subtle blue-steel accents
 - material style: low-poly hand-painted metal, simple Roblox viewport lighting
 - silhouette: very long vertical shaft, top crescent blade, compact socket/guard, lower pointed cap
-- local head support: use candidate 02's thicker integrated brace, not candidate 01's dangling gem style
+- local head support: use candidate 03's slim slanted connector rib and open negative space, not candidate 01's dangling gem style and not candidate 02's bulky triangular plate
 - forbidden changes after approval: do not change blade size, handle length, socket position, lower cap, palette, local head support, or overall height ratio
 
 ## Rules

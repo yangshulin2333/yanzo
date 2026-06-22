@@ -8,6 +8,7 @@ phase: front candidate first
 - uploaded_reference: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\uploaded_reference.png
 - front_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\front_candidate_01.png
 - front_candidate_02: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\front_candidate_02.png
+- front_candidate_03: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\front_candidate_03.png
 
 ## Front Prompt
 
@@ -31,6 +32,18 @@ Local edit target: replace the current thin curved support arm and dangling diam
 Keep unchanged: total height, long straight shaft, bottom grip and spike, main crescent blade shape, top hook blade, head socket silhouette, color palette of obsidian black + cold silver + subtle blue-steel accent, low-poly Roblox model screenshot style, lighting, background, camera angle, full weapon visibility, centered vertical orthographic front view.
 
 Avoid: red rectangle, annotation marks, text, watermark, UI, character, hand, new extra spikes, serrated teeth, chain, dangling charm, changing the main blade silhouette, changing the handle length, high-poly ornament, flat vector art.
+
+## Candidate 03 Right-Angle Support Refinement Prompt
+
+Edit the current Roblox war scythe front-view candidate image. Modify only the inner head support area at the sharp right-angle corner where the vertical socket meets the underside of the crescent blade. Keep the rest of the weapon unchanged.
+
+Problem to fix: the large added triangular plate in that right-angle area looks visually unreasonable and too bulky, like a random filler block. Remove that bulky triangular block.
+
+Replacement design: restore more open negative space under the blade. Add only a small believable forged connector: a short slanted low-poly metal socket rib or narrow curved collar that follows the underside direction of the crescent blade, connecting the vertical head socket to the blade base. It should look like a practical welded/bolted brace, not a decorative plate. Keep it slim, compact, and integrated into the existing blade root. The small blue-steel accent may remain as a tiny flush rivet near the socket, but do not make it hang and do not place it inside a large plate.
+
+Keep unchanged: main crescent blade silhouette, top hook blade, head socket outline, long straight shaft, bottom grip and spike, total height, proportions, obsidian black + cold silver + subtle blue accent palette, low-poly Roblox model screenshot style, lighting, background, centered vertical orthographic front view, full weapon visibility.
+
+Avoid: large triangular filler plate, bulky block at the right angle, dangling charm, loose chain, red annotation, text, watermark, UI, character, hand, new spikes, serrated teeth, changing handle length, changing blade size, changing camera angle, high-poly ornament, flat vector art.
 
 ## Next Prompts
 
