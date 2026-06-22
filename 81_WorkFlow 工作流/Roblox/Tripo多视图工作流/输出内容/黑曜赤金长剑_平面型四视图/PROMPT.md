@@ -28,3 +28,8 @@ Pending front approval.
 ## Side Prompt
 
 Pending front approval.
+
+## Candidate Preservation
+
+- front_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜赤金长剑_2026-06-22\front_candidate_01.png
+- status: passed internal visual check, waiting for user approval before generating back / left / right
