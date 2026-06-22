@@ -21,5 +21,6 @@ No text, no watermark, no UI, no axis widget, no floor plane, no horizon line, n
 
 ## Candidate Preservation
 
-- front_candidate_01: pending
-- status: pending generation
+- front_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\碧潮三叉戟_2026-06-22\front_candidate_01.png
+- formal_front: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\碧潮三叉戟_长柄枪头型正视图\aqua_tide_trident_front.png
+- status: generated and saved; waiting only if user wants to expand this front into full four views
