@@ -23,13 +23,28 @@ No text, no watermark, no UI, no character, no hand, no new geometry, no changed
 
 ## Back Prompt
 
-Pending front approval.
+Using the accepted front-view weapon image as the exact design lock, generate ONE independent BACK VIEW image of the same Roblox low-poly fantasy sword.
+
+It must look like the same model rotated 180 degrees, not a new weapon. Preserve the same total height, handle length, blade width, guard position, rounded faceted pommel, compact angular shoulder plates, long central blade channel, faceted pointed lower tip, material palette, and Roblox viewport/model screenshot feel.
+
+Keep the approved obsidian-and-aged-gold skin: dark obsidian / blackened steel blade planes, aged brass/gold bevels and guard accents, ember red/orange-red inlay language, deep black leather grip bands. The rear texture may be simpler; red inlay may be reduced or partially hidden, but the major shape and skin must match the accepted front view.
+
+Full weapon visible, centered vertical orthographic back view, clean light Roblox viewport-style background.
+No text, no watermark, no UI, no character, no hand, no new parts, no changed silhouette, no serrations, no saw teeth, no side spikes, no high-poly ornament, no flat vector style, no 3/4 angle.
 
 ## Side Prompt
 
-Pending front approval.
+Using the accepted front-view weapon image as the exact design lock, generate ONE independent LEFT 90-DEGREE SIDE VIEW image of the same Roblox low-poly fantasy sword.
+
+This is a flat weapon type. It must be a true side profile, not a 3/4 view. Preserve the same total height, handle length, rounded faceted pommel, black segmented grip, compact guard position, obsidian-and-aged-gold material palette, and Roblox viewport/model screenshot feel.
+
+Compress the front-facing guard and blade details into a narrow side edge. The blade should appear thin from the side, with only side-visible thickness and simple beveled edge detail. The ember red center inlay should be mostly hidden or reduced to a very thin edge hint.
+
+Full weapon visible, centered vertical orthographic side view, clean light Roblox viewport-style background.
+No text, no watermark, no UI, no character, no hand, no side serrations, no saw teeth, no extra side spikes, no front-facing guard spread, no new geometry, no flat vector style.
 
 ## Candidate Preservation
 
 - front_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜赤金长剑_2026-06-22\front_candidate_01.png
-- status: passed internal visual check, waiting for user approval before generating back / left / right
+- status: user approved; promoted to formal design lock
+- formal_front: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_front.png

@@ -12,9 +12,12 @@ candidate_dir: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工
   - workflow_read
   - previous_four_view_shape_lock_archived
   - output_folder_created
-- current_step: front_skin_candidate_waiting_user_approval
-- next_step: user_front_approval
-- last_verification_result: front_candidate_01_passed_internal_visual_check_pending_user_approval
+  - front_candidate_01_user_approved
+  - front_view_copied_to_formal_output
+  - design_lock_activated
+- current_step: generate_missing_views_from_accepted_front
+- next_step: back_view_generation
+- last_verification_result: front_design_lock_active
 
 ## Design Lock
 
@@ -34,7 +37,7 @@ candidate_dir: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工
 
 ## View Gates
 
-- front: candidate_pass_pending_user_approval
+- front: approved
 - back: pending
 - left: pending
 - right: pending
@@ -42,6 +45,10 @@ candidate_dir: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工
 ## Candidate Outputs
 
 - front_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜赤金长剑_2026-06-22\front_candidate_01.png
+
+## Formal Outputs
+
+- front: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜赤金长剑_平面型四视图\obsidian_gold_sword_front.png
 
 ## Rules
 
