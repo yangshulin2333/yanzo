@@ -4,7 +4,7 @@ created_at: 2026-06-22
 workflow_source: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\README.md
 generation_route: built-in image_gen
 weapon_type: 平面型长柄战镰
-status: waiting_for_front_approval
+status: waiting_for_front_candidate_02_approval
 
 ## Current State
 
@@ -15,9 +15,12 @@ status: waiting_for_front_approval
   - front_candidate_01_generated
   - front_candidate_01_visual_checked
   - front_candidate_01_copied_to_run_folder
-- current_step: wait_for_user_front_approval
-- next_step: if approved, promote front_candidate_01 as the only design lock and generate back / left / right from it
-- last_verification_result: front_candidate_01 passes basic gates, but is not approved yet
+  - front_candidate_02_local_head_support_edit_generated
+  - front_candidate_02_visual_checked
+  - front_candidate_02_copied_to_run_folder
+- current_step: wait_for_user_front_candidate_02_approval
+- next_step: if approved, promote front_candidate_02 as the only design lock and generate back / left / right from it
+- last_verification_result: front_candidate_02 improves the circled inner support area and passes basic gates, but is not approved yet
 
 ## Input Reference
 
@@ -26,25 +29,36 @@ status: waiting_for_front_approval
 ## Candidate Outputs
 
 - front_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\front_candidate_01.png
-- preview_copy: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜银月战镰_平面型正视图\obsidian_silver_scythe_front_candidate_01.png
+- front_candidate_02: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\front_candidate_02.png
+- preview_copy_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜银月战镰_平面型正视图\obsidian_silver_scythe_front_candidate_01.png
+- preview_copy_candidate_02: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\黑曜银月战镰_平面型正视图\obsidian_silver_scythe_front_candidate_02.png
 
-## Front Candidate Visual Check
+## Front Candidate 01 Visual Check
 
 - identity: long vertical Roblox low-poly fantasy war scythe
 - preserved: tall handle, crescent blade, dark metal frame, pale sharpened edge, lower pointed end
 - changed: cleaner angular crescent blade, shorter rigid support strut instead of loose chain, blue-steel accent gem, chunkier metal bands
 - style: Roblox low-poly model screenshot feel
+- issues: user disliked the circled inner blade support area
+
+## Front Candidate 02 Visual Check
+
+- identity: long vertical Roblox low-poly fantasy war scythe
+- preserved: tall handle, crescent blade, dark metal frame, pale sharpened edge, lower pointed end, bottom grip and spike
+- changed: circled inner support area became a thicker integrated low-poly metal brace; blue accent became embedded rather than dangling
+- style: Roblox low-poly model screenshot feel
 - issues: none blocking at this stage
 
 ## Design Lock Draft
 
-Only activate this section after the user approves `front_candidate_01`.
+Only activate this section after the user approves `front_candidate_02`.
 
 - weapon class: long-handled fantasy war scythe
 - palette: obsidian black, cold silver, subtle blue-steel accents
 - material style: low-poly hand-painted metal, simple Roblox viewport lighting
 - silhouette: very long vertical shaft, top crescent blade, compact socket/guard, lower pointed cap
-- forbidden changes after approval: do not change blade size, handle length, socket position, lower cap, palette, or overall height ratio
+- local head support: use candidate 02's thicker integrated brace, not candidate 01's dangling gem style
+- forbidden changes after approval: do not change blade size, handle length, socket position, lower cap, palette, local head support, or overall height ratio
 
 ## Rules
 

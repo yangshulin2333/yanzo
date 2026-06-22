@@ -7,6 +7,7 @@ phase: front candidate first
 
 - uploaded_reference: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\uploaded_reference.png
 - front_candidate_01: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\front_candidate_01.png
+- front_candidate_02: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\_imagegen_candidates\黑曜银月战镰_2026-06-22\front_candidate_02.png
 
 ## Front Prompt
 
@@ -20,6 +21,16 @@ Keep the Roblox low-poly viewport/model screenshot feel: clean faceted planes, h
 
 Full weapon visible, centered vertical orthographic FRONT view, clean light Roblox viewport-style background, generous padding around the full weapon.
 No text, no watermark, no UI, no character, no hand, no scene clutter, no dense micro-spikes, no serrated saw teeth, no high-poly ornament, no flat vector art.
+
+## Candidate 02 Local Edit Prompt
+
+Edit the unmarked Roblox war scythe front-view candidate image. Use the marked screenshot only to identify the red-box area. Modify only the circled inner head support area under the main crescent blade; keep the rest of the weapon unchanged.
+
+Local edit target: replace the current thin curved support arm and dangling diamond pendant inside the scythe head with a cleaner, stronger integrated low-poly metal brace. The new brace should feel forged into the blade socket, not hanging loose. Make it a short angular crescent / triangular support bridge from the vertical head socket to the underside of the blade, with broad faceted obsidian metal planes and cold silver beveled edges. Move the small blue-steel diamond accent into the brace as a flush inset rivet or small embedded gem, not a dangling ornament.
+
+Keep unchanged: total height, long straight shaft, bottom grip and spike, main crescent blade shape, top hook blade, head socket silhouette, color palette of obsidian black + cold silver + subtle blue-steel accent, low-poly Roblox model screenshot style, lighting, background, camera angle, full weapon visibility, centered vertical orthographic front view.
+
+Avoid: red rectangle, annotation marks, text, watermark, UI, character, hand, new extra spikes, serrated teeth, chain, dangling charm, changing the main blade silhouette, changing the handle length, high-poly ornament, flat vector art.
 
 ## Next Prompts
 
