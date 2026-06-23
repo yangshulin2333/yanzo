@@ -414,6 +414,8 @@ VARIANT_DELTA_TOO_WEAK
 STYLE_DRIFT
 BACK_VIEW_SHAPE_MISMATCH
 SIDE_VIEW_NOT_90_DEGREE
+SIDE_VIEW_NOT_VERTICAL
+SIDE_VIEW_FRONT_POSE_INHERITED
 SIDE_TOO_THIN_FOR_VOLUME_WEAPON
 SIDE_VOLUME_MISSING
 SIDE_SPIKES_MISSING
@@ -422,12 +424,28 @@ LEFT_RIGHT_SAME_SIDE
 LEFT_RIGHT_MISMATCH
 MULTIVIEW_SHEET_INCONSISTENT
 TEXT_UI_WATERMARK
+BACKGROUND_NOT_SOLID
 UNRELATED_IMAGE
 TRIPO_GRAY_UNTEXTURED_MODEL
 TRIPO_FRAGMENTED_HEAD_STRUCTURE
 TRIPO_MATERIAL_ZONE_UNREADABLE
 MODEL_FRIENDLY_FOUR_VIEW_REQUIRED
 ```
+
+## 翠金毒藤双镰杖这次的缺陷记录
+
+问题：
+
+1. `left / right` 虽然被压窄，但继承了 `front` 的交叉和倾斜姿态，不是垂直侧视。
+2. 初版背景保留了视口地面线 / 渐变背景，不符合 Tripo 输入的纯色背景要求。
+3. AI 独立生成的平面型侧视容易变成 3/4 或斜摆姿态。
+
+修正：
+
+1. 平面型侧视必须垂直居中，主体沿固定中轴线站直。
+2. 对平面型薄刃武器，合格侧视应接近一条垂直窄边，只保留厚度、边缘颜色和少量可见材质信息。
+3. 如果 AI 侧视不垂直，优先从确认后的 `front` 提取主体并压缩到垂直中轴线，再镜像另一侧。
+4. 最终 `front / back / left / right` 必须清理为纯色背景后再交付。
 
 ## 狼牙棒这次的缺陷记录
 
