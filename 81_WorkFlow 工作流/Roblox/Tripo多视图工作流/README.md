@@ -144,6 +144,14 @@ left / right 仍然必须是真 90 度侧视，但不能压成一条线。
 4. 尽量接近正视图。
 5. 不要叠太多 UI 或文字。
 
+最终交付背景要求：
+
+```text
+front / back / left / right 最终文件必须是纯色背景。
+不允许出现视口地面线、墙地分界线、渐变背景、投影、坐标轴、UI、文字或背景纹理。
+如果生成图背景不是纯色，必须先清理背景或重新生成，不能直接交付。
+```
+
 ### 第 2 步：只生成 1 张同系列改款 front
 
 这一轮只做一件事：
@@ -209,7 +217,7 @@ front 通过后，立刻把它升级为“唯一设计锁”。
 平面型武器：
 
 ```text
-front 确认 -> back -> left 细线侧视 -> right 细线侧视
+front 确认 -> back -> left 垂直细线侧视 -> mirror right
 ```
 
 长柄枪头型武器：
@@ -319,7 +327,9 @@ Using the accepted front-view weapon image as the exact design lock, generate ON
 
 This is a flat weapon type. The side view should be a true thin side profile. Compress the front-facing blade/head details into a narrow side edge. Keep only thickness and edge details.
 
-No 3/4 angle, no broad front face, no new geometry, no extra side spikes.
+The side profile must stand vertically on a centered vertical axis. Do not inherit the front view's tilted pose, crossed pose, diagonal lean, or spread-out silhouette. The side view should read as one narrow upright edge.
+
+No 3/4 angle, no broad front face, no tilted pose, no diagonal pose, no crossed front pose, no new geometry, no extra side spikes.
 ```
 
 长柄枪头型补充：
