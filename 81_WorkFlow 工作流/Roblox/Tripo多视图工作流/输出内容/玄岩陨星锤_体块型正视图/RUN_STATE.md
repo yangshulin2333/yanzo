@@ -4,7 +4,7 @@ created_at: 2026-06-23 14:29:30 +08:00
 workflow_source: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\README.md
 generation_route: built-in image_gen
 weapon_type: volume meteor hammer / spiked mace
-status: waiting_for_front_candidate_01_approval
+status: promoted_to_formal_four_view_output
 
 ## Current State
 
@@ -16,8 +16,8 @@ status: waiting_for_front_candidate_01_approval
   - front_candidate_01_copied_to_candidate_pool
   - front_candidate_01_copied_to_preview_folder
   - visual_gate_checked
-- current_step: waiting_for_user_front_approval
-- next_step: if approved, promote front_candidate_01 as the only design lock, write volume structure card, then expand to back/left/right
+- current_step: promoted_to_four_view_output
+- next_step: use formal four-view output folder for Tripo reference
 
 ## Source Reference
 
@@ -54,8 +54,18 @@ status: waiting_for_front_candidate_01_approval
 
 ## Rule Reminder
 
-- Do not generate back/left/right until the user approves the front candidate.
-- After approval, use only this accepted front image as the design lock.
-- Because this is a volume weapon, write a structure card before expanding the remaining views.
-- Side views must preserve bulky head volume and side-facing knobs; do not compress the weapon into a thin line.
+- User approved front_candidate_01 and it was promoted to the design lock.
+- A structure card was written before expanding the remaining views.
+- Back / left / right were generated only from this accepted front image plus the structure card.
+- Side views preserve bulky head volume and side-facing knobs; the weapon was not compressed into a thin line.
 - This workflow creates Tripo / 3D AI reference images only; no Roblox FBX / GLB packaging.
+
+## Formal Four-View Output
+
+- output_folder: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\玄岩陨星锤_体块型四视图
+- structure_card: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\玄岩陨星锤_体块型四视图\STRUCTURE_CARD.md
+- front: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\玄岩陨星锤_体块型四视图\dark_meteor_mace_front.png
+- back: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\玄岩陨星锤_体块型四视图\dark_meteor_mace_back.png
+- left: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\玄岩陨星锤_体块型四视图\dark_meteor_mace_left.png
+- right: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\玄岩陨星锤_体块型四视图\dark_meteor_mace_right.png
+- contact_sheet: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\输出内容\玄岩陨星锤_体块型四视图\dark_meteor_mace_contact_sheet.png
