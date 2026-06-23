@@ -4,7 +4,7 @@ created_at: 2026-06-23
 workflow_source: D:\Work\Note\yanzo\81_WorkFlow 工作流\Roblox\Tripo多视图工作流\README.md
 generation_route: built-in image_gen
 weapon_type: 长剑型 / 翼护手仪式剑
-status: waiting_for_front_candidate_01_approval
+status: promoted_to_formal_four_view_output
 
 ## Current State
 
@@ -16,9 +16,9 @@ status: waiting_for_front_candidate_01_approval
   - front_candidate_01_generated
   - front_candidate_01_visual_checked
   - front_candidate_01_copied_to_run_folder
-- current_step: wait_for_user_approval
-- next_step: after approval, use the accepted front image as the only design lock for back / left / right
-- last_verification_result: front_candidate_01 keeps the reference wing-guard long sword family identity and changes the theme to emerald / blackened iron / green rune glow
+- current_step: complete
+- next_step: use formal four-view output folder for Tripo reference
+- last_verification_result: front_candidate_01 was approved by user and promoted to formal four-view output
 
 ## Input Reference
 
