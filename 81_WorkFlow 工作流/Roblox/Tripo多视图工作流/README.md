@@ -316,8 +316,8 @@ Make it clearly different from the reference, not a near-copy. Change only these
 
 Keep the Roblox low-poly viewport screenshot feel: clean faceted planes, hand-painted texture look, readable silhouette, simple lighting, game-ready shape.
 
-Full weapon visible, centered vertical orthographic front view, clean light background.
-No text, no watermark, no UI, no character, no hand, no scene clutter, no high-poly ornament.
+Full weapon visible, centered vertical orthographic front view, solid flat light blue-gray background.
+No text, no watermark, no UI, no character, no hand, no scene clutter, no floor plane, no horizon line, no gradient, no high-poly ornament.
 ```
 
 ### 平面型 Side Prompt
@@ -400,8 +400,8 @@ Volume structure lock: <paste structure card here>.
 
 For side views, keep round-volume weapons bulky and round. A mace head should still look like a round drum / short cylinder from the side, with width close to the front/back view, not a flat oval plate or thin line. Preserve side-facing spikes. Front-facing and back-facing spikes may be partially hidden or compressed.
 
-Roblox low-poly viewport screenshot feel, clean light background, full weapon visible, centered.
-No text labels on the weapon, no watermark, no UI, no character, no hand, no 3/4 views, no new geometry, no missing side spikes.
+Roblox low-poly viewport screenshot feel, solid flat light blue-gray background, full weapon visible, centered.
+No text labels on the weapon, no watermark, no UI, no character, no hand, no floor plane, no horizon line, no gradient, no 3/4 views, no new geometry, no missing side spikes.
 ```
 
 ## 失败类型
