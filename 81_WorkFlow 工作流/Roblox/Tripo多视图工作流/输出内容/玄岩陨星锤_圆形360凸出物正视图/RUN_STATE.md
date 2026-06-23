@@ -2,7 +2,7 @@
 
 created_at: 2026-06-23
 workflow_route: front-candidate revision before four-view expansion
-status: waiting_for_user_approval
+status: promoted_to_formal_four_view_output
 
 ## User Feedback
 
@@ -35,11 +35,20 @@ status: waiting_for_user_approval
 
 ## Next Step
 
-If the user approves this front candidate, promote it as the new design lock and regenerate:
+The user approved this front candidate. It was promoted as the new design lock and regenerated:
 
 - back
 - left
 - right
 - contact sheet
 
-Do not continue from older candidates after this correction is approved.
+Do not continue from older candidates after this correction.
+
+## Formal Four-View Output
+
+- output_folder: ../玄岩陨星锤_圆形360凸出物四视图
+- front: dark_meteor_mace_round_360_front.png
+- back: dark_meteor_mace_round_360_back.png
+- left: dark_meteor_mace_round_360_left.png
+- right: dark_meteor_mace_round_360_right.png
+- contact_sheet: dark_meteor_mace_round_360_contact_sheet.png
