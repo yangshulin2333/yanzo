@@ -467,7 +467,7 @@ MODEL_FRIENDLY_FOUR_VIEW_REQUIRED
 平面型武器：
 
 ```text
-这把是平面型武器。先做同系列改款 front，我确认后，再基于它扩 back / left / right。left 和 right 必须是真 90 度细线侧视。
+这把是平面型武器。先做同系列改款 front，我确认后，再基于它扩 back / left / right。left 和 right 必须是真 90 度、垂直居中、纯色背景的细线侧视；不允许倾斜、交叉姿态或 3/4 视图。
 ```
 
 体块型武器：
