@@ -16,14 +16,16 @@ status: complete
   - back_candidate_01_generated_from_design_lock
   - back_view_copied_to_formal_output
   - left_candidate_01_generated_from_design_lock
+  - left_candidate_01_rejected_for_not_strict_90_degree
+  - left_candidate_02_strict_90_generated_from_design_lock
   - left_view_copied_to_formal_output
-  - right_view_mirrored_from_left_candidate_01
+  - right_view_mirrored_from_left_candidate_02_strict_90
   - right_view_copied_to_formal_output
   - contact_sheet_generated
   - visual_gate_checked
 - current_step: complete
 - next_step: ready_for_tripo_reference_use
-- last_verification_result: all four views are available as independent PNG reference images
+- last_verification_result: all four views are available as independent PNG reference images; side views were repaired after rejecting candidate 01 for not being a strict perpendicular 90-degree side projection
 
 ## Design Lock
 
@@ -38,8 +40,13 @@ status: complete
 
 - front: approved by user
 - back: approved by visual check
-- left: approved by visual check
-- right: approved by mirror from approved left candidate 01
+- left: approved after regenerating candidate 02 with strict orthographic 90-degree side-view constraints
+- right: approved by mirror from approved left candidate 02
+
+## Rejected Candidates
+
+- left_candidate_01: rejected because it was narrow but still read as a partial 3/4 / non-perpendicular side view around the wing guard and charm area
+- right_from_left_candidate_01: rejected because it was mirrored from the rejected left candidate 01
 
 ## Formal Outputs
 
@@ -53,5 +60,6 @@ status: complete
 
 - Front was confirmed first and used as the only design lock.
 - Back / left were generated from the accepted front design lock.
-- Right was mirrored from approved left side to avoid left/right drift.
+- Left candidate 01 failed the strict side-view gate and was replaced by left candidate 02.
+- Right was mirrored from approved left candidate 02 to avoid left/right drift.
 - This workflow creates Tripo / 3D AI reference images only; no Roblox FBX / GLB packaging.

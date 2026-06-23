@@ -47,6 +47,35 @@ Preserve the exact emerald-and-blackened-iron theme: deep emerald green, jade cr
 Full weapon visible, centered vertical orthographic LEFT SIDE view, clean light Roblox viewport-style background, generous padding around the full weapon.
 No text, no watermark, no UI, no character, no hand, no front-facing wing spread, no wide front guard, no full front gem face, no 3/4 view, no new parts, no changed silhouette height, no changed blade length, no serrations, no saw teeth, no extra side spikes, no flat vector art.
 
+## Left Candidate 01 Failure
+
+`left_candidate_01` was rejected after review.
+
+Failure type:
+
+```text
+SIDE_VIEW_NOT_90_DEGREE
+```
+
+Cause:
+
+```text
+The image was narrow, but the guard/charm area still read as a partial 3/4 or non-perpendicular side view. It did not meet the strict engineering side-projection gate.
+```
+
+## Strict Left Candidate 02 Prompt
+
+Using the accepted front-view weapon image as the exact design lock, generate ONE independent LEFT ORTHOGRAPHIC 90-DEGREE SIDE VIEW image of the same Roblox low-poly fantasy long sword / ceremonial wing-guard sword.
+
+STRICT CAMERA RULE: the camera is exactly perpendicular to the front face, viewing along the weapon's local X axis. This is a CAD/model-sheet LEFT SIDE projection, not an illustration angle. The weapon remains perfectly vertical. No perspective, no rotation toward the viewer, no 3/4 angle, no front-facing surfaces.
+
+SIDE SILHOUETTE RULE: from this exact 90-degree side view, the sword must become a very narrow vertical edge profile. The wide front-facing wing guard, leaf-feather layers, central emerald gem, glowing rune lines, and broad blade face must collapse into thin edge thickness only. The whole weapon's maximum visible width should be much narrower than the front view, roughly a slim blade-and-guard thickness profile, not a spread-out guard. The wing guard may appear only as a short stacked dark-metal side block / thin layered edge at the guard height, never as wings or feathers spreading left-right. The central emerald gem may appear only as a tiny green side sliver or be fully hidden. The blade should be a thin vertical silver-black edge with minimal green line slivers. The hanging charm near the top may remain visible as a thin side dangling talisman, but it must not make the weapon look like a front or 3/4 view.
+
+Preserve identity from the accepted front: same total height, same long blade length, same top pale braided grip and cap, same blackened iron fittings, same emerald / jade / green glow palette, same sharp bottom tip, same Roblox low-poly viewport/model screenshot feel.
+
+Full weapon visible, centered vertical orthographic LEFT SIDE view, clean light Roblox viewport-style background, generous padding around the full weapon.
+No text, no watermark, no UI, no character, no hand, no 3/4 view, no front-facing wing spread, no visible broad guard face, no visible full emerald front gem, no front blade face, no feather fan silhouette, no wide blade shoulders, no new parts, no changed total height, no changed blade length, no serrations, no saw teeth, no extra side spikes, no flat vector art.
+
 ## Right Prompt
 
-Right view was mirrored from approved left candidate 01 to prevent left/right drift.
+Right view was mirrored from approved left candidate 02 to prevent left/right drift.
