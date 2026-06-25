@@ -698,13 +698,10 @@ Players.PlayerAdded:Connect(onPlayerAdded)
 
 示例：
 
-```markdown
 | 名称 | AnimationId | Owner | Priority | Loop | 用途 |
 |---|---|---|---|---|---|
 | Player_Attack_Light01_R15_v001 | rbxassetid://0000000000 | Group | Action | false | 玩家轻攻击 |
 | NPC_Idle_Sleepy_R15_v001 | rbxassetid://0000000000 | Group | Idle | true | NPC 待机 |
-```
-
 Lua 配置表示例：
 
 ```lua
