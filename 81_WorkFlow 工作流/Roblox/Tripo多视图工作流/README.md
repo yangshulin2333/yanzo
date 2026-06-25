@@ -8,11 +8,12 @@
 
 1. 每个武器尽量独立开一个新对话处理，不在同一个长对话里连续处理很多武器。
 2. 继续旧武器时，只读取当前武器目录下的 `RUN_STATE.md`、`PROMPT.md`、`COPY_AUDIT.txt`，以及当前已确认的正视图 PNG。
-3. 禁止默认递归读取或检查整个 `输出内容` 目录；`_imagegen_candidates` 只作为候选归档，不主动全量浏览。
-4. 不要反复用 `view_image` 查看大量候选图。每一阶段只查看当前候选图或最终 contact sheet。
-5. 正视图生成后必须停下，写入 `RUN_STATE.md`，等待用户确认；用户确认后再进入 `back / left / right`。
-6. 每轮结束必须写清楚：当前阶段、已确认的设计锁图片路径、下一步只做哪一个视图、不需要继续读取哪些旧候选。
-7. 如果出现 `{"detail":"Bad Request"}`、无回复直接结束、或对话里已经生成/查看过很多图片，立即停止旧对话，开新对话并只提供 `RUN_STATE.md` 和设计锁图片路径继续。
+3. 开始新武器时，禁止读取、解释、复用上一把武器的 final 图、候选图、prompt 或设计锁。旧武器完成后只作为归档，不再参与新武器生成。
+4. 禁止默认递归读取或检查整个 `输出内容` 目录；`_imagegen_candidates` 只作为候选归档，不主动全量浏览。
+5. 不要反复用 `view_image` 查看大量候选图。每一阶段只查看当前候选图或最终 contact sheet。
+6. 正视图生成后必须停下，写入 `RUN_STATE.md`，等待用户确认；用户确认后再进入 `back / left / right`。
+7. 每轮结束必须写清楚：当前阶段、已确认的设计锁图片路径、下一步只做哪一个视图、不需要继续读取哪些旧候选。
+8. 如果出现 `{"detail":"Bad Request"}`、无回复直接结束、或对话里已经生成/查看过很多图片，立即停止旧对话，开新对话并只提供 `RUN_STATE.md` 和设计锁图片路径继续。
 
 ## 新对话继续口令
 
@@ -25,11 +26,11 @@
 
 不要让 Codex 重新扫描整个 `输出内容` 目录。
 
-更新时间：2026-06-23
+更新时间：2026-06-25
 
 ## 当前固定版本
 
-版本：v1.1
+版本：v1.2
 
 状态：已固定，作为当前 Roblox / Tripo 低模武器多视图生产工作流使用。
 
@@ -37,14 +38,17 @@
 
 1. 先生成并人工确认 1 张同系列改款 `front`。
 2. `front` 通过后立刻作为唯一设计锁，不再回原图重新发散。
-3. 先判断武器类型，再决定侧视规则：平面型、长柄枪头型、体块型。
-4. 平面型侧视必须是真 90 度垂直侧面轮廓；不能把正视图横向压扁后冒充侧视。长柄枪头型侧视保留枪头结构但不露完整正面宝石；体块型侧视保留体积和侧向结构。
-5. 左右侧视如果容易发散，优先生成一张合格侧视，再镜像另一侧。
-6. 最终交付图必须是纯色背景，不允许保留视口地面线、渐变、场景、UI、坐标轴、阴影噪点或背景纹理。
-7. 平面型武器的 `left / right` 侧视必须垂直居中，不允许继承正面的倾斜姿态、交叉姿态、正面纹理面或 3/4 姿态。
-8. 输出外层文件夹使用中文命名，内部图片保留 `front / back / left / right` 标准视图名。
-9. 图像风格以 Tripo 建模可用为目标：低模大面、结构清楚、少毛刺、少碎裂，方便后续 Blender 精简。
-10. 如果 Tripo 生成结果出现灰白素模、碎面、结构脏、材质不明显，不要第一时间判断为面数太低；优先生成一版“建模友好版四视图”作为补救输入。
+3. 每把新武器必须使用独立上下文和独立运行目录；上一把武器完成后只归档，不再作为新武器参考。
+4. `front` 通过后必须同时写下“风格锁”：高级风格化 Roblox 游戏资产、清晰大面、材质分区、细节密度、非儿童化、非简陋玩具。
+5. 先判断武器类型，再决定侧视规则：平面型、长柄枪头型、体块型。
+6. 平面型侧视必须是真 90 度垂直侧面轮廓；不能把正视图横向压扁后冒充侧视。长柄枪头型侧视保留枪头结构但不露完整正面宝石；体块型侧视保留体积和侧向结构。
+7. 左右侧视默认不要独立生成两张；优先生成一张合格的 90 度工程侧视，再镜像另一侧，除非武器明确左右不对称。
+8. 最终交付图必须是纯色背景，不允许保留视口地面线、渐变、场景、UI、坐标轴、阴影噪点或背景纹理。
+9. 平面型武器的 `left / right` 侧视必须垂直居中，不允许继承正面的倾斜姿态、交叉姿态、正面纹理面或 3/4 姿态。
+10. 四个视图必须通过“同一武器一致性门”：从 front / back / left / right 四个方向看，都能判断是同一把武器旋转，而不是同系列的四把不同武器。
+11. 输出外层文件夹使用中文命名，内部图片保留 `front / back / left / right` 标准视图名。
+12. 图像风格以 Tripo 建模可用为目标：高级风格化 Roblox 游戏资产、低模大面、结构清楚、材质分区明确、少毛刺、少碎裂，方便后续 Blender 精简。这里的“低模”不是儿童化、简陋化或玩具化。
+13. 如果 Tripo 生成结果出现灰白素模、碎面、结构脏、材质不明显，不要第一时间判断为面数太低；优先生成一版“建模友好版四视图”作为补救输入。
 
 后续维护原则：
 
@@ -60,11 +64,14 @@
 2. 还没确认改款正视图，就开始扩背面和侧面。
 3. 把所有武器的侧视都当成“一条细线”，导致体块型武器丢结构。
 4. “同系列改款”变成原武器复制，或者变成完全新系列。
+5. 新武器开始时又读取旧武器视图，造成上下文污染和对话报错。
+6. 提到“低模”后被误解成儿童化、简陋化、玩具化，而不是复杂结构工程化简化。
+7. 四个方向风格或结构突然不一致，无法判断它们是同一把武器。
 
 核心原则：
 
 ```text
-先锁 1 张同系列改款 front，再根据武器类型决定怎么扩 back / left / right。
+一把武器一个上下文；先锁 1 张同系列改款 front 和风格锁，再根据武器类型扩 back / left / right；最终四个方向必须像同一把武器旋转。
 ```
 
 ## 第 0 步：先判断武器类型
@@ -203,6 +210,18 @@ front / back / left / right 最终文件必须是纯色背景。
 上下尖锥端帽
 ```
 
+同一轮还必须写“风格锁”，用于约束后续 `back / left / right` 不突然变成另一种画风。
+
+风格锁建议写 5 类：
+
+```text
+资产定位：高级风格化 Roblox 游戏资产，不是儿童玩具，不是简陋练习模型。
+低模含义：把复杂结构简化成清晰大块、棱面和材质区，不删除高级幻想武器身份。
+材质语言：金属、木头、皮革、宝石、发光区分别怎么表现。
+细节密度：保留主结构和少量识别点，减少微小碎片、密集尖刺、复杂切面。
+渲染感觉：Roblox 低模资产截图感，简单灯光，清楚轮廓，非概念插画，非扁平图标。
+```
+
 ### 第 3 步：人工确认 front
 
 front 通过后，立刻把它升级为“唯一设计锁”。
@@ -213,6 +232,8 @@ front 通过后，立刻把它升级为“唯一设计锁”。
 2. 不再混用之前失败的草图。
 3. back / left / right 全部只参考这张确认后的 front。
 4. 如果形状已经对了，后面尽量只做颜色微调，不再改大结构。
+5. 不再读取、解释或复用上一把武器的视图。上一把武器完成后只作为归档。
+6. 每个后续视图 prompt 必须继承同一份设计锁和风格锁。
 
 ### 第 4 步：体块型武器先写结构卡
 
@@ -243,7 +264,7 @@ front 通过后，立刻把它升级为“唯一设计锁”。
 平面型武器：
 
 ```text
-front 确认 -> back -> left 垂直细线侧视 -> mirror right
+front 确认 -> back -> 生成一张垂直 90 度工程侧视 -> mirror 另一侧
 ```
 
 长柄枪头型武器：
@@ -265,6 +286,34 @@ front 确认 -> 结构卡 -> 一张正交多视图板 -> 必要时裁成 back / 
 
 输出文件夹用中文命名，写清楚武器和类型，例如 `狼牙棒_圆体块四视图`。
 内部图片文件保留标准视图名：`front / back / left / right`，方便后续喂给 Tripo 或脚本处理。
+
+### 第 5.5 步：四视图同一武器一致性门
+
+最终交付前必须把 `front / back / left / right` 放在同一张 contact sheet 里检查。
+
+必须全部通过：
+
+1. 武器类别一致：不能 front 是剑、back 像匕首、side 像长针。
+2. 总高度一致：柄长、刃长、头部位置不能明显跳变。
+3. 主结构一致：护手、枪托、锤头、端帽、宝石或插槽的位置必须能对上。
+4. 材质一致：金属、木头、皮革、宝石、发光区的颜色和质感不能突然换风格。
+5. 细节密度一致：不能 front 很高级，back 很简陋，side 像儿童玩具。
+6. 旋转逻辑一致：back 像同一把武器转到背面；side 像同一把武器转到 90 度，而不是重新画的新武器。
+
+失败时记录：
+
+```text
+FOUR_VIEW_IDENTITY_MISMATCH
+STYLE_LOCK_BROKEN
+LOW_POLY_CHILDISH_SIMPLIFICATION
+```
+
+处理规则：
+
+- 只要无法判断四张图是同一把武器，就不能上传 Tripo。
+- 如果只是某一张风格漂移，只重做那一张。
+- 如果 back / side 都漂移，回到已确认的 front 和风格锁，不回原图、不读旧武器。
+- 如果侧视合格但另一侧发散，镜像合格侧视，不独立生成另一侧。
 
 ### 第 6 步：Tripo 结果不好时做建模友好版四视图
 
@@ -340,22 +389,22 @@ Preserve the weapon family identity: <weapon type>, <overall ratio>, <main head/
 
 Make it clearly different from the reference, not a near-copy. Change only these local design areas: <change 1>, <change 2>, <change 3>. Keep the same series identity, but make it obviously not the exact original weapon.
 
-Keep the Roblox low-poly viewport screenshot feel: clean faceted planes, hand-painted texture look, readable silhouette, simple lighting, game-ready shape.
+Keep a premium stylized Roblox game asset look: clean large low-poly forms, readable faceted planes, clear material zones, hand-painted texture feel, strong silhouette, simple lighting, and game-ready proportions.
 
 Full weapon visible, centered vertical orthographic front view, solid flat light blue-gray background.
-No text, no watermark, no UI, no character, no hand, no scene clutter, no floor plane, no horizon line, no gradient, no high-poly ornament.
+No text, no watermark, no UI, no character, no hand, no scene clutter, no floor plane, no horizon line, no gradient, no high-poly ornament, no childish toy style, no primitive training-model look, no overly simple plastic weapon.
 ```
 
 ### 平面型 Side Prompt
 
 ```text
-Using the accepted front-view weapon image as the exact design lock, generate ONE independent LEFT/RIGHT 90-degree side view image of the same Roblox low-poly fantasy weapon.
+Using the accepted front-view weapon image as the exact design lock and style lock, generate ONE independent LEFT/RIGHT 90-degree engineering side view image of the same premium stylized Roblox fantasy weapon.
 
-This is a flat weapon type. The side view should be a true thin side profile. Compress the front-facing blade/head details into a narrow side edge. Keep only thickness and edge details.
+This is a flat weapon type. The side view should be a true thin side profile. Reconstruct the front-facing blade/head details into a narrow side edge. Keep only thickness, bevels, sockets, collars, guard depth, and side-visible material zones.
 
-The side profile must stand vertically on a centered vertical axis. Do not inherit the front view's tilted pose, crossed pose, diagonal lean, or spread-out silhouette. The side view should read as one narrow upright edge.
+The side profile must stand vertically on a centered vertical axis. Do not inherit the front view's tilted pose, crossed pose, diagonal lean, or spread-out silhouette. The side view should read as one narrow upright edge of the same weapon.
 
-No 3/4 angle, no broad front face, no tilted pose, no diagonal pose, no crossed front pose, no new geometry, no extra side spikes.
+No 3/4 angle, no broad front face, no tilted pose, no diagonal pose, no crossed front pose, no new weapon design, no style change, no childish toy style, no primitive simplification, no extra side spikes.
 ```
 
 长柄枪头型补充：
@@ -376,9 +425,9 @@ Front 补充：
 
 ```text
 This is a MODELING-FRIENDLY orthographic front view for Tripo.
-Use large clean low-poly planes, simple prism blades, one continuous thick guard, clear sockets, simple raised crystal blocks, and readable material zones.
+Use premium stylized Roblox game asset quality with large clean low-poly planes, simplified but strong fantasy weapon forms, simple prism blades, one continuous thick guard, clear sockets, simple raised crystal blocks, and readable material zones.
 No tiny decorative spikes, no micro notches, no fragmented trim, no noisy texture.
-This is an engineering-style 3D modeling reference, not a decorative concept-art upgrade.
+This is an engineering-style 3D modeling reference, not a decorative concept-art upgrade and not a childish toy weapon.
 ```
 
 Back 补充：
@@ -386,7 +435,7 @@ Back 补充：
 ```text
 It must look like the same simplified model rotated 180 degrees.
 Rear details may be simpler, but total height, head position, guard thickness, sockets, grip rings, pommel, and material zones must match the front.
-Keep large clean planes and clear object separation.
+Keep large clean planes and clear object separation. Preserve the same premium stylized Roblox weapon identity.
 ```
 
 Side 补充：
@@ -396,38 +445,38 @@ This is a true 90-degree engineering side view.
 The broad front guard becomes a narrow thick edge.
 The front crystal appears only as a thin side block.
 Show thickness, sockets, collars, and handle alignment.
-Do not show the full front spread, full front diamond gem, or broad front-facing guard.
+Do not show the full front spread, full front diamond gem, or broad front-facing guard. Do not turn the weapon into a childish, primitive, or overly simple toy.
 ```
 
 ### 体块型 Side Prompt
 
 ```text
-Using the accepted front-view weapon image as the exact design lock, generate ONE independent LEFT/RIGHT 90-degree side view image of the same Roblox low-poly fantasy weapon.
+Using the accepted front-view weapon image as the exact design lock and style lock, generate ONE independent LEFT/RIGHT 90-degree side view image of the same premium stylized Roblox fantasy weapon.
 
 This is a volume weapon type, not a flat blade. If the weapon head is a round mace / round drum / ball hammer, the side view must remain bulky and round, with width close to the front/back view, only slightly narrower due to true 90-degree rotation. Do not flatten it into an oval plate or a thin line.
 
-Preserve side-visible structural parts: side-facing spikes, metal rings, handle alignment, top cap, bottom cap, and the same material palette.
+Preserve side-visible structural parts: side-facing spikes, metal rings, handle alignment, top cap, bottom cap, and the same material palette and style lock.
 
 Front-facing and back-facing details may be hidden or compressed by the 90-degree rotation, but do not remove the whole spike system or simplify the weapon into a plain stick.
 
-No 3/4 angle, no new spike pattern, no missing side spikes, no broad front face, no concept art style.
+No 3/4 angle, no new spike pattern, no missing side spikes, no broad front face, no concept art style, no childish toy style, no primitive simplification.
 ```
 
 ### 体块型多视图板 Prompt
 
 ```text
-Using the accepted front-view weapon image as the exact design lock, create one clean orthographic multi-view reference sheet for the same Roblox low-poly weapon.
+Using the accepted front-view weapon image as the exact design lock and style lock, create one clean orthographic multi-view reference sheet for the same premium stylized Roblox weapon.
 
 Show exactly four views in one image: FRONT, BACK, LEFT 90-degree SIDE, RIGHT 90-degree SIDE.
 
-This is one same weapon rotated, not four redesigns. Keep the same total height, handle length, head position, material palette, wood texture, metal rings, bone spikes, top cap, and bottom cap.
+This is one same weapon rotated, not four redesigns. Keep the same total height, handle length, head position, material palette, wood texture, metal rings, bone spikes, top cap, bottom cap, and premium stylized Roblox game asset quality.
 
 Volume structure lock: <paste structure card here>.
 
 For side views, keep round-volume weapons bulky and round. A mace head should still look like a round drum / short cylinder from the side, with width close to the front/back view, not a flat oval plate or thin line. Preserve side-facing spikes. Front-facing and back-facing spikes may be partially hidden or compressed.
 
 Roblox low-poly viewport screenshot feel, solid flat light blue-gray background, full weapon visible, centered.
-No text labels on the weapon, no watermark, no UI, no character, no hand, no floor plane, no horizon line, no gradient, no 3/4 views, no new geometry, no missing side spikes.
+No text labels on the weapon, no watermark, no UI, no character, no hand, no floor plane, no horizon line, no gradient, no 3/4 views, no new geometry, no missing side spikes, no childish toy style, no primitive simplification.
 ```
 
 ## 失败类型
@@ -438,6 +487,10 @@ No text labels on the weapon, no watermark, no UI, no character, no hand, no flo
 FRONT_VIEW_NOT_APPROVED
 VARIANT_DELTA_TOO_WEAK
 STYLE_DRIFT
+STYLE_LOCK_BROKEN
+OLD_WEAPON_CONTEXT_POLLUTION
+FOUR_VIEW_IDENTITY_MISMATCH
+LOW_POLY_CHILDISH_SIMPLIFICATION
 BACK_VIEW_SHAPE_MISMATCH
 SIDE_VIEW_NOT_90_DEGREE
 SIDE_VIEW_NOT_VERTICAL
@@ -495,19 +548,19 @@ MODEL_FRIENDLY_FOUR_VIEW_REQUIRED
 平面型武器：
 
 ```text
-这把是平面型武器。先做同系列改款 front，我确认后，再基于它扩 back / left / right。left 和 right 必须是真 90 度、垂直居中、纯色背景的侧面轮廓；不允许倾斜、交叉姿态、3/4 视图，也不允许把 front 横向压扁当侧视。
+这是一把新武器，不要读取或参考任何旧武器视图。先写 DNA 卡和风格锁，再只做同系列改款 front。风格锁是高级风格化 Roblox 游戏资产：清晰大面、材质分区明确、结构简化但不儿童化、不简陋玩具化。我确认 front 后，再基于它扩 back 和一张垂直 90 度工程侧视，另一侧默认镜像。四张图必须从 front / back / left / right 都看得出是同一把武器旋转；不允许倾斜、交叉姿态、3/4 视图，也不允许把 front 横向压扁当侧视。
 ```
 
 体块型武器：
 
 ```text
-这把是圆体块武器。先做同系列改款 front，我确认后，先写结构卡，再生成一张正交多视图板。left / right 必须是真 90 度厚度侧视，侧面仍要接近圆鼓体积，并保留侧向尖刺。
+这是一把新武器，不要读取或参考任何旧武器视图。这把是圆体块武器。先写 DNA 卡和风格锁，再只做同系列改款 front。我确认后，先写结构卡，再生成一张正交多视图板。left / right 必须是真 90 度厚度侧视，侧面仍要接近圆鼓体积，并保留侧向尖刺。四个方向必须看得出是同一把武器旋转，不能像四把同系列但不同设计的武器。
 ```
 
 Tripo 建模结果不好时：
 
 ```text
-Tripo 生成结果灰白、碎面、结构脏。不要先加面数，基于已确认的美术版四视图做一套建模友好版四视图：减少装饰，强化大块低模结构、材质分区、厚度、插槽和连接关系。
+Tripo 生成结果灰白、碎面、结构脏。不要先加面数，也不要读取旧武器候选图。基于当前武器已确认的美术版四视图做一套建模友好版四视图：减少装饰，强化大块低模结构、材质分区、厚度、插槽和连接关系。建模友好不等于儿童化或简陋化。
 ```
 
 ## 交付边界
