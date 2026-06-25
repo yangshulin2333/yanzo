@@ -960,7 +960,6 @@ Loop = true
 
 每做完一组动画，建议记录：
 
-```markdown
 ## Animation Handoff
 
 | 字段 | 内容 |
@@ -976,8 +975,6 @@ Loop = true
 | 播放位置 | LocalScript for visual, server validates damage |
 | 验证结果 | Studio Play 测试通过 |
 | 注意事项 | 只控制上半身，腿部仍可走路 |
-```
-
 ## 21. 快速决策表
 
 | 问题 | 选择 |
