@@ -55,9 +55,9 @@ Tripo 工作流
 
 ## 当前固定版本
 
-版本：v1.2
+版本：v1.3
 
-状态：已固定，作为当前 Roblox / Tripo 低模武器多视图生产工作流使用。
+状态：已固定，作为当前 Roblox / Tripo 低模武器多视图生产工作流使用。除非出现新的稳定失败类型，否则不要再改动主流程。
 
 固定范围：
 
@@ -71,9 +71,11 @@ Tripo 工作流
 8. 最终交付图必须是纯色背景，不允许保留视口地面线、渐变、场景、UI、坐标轴、阴影噪点或背景纹理。
 9. 平面型武器的 `left / right` 侧视必须垂直居中，不允许继承正面的倾斜姿态、交叉姿态、正面纹理面或 3/4 姿态。
 10. 四个视图必须通过“同一武器一致性门”：从 front / back / left / right 四个方向看，都能判断是同一把武器旋转，而不是同系列的四把不同武器。
-11. 输出外层文件夹使用中文命名，内部图片保留 `front / back / left / right` 标准视图名。
-12. 图像风格以 Tripo 建模可用为目标：高级风格化 Roblox 游戏资产、低模大面、结构清楚、材质分区明确、少毛刺、少碎裂，方便后续 Blender 精简。这里的“低模”不是儿童化、简陋化或玩具化。
-13. 如果 Tripo 生成结果出现灰白素模、碎面、结构脏、材质不明显，不要第一时间判断为面数太低；优先生成一版“建模友好版四视图”作为补救输入。
+11. 最终交付目录固定为 `00_final_tripo_upload`，目录内只能有 `front.png`、`back.png`、`left.png`、`right.png` 四个文件，不能放 contact sheet、候选图、README、日志或子文件夹。
+12. 最终回复必须给出四张图的绝对路径 Markdown 链接，保证用户能在 Codex 中直接点开。
+13. 输出外层文件夹使用中文命名或清晰英文命名，内部最终交付目录固定为 `00_final_tripo_upload`。
+14. 图像风格以 Tripo 建模可用为目标：高级风格化 Roblox 游戏资产、低模大面、结构清楚、材质分区明确、少毛刺、少碎裂，方便后续 Blender 精简。这里的“低模”不是儿童化、简陋化或玩具化。
+15. 如果 Tripo 生成结果出现灰白素模、碎面、结构脏、材质不明显，不要第一时间判断为面数太低；优先生成一版“建模友好版四视图”作为补救输入。
 
 后续维护原则：
 
@@ -340,6 +342,63 @@ LOW_POLY_CHILDISH_SIMPLIFICATION
 - 如果 back / side 都漂移，回到已确认的 front 和风格锁，不回原图、不读旧武器。
 - 如果侧视合格但另一侧发散，镜像合格侧视，不独立生成另一侧。
 
+### 第 5.6 步：最终交付目录门
+
+最终交付目录固定为：
+
+```text
+<run_dir>\00_final_tripo_upload
+```
+
+这个目录必须保持干净，只能包含四个文件：
+
+```text
+front.png
+back.png
+left.png
+right.png
+```
+
+禁止放入：
+
+```text
+contact_sheet_check.png
+README.md
+RUN_STATE.md
+PROMPT.md
+COPY_AUDIT.txt
+TRIPO_RESULT_AUDIT.md
+FAILURE_LOG.md
+_imagegen_candidates
+_checks
+_docs
+任何临时候选图
+任何子文件夹
+```
+
+交付前必须检查目录内容。如果目录里不是刚好这四个 PNG，记录：
+
+```text
+FINAL_DELIVERY_FOLDER_DIRTY
+```
+
+然后先移动或删除非最终交付物，把检查图放到 `_checks`，把文档放到 `_docs`，把候选图放到 `_imagegen_candidates`。最终目录未清理干净前，不允许交付。
+
+最终回复必须使用 Codex 可直接点开的绝对路径 Markdown 链接：
+
+```markdown
+- [front.png](<绝对路径\00_final_tripo_upload\front.png>)
+- [back.png](<绝对路径\00_final_tripo_upload\back.png>)
+- [left.png](<绝对路径\00_final_tripo_upload\left.png>)
+- [right.png](<绝对路径\00_final_tripo_upload\right.png>)
+```
+
+如果最终回复没有给四个可点击文件链接，记录：
+
+```text
+FINAL_DELIVERY_LINKS_MISSING
+```
+
 ### 第 6 步：Tripo 结果不好时做建模友好版四视图
 
 当 Tripo 已经根据四视图生成模型，但结果出现下面问题时，先不要把主因归结为面数太低：
@@ -530,6 +589,8 @@ LEFT_RIGHT_MISMATCH
 MULTIVIEW_SHEET_INCONSISTENT
 TEXT_UI_WATERMARK
 BACKGROUND_NOT_SOLID
+FINAL_DELIVERY_FOLDER_DIRTY
+FINAL_DELIVERY_LINKS_MISSING
 UNRELATED_IMAGE
 TRIPO_GRAY_UNTEXTURED_MODEL
 TRIPO_FRAGMENTED_HEAD_STRUCTURE
