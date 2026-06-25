@@ -239,6 +239,12 @@
   },
   "active": "37dcfd4209b68cab",
   "lastOpenFiles": [
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/_imagegen_candidates/钴蓝风暴细剑_2026-06-25/front_candidate_01.png",
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/钴蓝风暴细剑_细剑型正视图/cobalt_storm_rapier_front_candidate_01.png",
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型四视图/COPY_AUDIT.txt",
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型四视图/FAILURE_LOG.md",
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型四视图/PROMPT.md",
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型四视图/RUN_STATE.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/_imagegen_candidates/钴蓝风暴细剑_2026-06-25/uploaded_reference.png",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/_imagegen_candidates/钴蓝风暴细剑_2026-06-25",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/钴蓝风暴细剑_细剑型正视图",
@@ -250,12 +256,10 @@
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型四视图/iceblue_darksteel_sword_back.png",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型四视图/iceblue_darksteel_sword_front.png",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/_imagegen_candidates/冰蓝暗钢短剑_2026-06-25/left_candidate_01_rejected_not_strict_90.png",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/_imagegen_candidates/冰蓝暗钢短剑_2026-06-25/back_candidate_01_original.png",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型四视图",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型正视图/FAILURE_LOG.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型正视图/PROMPT.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型正视图/RUN_STATE.md",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/_imagegen_candidates/冰蓝暗钢短剑_2026-06-25/front_candidate_01_flat_bg.png",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/_imagegen_candidates/冰蓝暗钢短剑_2026-06-25",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/冰蓝暗钢短剑_平面型正视图",
     "20_Areas 领域/Roblox/框架/模块系统/动画系统/原生动画系统补充.md",
@@ -268,7 +272,6 @@
     "20_Areas 领域/Roblox/框架/模块系统/动画系统/assets/未命名/file-20260625115432433.md",
     "20_Areas 领域/Roblox/框架/模块系统/动画系统/assets/未命名",
     "20_Areas 领域/Roblox/框架/模块系统/动画系统/assets",
-    "20_Areas 领域/Roblox/框架/模块系统/动画系统",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/翡翠黑铁翼刃长剑_长剑型四视图/FAILURE_LOG.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/玄岩陨星锤_圆形360凸出物四视图/PROMPT.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/玄岩陨星锤_圆形360凸出物四视图/RUN_STATE.md",
@@ -281,9 +284,6 @@
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/翠金毒藤双镰杖_平面型四视图_纯色背景修正版/返工说明.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/玄岩陨星锤_圆形360凸出物正视图/PROMPT.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/玄岩陨星锤_圆形360凸出物正视图/RUN_STATE.md",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/玄岩陨星锤_圆形360凸出物正视图/STRUCTURE_LOCK.md",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/玄岩陨星锤_圆形锤头正视图/PROMPT.md",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/玄岩陨星锤_圆形锤头正视图/RUN_STATE.md",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/翠金毒藤双镰杖_平面型四视图/四视图交付说明.md"
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/玄岩陨星锤_圆形360凸出物正视图/STRUCTURE_LOCK.md"
   ]
 }
