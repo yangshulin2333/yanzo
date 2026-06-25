@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas 领域/Roblox/框架/模块系统/动画系统/Roblox 原生动画系统.md",
+                "file": "20_Areas 领域/Roblox/框架/模块系统/动画系统/原生动画系统补充.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Roblox 原生动画系统"
+              "title": "原生动画系统补充"
             }
           }
         ],
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas 领域/Roblox/框架/模块系统/动画系统/Roblox 原生动画系统.md",
+                "file": "20_Areas 领域/Roblox/框架/模块系统/动画系统/原生动画系统补充.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Roblox 原生动画系统 的大纲"
+              "title": "原生动画系统补充 的大纲"
             }
           }
         ],
@@ -237,10 +237,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "37dcfd4209b68cab",
+  "active": "d3be8173c5b5c46c",
   "lastOpenFiles": [
-    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/003_PlayerHUD/003_PlayerHUD.md",
     "20_Areas 领域/Roblox/框架/模块系统/动画系统/Roblox 原生动画系统.md",
+    "20_Areas 领域/Roblox/框架/模块系统/动画系统/原生动画系统补充.md",
+    "10_Projects 项目/Roblox/玩具/ToyboxGuardiansGame/003_PlayerHUD/003_PlayerHUD.md",
     "20_Areas 领域/Roblox/框架/模块系统/动画系统",
     "20_Areas 领域/Roblox/框架/模块系统",
     "20_Areas 领域/Roblox/框架/模块系统/动画系统/未命名.md",
@@ -283,7 +284,6 @@
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/玄岩陨星锤_体块型四视图/RUN_STATE.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/霜蓝秘银三叉戟_长柄枪头型正视图/PROMOTED_TO_FOUR_VIEW.md",
     "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/翡翠黑铁翼刃长剑_长剑型正视图/PROMPT.md",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/翡翠黑铁翼刃长剑_长剑型正视图/RUN_STATE.md",
-    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/霜蓝秘银三叉戟_长柄枪头型四视图/RUN_STATE.md"
+    "81_WorkFlow 工作流/Roblox/Tripo多视图工作流/输出内容/翡翠黑铁翼刃长剑_长剑型正视图/RUN_STATE.md"
   ]
 }
