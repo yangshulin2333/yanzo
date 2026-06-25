@@ -34,10 +34,19 @@ Because this is a flat sword, compress the front-facing blade, guard, diamond so
 The side profile must stand perfectly upright on a centered vertical axis. Maximum visible width should be much narrower than the front view, like a clean thin vertical edge with small thickness at grip, guard, pommel, and blade. No diagonal lean, no crossed pose, no perspective rotation, no visible broad front face.
 ```
 
+## Rejected Side Method
+
+```text
+Do not horizontally compress the accepted front image and call it a side view.
+That produces SIDE_VIEW_FRONT_COMPRESSED_FAKE because the image still reads as a front blade face.
+```
+
 ## Final Side Method
 
 ```text
-For this flat sword, final side views were derived from the approved front by compressing the accepted front foreground onto a centered vertical axis.
-Left is the strict 90-degree compressed profile.
+For this flat sword, final side views were reconstructed as a true 90-degree orthographic side silhouette.
+Preserve total height, handle length, guard position, pommel position, and palette.
+Draw only side thickness: narrow blade edge, narrow grip edge, hidden-or-sliver gem, short front/back guard-depth block.
+Left is the reconstructed strict 90-degree side silhouette.
 Right is a horizontal mirror of left.
 ```

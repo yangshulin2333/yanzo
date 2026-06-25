@@ -28,11 +28,12 @@
 
 - Back view was generated from the approved front as design lock.
 - AI-generated left side candidate 01 was rejected because it still showed too much front blade face.
-- Final left side was derived from the approved front by compressing the foreground onto a centered vertical axis.
-- Final right side was mirrored from the strict 90-degree left side.
+- Left / right candidate 02 was rejected because it was a front-compression fake side view, not a reconstructed 90-degree side silhouette.
+- Final left side is candidate 03: a reconstructed true 90-degree side silhouette with narrow blade edge, narrow grip edge, hidden/sliver gem, and short guard-depth block.
+- Final right side was mirrored from candidate 03.
 
 ## Verification
 
 - All final views use a solid flat blue-gray background.
-- Left / right are true vertical narrow side profiles for a flat sword.
+- Left / right are true vertical 90-degree side silhouettes for a flat sword, not compressed front textures.
 - No viewport UI, floor plane, horizon line, text, watermark, character, or hand is present.
