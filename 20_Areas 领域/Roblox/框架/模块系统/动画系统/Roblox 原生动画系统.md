@@ -18,11 +18,11 @@
 
 重点不是记按钮位置，而是理解 Roblox 动画的三层结构：
 
-| 层级 | 你在做什么 | 关键对象 |
-|---|---|---|
-| 编辑层 | 在时间轴上摆姿势、打关键帧 | Rig、Track、Keyframe、Easing |
+| 层级  | 你在做什么                  | 关键对象                                        |
+| --- | ---------------------- | ------------------------------------------- |
+| 编辑层 | 在时间轴上摆姿势、打关键帧          | Rig、Track、Keyframe、Easing                   |
 | 资产层 | 保存本地编辑数据或发布成 Roblox 资产 | KeyframeSequence、CurveAnimation、AnimationId |
-| 运行层 | 用脚本加载并播放动画 | Animation、Animator、AnimationTrack |
+| 运行层 | 用脚本加载并播放动画             | Animation、Animator、AnimationTrack           |
 
 ## 2. 核心概念
 
